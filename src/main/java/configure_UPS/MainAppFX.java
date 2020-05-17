@@ -16,8 +16,13 @@ public class MainAppFX extends Application {
 
     Parent root = loader.load();
 
+<<<<<<< HEAD:src/main/java/configure_UPS/MainAppFX.java
     primaryStage.setTitle("configure_UPS");
     primaryStage.setScene(new Scene(root, 600, 650));
+=======
+    primaryStage.setTitle("configure_ups");
+    primaryStage.setScene(new Scene(root, 1050, 750));
+>>>>>>> 52751f5... first screen with large design:src/main/java/configure_ups/MainAppFX.java
     primaryStage.show();
 
 
