@@ -12,143 +12,197 @@ public class Unit {
     private static int maxTempBoost;
     private static int outputMaximum;
     private static int outputMiddle;
-    private static int outputMinimum;
-    private static double valueOfNominalCurrentVolt;
+    private static int outputFloatMinimum;
+    private static int outputBoostMinimum;
+    private static double coefficientOfCalibration;
+    private static int maxVoltShunt;
+    private static int maxCurrentShunt;
+    private static int capacitanceOfBattery;
+    private static int numberBattery;
+    private static int coeffAnalogueAmplifier;
+    private static double chargingCurrent;
+    private static double maxChargCurrent;
+    private static double thresholdForBoost;
+    private static double thresholdBoostEnding;
+    
 
     public Unit(){
-/*      this.mVAtZeroDeg.set(500);
-        this.changingMVPerOneDeg.set(10);
-        this.minTempFloat.set(0);
-        this.tempFirstMidPointFloat.set(15);
-        this.tempSecondMidPointFloat.set(35);
-        this.maxTempFloat.set(50);
-        this.maxTempBoost.set(30);
-        this.minTempBoost.set(45);
-        this.outputMaximum.set(2660);
-        this.outputMiddle.set(2550);
-        this.outputMinimum.set(2468);
-        this.valueOfNominalCurrentVolt.set(30.0);
 
-*/
     }
 
-    public int getMVAtZeroDeg() {
+    public static int getmVAtZeroDeg() {
         return mVAtZeroDeg;
     }
 
-//    public IntegerProperty mVAtZeroDegProperty() {        return mVAtZeroDeg;    }
-
-    public void setMVAtZeroDeg(int mVAtZeroDeg) {
-        this.mVAtZeroDeg=mVAtZeroDeg;
+    public static void setmVAtZeroDeg(int mVAtZeroDeg) {
+        Unit.mVAtZeroDeg = mVAtZeroDeg;
     }
 
-    public int getChangingMVPerOneDeg() {
+    public static int getChangingMVPerOneDeg() {
         return changingMVPerOneDeg;
     }
 
-    //  public IntegerProperty changingMVPerOneDegProperty() { return changingMVPerOneDeg; }
-
-    public void setChangingMVPerOneDeg(int changingMVPerOneDeg) {
-        this.changingMVPerOneDeg = changingMVPerOneDeg;
+    public static void setChangingMVPerOneDeg(int changingMVPerOneDeg) {
+        Unit.changingMVPerOneDeg = changingMVPerOneDeg;
     }
 
-    public int getMinTempFloat() {
+    public static int getMinTempFloat() {
         return minTempFloat;
     }
 
-//    public IntegerProperty minTempFloatProperty() {        return minTempFloat;    }
-
-    public void setMinTempFloat(int minTempFloat) {
-        this.minTempFloat = minTempFloat;
+    public static void setMinTempFloat(int minTempFloat) {
+        Unit.minTempFloat = minTempFloat;
     }
 
-    public int getTempFirstMidPointFloat() {
+    public static int getTempFirstMidPointFloat() {
         return tempFirstMidPointFloat;
     }
 
-//    public IntegerProperty tempFirstMidPointFloatProperty() {     return tempFirstMidPointFloat;  }
-
-    public void setTempFirstMidPointFloat(int tempFirstMidPointFloat) {
-        this.tempFirstMidPointFloat = tempFirstMidPointFloat;
+    public static void setTempFirstMidPointFloat(int tempFirstMidPointFloat) {
+        Unit.tempFirstMidPointFloat = tempFirstMidPointFloat;
     }
 
-    public int getTempSecondMidPointFloat() {
+    public static int getTempSecondMidPointFloat() {
         return tempSecondMidPointFloat;
     }
 
-//    public IntegerProperty tempSecondMidPointFloatProperty() {  return tempSecondMidPointFloat;  }
-
-    public void setTempSecondMidPointFloat(int tempSecondMidPointFloat) {
-        this.tempSecondMidPointFloat = tempSecondMidPointFloat;
+    public static void setTempSecondMidPointFloat(int tempSecondMidPointFloat) {
+        Unit.tempSecondMidPointFloat = tempSecondMidPointFloat;
     }
 
-    public int getMaxTempFloat() {
+    public static int getMaxTempFloat() {
         return maxTempFloat;
     }
 
-//    public IntegerProperty maxTempFloatProperty() {  return maxTempFloat;    }
-
-    public void setMaxTempFloat(int maxTempFloat) {
-        this.maxTempFloat = maxTempFloat;
+    public static void setMaxTempFloat(int maxTempFloat) {
+        Unit.maxTempFloat = maxTempFloat;
     }
 
-    public int getMinTempBoost() {
+    public static int getMinTempBoost() {
         return minTempBoost;
     }
 
-//    public IntegerProperty minTempBoostProperty() {  return minTempBoost; }
-
-    public void setMinTempBoost(int minTempBoost) {
-        this.minTempBoost=minTempBoost;
+    public static void setMinTempBoost(int minTempBoost) {
+        Unit.minTempBoost = minTempBoost;
     }
 
-    public int getMaxTempBoost() {
+    public static int getMaxTempBoost() {
         return maxTempBoost;
     }
 
-//    public IntegerProperty maxTempBoostProperty() {    return maxTempBoost;  }
-
-    public void setMaxTempBoost(int maxTempBoost) {
-        this.maxTempBoost = maxTempBoost;
+    public static void setMaxTempBoost(int maxTempBoost) {
+        Unit.maxTempBoost = maxTempBoost;
     }
 
-    public int getOutputMaximum() {
+    public static int getOutputMaximum() {
         return outputMaximum;
     }
 
-//    public IntegerProperty outputMaximumProperty() {  return outputMaximum; }
-
-    public void setOutputMaximum(int outputMaximum) {
-        this.outputMaximum = outputMaximum;
+    public static void setOutputMaximum(int outputMaximum) {
+        Unit.outputMaximum = outputMaximum;
     }
 
-    public int getOutputMiddle() {
+    public static int getOutputMiddle() {
         return outputMiddle;
     }
 
-//    public IntegerProperty outputMiddleProperty() {  return outputMiddle; }
-
-    public void setOutputMiddle(int outputMiddle) {
-        this.outputMiddle = outputMiddle;
+    public static void setOutputMiddle(int outputMiddle) {
+        Unit.outputMiddle = outputMiddle;
     }
 
-    public int getOutputMinimum() {
-        return outputMinimum;
+    public static int getOutputFloatMinimum() {
+        return outputFloatMinimum;
     }
 
-//    public IntegerProperty outputMinimumProperty() { return outputMinimum; }
-
-    public void setOutputMinimum(int outputMinimum) {
-        this.outputMinimum = outputMinimum;
+    public static void setOutputFloatMinimum(int outputFloatMinimum) {
+        Unit.outputFloatMinimum = outputFloatMinimum;
     }
 
-    public double getValueOfNominalCurrentVolt() {
-        return valueOfNominalCurrentVolt;
+    public static int getOutputBoostMinimum() {
+        return outputBoostMinimum;
     }
 
-//    public DoubleProperty valueOfNominalCurrentVoltProperty() {  return valueOfNominalCurrentVolt; }
+    public static void setOutputBoostMinimum(int outputBoostMinimum) {
+        Unit.outputBoostMinimum = outputBoostMinimum;
+    }
 
-    public void setValueOfNominalCurrentVolt(double valueOfNominalCurrentVolt) {
-        this.valueOfNominalCurrentVolt = valueOfNominalCurrentVolt;
+    public static double getCoefficientOfCalibration() {
+        return coefficientOfCalibration;
+    }
+
+    public static void setCoefficientOfCalibration(double coefficientOfCalibration) {
+        Unit.coefficientOfCalibration = coefficientOfCalibration;
+    }
+
+    public static int getMaxVoltShunt() {
+        return maxVoltShunt;
+    }
+
+    public static void setMaxVoltShunt(int maxVoltShunt) {
+        Unit.maxVoltShunt = maxVoltShunt;
+    }
+
+    public static int getMaxCurrentShunt() {
+        return maxCurrentShunt;
+    }
+
+    public static void setMaxCurrentShunt(int maxCurrentShunt) {
+        Unit.maxCurrentShunt = maxCurrentShunt;
+    }
+
+    public static int getCapacitanceOfBattery() {
+        return capacitanceOfBattery;
+    }
+
+    public static void setCapacitanceOfBattery(int capacitanceOfBattery) {
+        Unit.capacitanceOfBattery = capacitanceOfBattery;
+    }
+
+    public static int getNumberBattery() {
+        return numberBattery;
+    }
+
+    public static void setNumberBattery(int numberBattery) {
+        Unit.numberBattery = numberBattery;
+    }
+
+    public static int getCoeffAnalogueAmplifier() {
+        return coeffAnalogueAmplifier;
+    }
+
+    public static void setCoeffAnalogueAmplifier(int coeffAnalogueAmplifier) {
+        Unit.coeffAnalogueAmplifier = coeffAnalogueAmplifier;
+    }
+
+    public static double getChargingCurrent() {
+        return chargingCurrent;
+    }
+
+    public static void setChargingCurrent(double chargingCurrent) {
+        Unit.chargingCurrent = chargingCurrent;
+    }
+
+    public static double getMaxChargCurrent() {
+        return maxChargCurrent;
+    }
+
+    public static void setMaxChargCurrent(double maxChargCurrent) {
+        Unit.maxChargCurrent = maxChargCurrent;
+    }
+
+    public static double getThresholdForBoost() {
+        return thresholdForBoost;
+    }
+
+    public static void setThresholdForBoost(double thresholdForBoost) {
+        Unit.thresholdForBoost = thresholdForBoost;
+    }
+
+    public static double getThresholdBoostEnding() {
+        return thresholdBoostEnding;
+    }
+
+    public static void setThresholdBoostEnding(double thresholdBoostEnding) {
+        Unit.thresholdBoostEnding = thresholdBoostEnding;
     }
 }

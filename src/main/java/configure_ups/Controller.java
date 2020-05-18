@@ -43,10 +43,40 @@ public class Controller {
     private TextField outputMiddle;
 
     @FXML
-    private TextField outputMinimum;
+    private TextField outputFloatMinimum;
 
     @FXML
-    private TextField valueOfNominalCurrentVolt;
+    private TextField outputBoostMinimum;
+
+    @FXML
+    private TextField coefficientOfCalibration;
+
+    @FXML
+    private TextField maxVoltShunt;
+
+    @FXML
+    private TextField maxCurrentShunt;
+
+    @FXML
+    private TextField capacitanceOfBattery;
+
+    @FXML
+    private TextField numberBattery;
+
+    @FXML
+    private TextField coeffAnalogueAmplifier;
+
+    @FXML
+    private TextField chargingCurrent;
+
+    @FXML
+    private TextField maxChargCurrent;
+
+    @FXML
+    private TextField thresholdForBoost;
+
+    @FXML
+    private TextField thresholdBoostEnding;
 
     @FXML
     private Button previousField;
@@ -65,7 +95,7 @@ public class Controller {
 
     public void handleDelete(){
 
-        unit.setMVAtZeroDeg(0);
+        unit.setmVAtZeroDeg(0);
         unit.setChangingMVPerOneDeg(0);
         unit.setMinTempFloat(0);
         unit.setTempFirstMidPointFloat(0);
@@ -75,8 +105,19 @@ public class Controller {
         unit.setMinTempBoost(0);
         unit.setOutputMaximum(0);
         unit.setOutputMiddle(0);
-        unit.setOutputMinimum(0);
-        unit.setValueOfNominalCurrentVolt(0.0);
+        unit.setOutputFloatMinimum(0);
+        unit.setOutputBoostMinimum(0);
+        unit.setCoefficientOfCalibration(0.0);
+        unit.setMaxVoltShunt(0);
+        unit.setMaxCurrentShunt(0);
+        unit.setCapacitanceOfBattery(0);
+        unit.setNumberBattery(0);
+        unit.setCoeffAnalogueAmplifier(0);
+        unit.setChargingCurrent(0.0);
+        unit.setMaxChargCurrent(0.0);
+        unit.setThresholdForBoost(0.0);
+        unit.setThresholdBoostEnding(0.0);
+
 
         mVAtZeroDeg.setText("");
         changingMVPerOneDeg.setText("");
@@ -88,12 +129,23 @@ public class Controller {
         maxTempBoost.setText("");
         outputMaximum.setText("");
         outputMiddle.setText("");
-        outputMinimum.setText("");
-        valueOfNominalCurrentVolt.setText("");
+        outputFloatMinimum.setText("");
+        outputBoostMinimum.setText("");
+        coefficientOfCalibration.setText("");
+        maxVoltShunt.setText("");
+        maxCurrentShunt.setText("");
+        capacitanceOfBattery.setText("");
+        numberBattery.setText("");
+        coeffAnalogueAmplifier.setText("");
+        chargingCurrent.setText("");
+        maxChargCurrent.setText("");
+        thresholdForBoost.setText("");
+        thresholdBoostEnding.setText("");
+
     }
 
     public void setBasicParams(){
-        unit.setMVAtZeroDeg(500);
+        unit.setmVAtZeroDeg(500);
         unit.setChangingMVPerOneDeg(10);
         unit.setMinTempFloat(0);
         unit.setTempFirstMidPointFloat(15);
@@ -103,10 +155,21 @@ public class Controller {
         unit.setMinTempBoost(45);
         unit.setOutputMaximum(2660);
         unit.setOutputMiddle(2550);
-        unit.setOutputMinimum(2468);
-        unit.setValueOfNominalCurrentVolt(30.0);
+        unit.setOutputFloatMinimum(2468);
+        unit.setOutputBoostMinimum(2550);
+        unit.setCoefficientOfCalibration(1.108);
+        unit.setMaxVoltShunt(60);
+        unit.setMaxCurrentShunt(400);
+        unit.setCapacitanceOfBattery(75);
+        unit.setNumberBattery(4);
+        unit.setCoeffAnalogueAmplifier(25);
+        unit.setChargingCurrent(2.8);
+        unit.setMaxChargCurrent(3.5);
+        unit.setThresholdForBoost(0.9);
+        unit.setThresholdBoostEnding(0.25);
 
-        mVAtZeroDeg.setText(String.valueOf(unit.getMVAtZeroDeg()));
+
+        mVAtZeroDeg.setText(String.valueOf(unit.getmVAtZeroDeg()));
         changingMVPerOneDeg.setText(String.valueOf(unit.getChangingMVPerOneDeg()));
         minTempFloat.setText(String.valueOf(unit.getMinTempFloat()));
         tempFirstMidPointFloat.setText(String.valueOf(unit.getTempFirstMidPointFloat()));
@@ -116,13 +179,23 @@ public class Controller {
         maxTempBoost.setText(String.valueOf(unit.getMinTempBoost()));
         outputMaximum.setText(String.valueOf(unit.getOutputMaximum()));
         outputMiddle.setText(String.valueOf(unit.getOutputMiddle()));
-        outputMinimum.setText(String.valueOf(unit.getOutputMinimum()));
-        valueOfNominalCurrentVolt.setText(String.valueOf(unit.getValueOfNominalCurrentVolt()));
+        outputFloatMinimum.setText(String.valueOf(unit.getOutputFloatMinimum()));
+        outputBoostMinimum.setText(String.valueOf(unit.getOutputBoostMinimum()));
+        coefficientOfCalibration.setText(String.valueOf(unit.getCoefficientOfCalibration()));
+        maxVoltShunt.setText(String.valueOf(unit.getMaxVoltShunt()));
+        maxCurrentShunt.setText(String.valueOf(unit.getMaxCurrentShunt()));
+        capacitanceOfBattery.setText(String.valueOf(unit.getCapacitanceOfBattery()));
+        numberBattery.setText(String.valueOf(unit.getNumberBattery()));
+        coeffAnalogueAmplifier.setText(String.valueOf(unit.getCoeffAnalogueAmplifier()));
+        chargingCurrent.setText(String.valueOf(unit.getChargingCurrent()));
+        maxChargCurrent.setText(String.valueOf(unit.getMaxChargCurrent()));
+        thresholdForBoost.setText(String.valueOf(unit.getThresholdForBoost()));
+        thresholdBoostEnding.setText(String.valueOf(unit.getThresholdBoostEnding()));
 
     }
     public void setWriteParams() throws IOException {
 
-        unit.setMVAtZeroDeg(Integer.parseInt(mVAtZeroDeg.getText()));
+        unit.setmVAtZeroDeg(Integer.parseInt(mVAtZeroDeg.getText()));
         unit.setChangingMVPerOneDeg(Integer.parseInt(changingMVPerOneDeg.getText()));
         unit.setMinTempFloat(Integer.parseInt(minTempFloat.getText()));
         unit.setTempFirstMidPointFloat(Integer.parseInt(tempFirstMidPointFloat.getText()));
@@ -132,8 +205,9 @@ public class Controller {
         unit.setMaxTempBoost(Integer.parseInt(maxTempBoost.getText()));
         unit.setOutputMaximum(Integer.parseInt(outputMaximum.getText()));
         unit.setOutputMiddle(Integer.parseInt(outputMiddle.getText()));
-        unit.setOutputMinimum(Integer.parseInt(outputMinimum.getText()));
-        unit.setValueOfNominalCurrentVolt(Double.parseDouble(valueOfNominalCurrentVolt.getText()));
+        unit.setOutputFloatMinimum(Integer.parseInt(outputFloatMinimum.getText()));
+        unit.setOutputBoostMinimum(Integer.parseInt(outputBoostMinimum.getText()));
+        unit.setCoefficientOfCalibration(Double.parseDouble(coefficientOfCalibration.getText()));
 
         //    BufferedWriter writer = new BufferedWriter(new FileWriter("/home/kirill/test/UPSTuborTc_Boost/UPSTuborTc_Boost.ino"));
 
@@ -143,7 +217,7 @@ public class Controller {
         strings[0]= "#define OUTPUT_SIGNAL A0\n" +
                 "#define INPUT_TEMP A2\n" +
                 "#define INPUT_SHUNT A4";
-        strings[1] = "int millivoltAtZeroDegrees = " + unit.getMVAtZeroDeg() + ";";
+        strings[1] = "int millivoltAtZeroDegrees = " + unit.getmVAtZeroDeg() + ";";
         strings[2] = "int changingMillivoltPerOneDegrees = " + unit.getChangingMVPerOneDeg() + ";";
         strings[3] = "double accuracyInput = 1.611;\n" +
                 "double accuracyOutput = 3.223;";
@@ -155,8 +229,8 @@ public class Controller {
         strings[9] = "int maxTempBoostDeg = " + unit.getMaxTempBoost() + ";";
         strings[10] = "int outputMaximum = " + unit.getOutputMaximum() + ";";
         strings[11] = "int outputMiddleFloat = " + unit.getOutputMiddle() + ";";
-        strings[12] = "int  outputMinimum = " + unit.getOutputMinimum() + ";";
-        strings[13] = "double valueOfNominalCurrentOnVoltage = " + unit.getValueOfNominalCurrentVolt() + ";";
+        strings[12] = "int  outputMinimum = " + ";";
+        strings[13] = "double valueOfNominalCurrentOnVoltage = "  + ";";
         strings[14] = "//Вычисляемые значения\n" +
                 "\n" +
                 "//Вычисляем значение показаний шунта для 10-битного АЦП, пока не округляя\n" +
