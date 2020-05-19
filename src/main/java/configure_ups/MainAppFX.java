@@ -17,7 +17,7 @@ public class MainAppFX extends Application {
     Parent root = loader.load();
 
     primaryStage.setTitle("configure_ups");
-    primaryStage.setScene(new Scene(root, 1050, 750));
+    primaryStage.setScene(new Scene(root, 1055, 750));
     primaryStage.show();
 
 

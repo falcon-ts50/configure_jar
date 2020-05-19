@@ -208,6 +208,15 @@ public class Controller {
         unit.setOutputFloatMinimum(Integer.parseInt(outputFloatMinimum.getText()));
         unit.setOutputBoostMinimum(Integer.parseInt(outputBoostMinimum.getText()));
         unit.setCoefficientOfCalibration(Double.parseDouble(coefficientOfCalibration.getText()));
+        unit.setMaxVoltShunt(Integer.parseInt(maxVoltShunt.getText()));
+        unit.setMaxCurrentShunt(Integer.parseInt(maxCurrentShunt.getText()));
+        unit.setCapacitanceOfBattery(Integer.parseInt(capacitanceOfBattery.getText()));
+        unit.setNumberBattery(Integer.parseInt(numberBattery.getText()));
+        unit.setCoeffAnalogueAmplifier(Integer.parseInt(coeffAnalogueAmplifier.getText()));
+        unit.setChargingCurrent(Double.parseDouble(chargingCurrent.getText()));
+        unit.setMaxChargCurrent(Double.parseDouble(maxChargCurrent.getText()));
+        unit.setThresholdForBoost(Double.parseDouble(thresholdForBoost.getText()));
+        unit.setThresholdBoostEnding(Double.parseDouble(thresholdBoostEnding.getText()));
 
         //    BufferedWriter writer = new BufferedWriter(new FileWriter("/home/kirill/test/UPSTuborTc_Boost/UPSTuborTc_Boost.ino"));
 
