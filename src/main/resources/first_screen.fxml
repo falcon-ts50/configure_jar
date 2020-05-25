@@ -36,54 +36,54 @@
       <TextField fx:id="maxTempBoost" layoutX="352.0" layoutY="341.0" prefHeight="25.0" prefWidth="98.0" text="45" />
       <Label layoutX="475.0" layoutY="346.0" text="град. С" />
       <Label layoutX="90.0" layoutY="384.0" text="Введите значения зарядного напряжения для режимов" />
-      <Label layoutX="475.0" layoutY="436.0" text="мВ/эл" />
-      <TextField fx:id="outputFloatMinimum" layoutX="352.0" layoutY="431.0" prefHeight="25.0" prefWidth="98.0" text="2468" />
-      <Label layoutX="14.0" layoutY="436.0" text="Минимальное значение режима Float" />
-      <Label layoutX="14.0" layoutY="468.0" text="Минимальное значение режима Boost" />
-      <TextField fx:id="outputBoostMinimum" layoutX="352.0" layoutY="463.0" prefHeight="25.0" prefWidth="98.0" text="2550" />
-      <Label layoutX="475.0" layoutY="468.0" text="мВ/эл" />
-      <Label layoutX="14.0" layoutY="530.0" text="Максимальное значение для Float и Boost" />
-      <TextField fx:id="outputMaximum" layoutX="352.0" layoutY="525.0" prefHeight="25.0" prefWidth="98.0" text="2660" />
-      <Label layoutX="475.0" layoutY="530.0" text="мВ/эл" />
-      <Button fx:id="write" layoutX="927.0" layoutY="694.0" mnemonicParsing="false" onAction="#setWriteParams" text="Записать" />
+      <Label layoutX="475.0" layoutY="492.0" text="мВ/эл" />
+      <TextField fx:id="outputFloatMinimum" layoutX="352.0" layoutY="487.0" prefHeight="25.0" prefWidth="98.0" text="2468" />
+      <Label layoutX="14.0" layoutY="492.0" text="Минимальное значение для режима Float" />
+      <Label layoutX="14.0" layoutY="525.0" text="Минимальное значение для режима Boost" />
+      <TextField fx:id="outputBoostMinimum" layoutX="352.0" layoutY="520.0" prefHeight="25.0" prefWidth="98.0" text="2550" />
+      <Label layoutX="475.0" layoutY="525.0" text="мВ/эл" />
+      <Label layoutX="14.0" layoutY="427.0" text="Максимальное значение для (Float и Boost)" />
+      <TextField fx:id="outputMaximum" layoutX="352.0" layoutY="422.0" prefHeight="25.0" prefWidth="98.0" text="2660" />
+      <Label layoutX="475.0" layoutY="427.0" text="мВ/эл" />
+      <Button fx:id="write" layoutX="933.0" layoutY="694.0" mnemonicParsing="false" onAction="#setWriteParams" text="Записать" />
       <Button fx:id="clear" layoutX="836.0" layoutY="694.0" mnemonicParsing="false" onAction="#handleDelete" text="Очистить" />
       <Button fx:id="previousField" layoutX="555.0" layoutY="694.0" mnemonicParsing="false" onAction="#setBasicParams" text="Вернуть первоначальные значения" />
-      <Label layoutX="475.0" layoutY="499.0" text="мВ/эл" />
-      <TextField fx:id="outputMiddle" layoutX="352.0" layoutY="494.0" prefHeight="25.0" prefWidth="98.0" text="2550" />
-      <Label layoutX="14.0" layoutY="499.0" text="Значение средней точки режима Float" />
+      <Label layoutX="475.0" layoutY="459.0" text="мВ/эл" />
+      <TextField fx:id="outputMiddle" layoutX="352.0" layoutY="454.0" prefHeight="25.0" prefWidth="98.0" text="2550" />
+      <Label layoutX="14.0" layoutY="459.0" text="Значение средней точки для режима Float" />
       <TextField fx:id="coefficientOfCalibration" layoutX="434.0" layoutY="599.0" prefHeight="25.0" prefWidth="83.0" text="1.108" />
       <Label layoutX="14.0" layoutY="579.0" text="Задайте коэффициент преобразования базовой шкалы &quot;мВ на элемент&quot;" />
       <Label layoutX="14.0" layoutY="604.0" text="для получения калиброванного управляющего напряжения" />
       <Label layoutX="547.0" layoutY="393.0" text="(значение относительно номинального тока)" />
-      <TextField layoutX="911.0" layoutY="381.0" prefHeight="25.0" prefWidth="68.0" text="0.25" />
+      <TextField fx:id="thresholdBoostEnding" layoutX="911.0" layoutY="381.0" prefHeight="25.0" prefWidth="68.0" text="0.25" />
       <Label layoutX="547.0" layoutY="380.0" text="Задайте условие окончания ускоренного заряда" />
       <Label layoutX="547.0" layoutY="342.0" text="Задайте порог применения ускоренного заряда" />
-      <TextField layoutX="911.0" layoutY="343.0" prefHeight="25.0" prefWidth="68.0" text="0.9" />
+      <TextField fx:id="thresholdForBoost" layoutX="911.0" layoutY="343.0" prefHeight="25.0" prefWidth="68.0" text="0.9" />
       <Label layoutX="547.0" layoutY="355.0" text="(значение относительно номинального тока)" />
       <Label layoutX="547.0" layoutY="305.0" text="Задайте предельный ток заряда" />
-      <TextField layoutX="909.0" layoutY="308.0" prefHeight="25.0" prefWidth="68.0" text="3.5" />
+      <TextField fx:id="maxChargCurrent" layoutX="909.0" layoutY="308.0" prefHeight="25.0" prefWidth="68.0" text="3.5" />
       <Label layoutX="547.0" layoutY="318.0" text="(значение относительно номинального тока)" />
       <Label layoutX="547.0" layoutY="285.0" text="(значение относительно номинального тока)" />
-      <TextField layoutX="908.0" layoutY="271.0" prefHeight="25.0" prefWidth="68.0" text="2.8" />
+      <TextField fx:id="chargingCurrent" layoutX="908.0" layoutY="271.0" prefHeight="25.0" prefWidth="68.0" text="2.8" />
       <Label layoutX="547.0" layoutY="272.0" text="Задайте ток заряда" />
       <Label layoutX="545.0" layoutY="242.0" text="передачи аналогового предусилителя" />
-      <TextField layoutX="906.0" layoutY="232.0" prefHeight="25.0" prefWidth="68.0" text="25" />
+      <TextField fx:id="coeffAnalogueAmplifier" layoutX="907.0" layoutY="231.0" prefHeight="25.0" prefWidth="68.0" text="25" />
       <Label layoutX="547.0" layoutY="229.0" text="Введите значение коэффциента" />
       <Label layoutX="988.0" layoutY="158.0" text="А*час" />
-      <TextField layoutX="907.0" layoutY="153.0" prefHeight="25.0" prefWidth="68.0" text="75" />
+      <TextField fx:id="capacitanceOfBattery" layoutX="907.0" layoutY="153.0" prefHeight="25.0" prefWidth="68.0" text="75" />
       <Label layoutX="545.0" layoutY="151.0" text="(укажите ёмкость одного аккумулятора)" />
       <Label layoutX="545.0" layoutY="132.0" text="Введите паспортную ёмкость для марки используемых аккумуляторов" />
       <Label layoutX="555.0" layoutY="82.0" text="Максимальный ток шунта" />
-      <TextField layoutX="908.0" layoutY="81.0" prefHeight="25.0" prefWidth="68.0" text="400" />
+      <TextField fx:id="maxCurrentShunt" layoutX="908.0" layoutY="81.0" prefHeight="25.0" prefWidth="68.0" text="400" />
       <Label layoutX="997.0" layoutY="86.0" text="A" />
       <Label layoutX="995.0" layoutY="46.0" text="mV" />
-      <TextField layoutX="908.0" layoutY="41.0" prefHeight="25.0" prefWidth="68.0" text="60" />
+      <TextField fx:id="maxVoltShunt" layoutX="908.0" layoutY="41.0" prefHeight="25.0" prefWidth="68.0" text="60" />
       <Label layoutX="555.0" layoutY="42.0" text="Максимальное напряжение шунта" />
       <Label layoutX="667.0" layoutY="10.0" prefHeight="15.0" prefWidth="323.0" text="Введите параметры шунта (в цепи батарей)" />
       <Line endX="750.0" endY="-0.0" layoutX="160.0" layoutY="375.0" rotate="90.0" />
       <Label layoutX="233.0" layoutY="399.0" text="(мВ на элемент)" />
       <Label layoutX="547.0" layoutY="186.0" text="Укажите число параллельных цепочек" />
-      <TextField layoutX="906.0" layoutY="190.0" prefHeight="25.0" prefWidth="68.0" text="4" />
+      <TextField fx:id="numberBattery" layoutX="907.0" layoutY="189.0" prefHeight="25.0" prefWidth="68.0" text="4" />
       <Label layoutX="547.0" layoutY="199.0" text="из аккумуляторов" />
    </children>
 </AnchorPane>
