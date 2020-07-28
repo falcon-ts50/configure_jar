@@ -1,3 +1,4 @@
-/home/kirill/Arduino/configure_jar/src/main/java/configure_UPS/Controller.java
-/home/kirill/Arduino/configure_jar/src/main/java/configure_UPS/Unit.java
-/home/kirill/Arduino/configure_jar/src/main/java/configure_UPS/MainAppFX.java
+/home/kirill/Arduino/configure_jar/src/main/java/module-info.java
+/home/kirill/Arduino/configure_jar/src/main/java/configure_ups/Unit.java
+/home/kirill/Arduino/configure_jar/src/main/java/configure_ups/Controller.java
+/home/kirill/Arduino/configure_jar/src/main/java/configure_ups/MainAppFX.java

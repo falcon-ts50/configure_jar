@@ -24,6 +24,8 @@ public class Unit {
     private static double maxChargCurrent;
     private static double thresholdForBoost;
     private static double thresholdBoostEnding;
+    private static int timeInBoost;
+    private static int delayBoost;
     
 
     public Unit(){
@@ -200,6 +202,22 @@ public class Unit {
 
     public static double getThresholdBoostEnding() {
         return thresholdBoostEnding;
+    }
+
+    public static int getTimeInBoost() {
+        return timeInBoost;
+    }
+
+    public static void setTimeInBoost(int timeInBoost) {
+        Unit.timeInBoost = timeInBoost;
+    }
+
+    public static int getDelayBoost() {
+        return delayBoost;
+    }
+
+    public static void setDelayBoost(int delayBoost) {
+        Unit.delayBoost = delayBoost;
     }
 
     public static void setThresholdBoostEnding(double thresholdBoostEnding) {
