@@ -481,7 +481,7 @@ public class Controller {
                 "  //БЛОК 1. получение данных по напряжению на шунте\n" +
                 "\n" +
                 "  if (!isTimerWork(timerVoltageShunt, 15)) {\n" +
-                "    valueOfCurrent = 2*getMovAverageCurrent(arrayCurrent);\n" +
+                "    valueOfCurrent = getMovAverageCurrent(arrayCurrent);\n" +
                 "    timerVoltageShunt = millis();\n" +
                 "  }\n" +
                 "\n" +
@@ -493,7 +493,7 @@ public class Controller {
                 "\n" +
                 "  //БЛОК 3. получение данных по Usupport\n" +
                 "  if (!isTimerWork(timerVoltageSupport, 15)) {\n" +
-                "    voltageSupport = getMovAverageSupport(arraySupport);\n" +
+                "    voltageSupport = 2*getMovAverageSupport(arraySupport);\n" +
                 "    timerVoltageSupport = millis();\n" +
                 "  }\n" +
                 "\n" +
