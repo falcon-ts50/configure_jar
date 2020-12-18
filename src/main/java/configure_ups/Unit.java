@@ -30,6 +30,31 @@ public class Unit {
 
     public Unit(){
 
+        this.setmVAtZeroDeg(500);
+        this.setChangingMVPerOneDeg(10);
+        this.setMinTempFloat(0);
+        this.setTempFirstMidPointFloat(15);
+        this.setTempSecondMidPointFloat(35);
+        this.setMaxTempFloat(50);
+        this.setMaxTempBoost(30);
+        this.setMinTempBoost(45);
+        this.setOutputMaximum(2660);
+        this.setOutputMiddle(2550);
+        this.setOutputFloatMinimum(2468);
+        this.setOutputBoostMinimum(2550);
+        this.setCoefficientOfCalibration(1.108);
+        this.setMaxVoltShunt(60);
+        this.setMaxCurrentShunt(400);
+        this.setCapacitanceOfBattery(75);
+        this.setNumberBattery(4);
+        this.setCoeffAnalogueAmplifier(25);
+        this.setChargingCurrent(2.8);
+        this.setMaxChargCurrent(3.5);
+        this.setThresholdForBoost(0.9);
+        this.setThresholdBoostEnding(0.25);
+        this.setTimeInBoost(480);
+        this.setDelayBoost(15);
+
     }
 
     public static int getmVAtZeroDeg() {
