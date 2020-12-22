@@ -99,156 +99,66 @@ public class Controller {
 
     @FXML
     void initialize(){
+//Ниже идёт создание подсказок с текстовым наполнением. Краткие пояснения перед каждым для быстрой навигации по коду
 
-        mVAtZeroDeg.setTooltip(new Tooltip("введите значение от 0 до 500"));
+// Харакетристика датчика температуры
+        mVAtZeroDeg.setTooltip(new Tooltip("введите значение от 200 до 1000 мВ, см характеристика датчика"));
 
-        changingMVPerOneDeg.setTooltip(new Tooltip("введите значение от 1 до 10"));
+        changingMVPerOneDeg.setTooltip(new Tooltip("введите значение от 1 до 50 град Цельсия"));
+// Температурно-вольтовая характеристика
+        //режим Флоат
+        minTempFloat.setTooltip(new Tooltip("введите значение от -39 до 50 град Цельсия"));
 
-        minTempFloat.setTooltip(new Tooltip("введите значение от 0 до 2260"));
+        tempFirstMidPointFloat.setTooltip(new Tooltip("введите значение от -39 до 50 град Цельсия"));
 
-        tempFirstMidPointFloat.setTooltip(new Tooltip(""));
+        tempSecondMidPointFloat.setTooltip(new Tooltip("введите значение от -39 до 50 град Цельсия"));
 
-        tempSecondMidPointFloat.setTooltip(new Tooltip(""));
+        maxTempFloat.setTooltip(new Tooltip("введите значение от -39 до 50 град Цельсия"));
+        //режим Буст
+        minTempBoost.setTooltip(new Tooltip("введите значение от -39 до 50 град Цельсия"));
 
-        maxTempFloat.setTooltip(new Tooltip(""));
+        maxTempBoost.setTooltip(new Tooltip("введите значение от -39 до 50 град Цельсия"));
+        //выходное напряжение
+        outputMaximum.setTooltip(new Tooltip("введите значение от 3300 до 1 мВ на элемент"));
 
-        minTempBoost.setTooltip(new Tooltip(""));
+        outputMiddle.setTooltip(new Tooltip("введите значение от 3300 до 1 мВ на элемент"));
 
-        maxTempBoost.setTooltip(new Tooltip(""));
+        outputFloatMinimum.setTooltip(new Tooltip("введите значение от 3300 до 1 мВ на элемент"));
 
-        outputMaximum.setTooltip(new Tooltip(""));
+        outputBoostMinimum.setTooltip(new Tooltip("введите значение от 3300 до 1 мВ на элемент"));
+        //коэффициент преобразования для базовой шкалы
+        coefficientOfCalibration.setTooltip(new Tooltip("введите значени от 0.1 до 1.999"));
+//Характеристика шунта
+        maxVoltShunt.setTooltip(new Tooltip("введите значени от 1 до 100 мВ"));
 
-        outputMiddle.setTooltip(new Tooltip(""));
-
-        outputFloatMinimum.setTooltip(new Tooltip(""));
-
-        outputBoostMinimum.setTooltip(new Tooltip(""));
-
-        coefficientOfCalibration.setTooltip(new Tooltip(""));
-
-        maxVoltShunt.setTooltip(new Tooltip(""));
-
-        maxCurrentShunt.setTooltip(new Tooltip(""));
-
-        capacitanceOfBattery.setTooltip(new Tooltip(""));
-
-        numberBattery.setTooltip(new Tooltip(""));
-
-        coeffAnalogueAmplifier.setTooltip(new Tooltip(""));
-
-        chargingCurrent.setTooltip(new Tooltip(""));
-
-        maxChargCurrent.setTooltip(new Tooltip(""));
-
-        thresholdForBoost.setTooltip(new Tooltip(""));
-
-        thresholdBoostEnding.setTooltip(new Tooltip(""));
-
-        timeInBoost.setTooltip(new Tooltip(""));
-
-        delayBoost.setTooltip(new Tooltip(""));
-
-        previousField.setTooltip(new Tooltip(""));
-
-        clear.setTooltip(new Tooltip("а вот и кнопка"));
-
-        write.setTooltip(new Tooltip("а вот и кнопка"));
-
-    }
-
-    /*
-    public Controller(){
-
-        mVAtZeroDeg = new TextField();
-
-        mVAtZeroDeg.setText(String.valueOf(unit.getmVAtZeroDeg()));
-
-        clear = new Button("Hover over me");
-
-
-
-
-        this.changingMVPerOneDeg.setText(String.valueOf(unit.getChangingMVPerOneDeg()));
-        this.minTempFloat.setText(String.valueOf(unit.getMinTempFloat()));
-        this.tempFirstMidPointFloat.setText(String.valueOf(unit.getTempFirstMidPointFloat()));
-        this.tempSecondMidPointFloat.setText(String.valueOf(unit.getTempSecondMidPointFloat()));
-        this.maxTempFloat.setText(String.valueOf(unit.getMaxTempFloat()));
-        this.minTempBoost.setText(String.valueOf(unit.getMaxTempBoost()));
-        this.maxTempBoost.setText(String.valueOf(unit.getMinTempBoost()));
-        this.outputMaximum.setText(String.valueOf(unit.getOutputMaximum()));
-        this.outputMiddle.setText(String.valueOf(unit.getOutputMiddle()));
-        this.outputFloatMinimum.setText(String.valueOf(unit.getOutputFloatMinimum()));
-        this.outputBoostMinimum.setText(String.valueOf(unit.getOutputBoostMinimum()));
-        this.coefficientOfCalibration.setText(String.valueOf(unit.getCoefficientOfCalibration()));
-        this.maxVoltShunt.setText(String.valueOf(unit.getMaxVoltShunt()));
-        this.maxCurrentShunt.setText(String.valueOf(unit.getMaxCurrentShunt()));
-        this.capacitanceOfBattery.setText(String.valueOf(unit.getCapacitanceOfBattery()));
-        this.numberBattery.setText(String.valueOf(unit.getNumberBattery()));
-        this.coeffAnalogueAmplifier.setText(String.valueOf(unit.getCoeffAnalogueAmplifier()));
-        this.chargingCurrent.setText(String.valueOf(unit.getChargingCurrent()));
-        this.maxChargCurrent.setText(String.valueOf(unit.getMaxChargCurrent()));
-        this.thresholdForBoost.setText(String.valueOf(unit.getThresholdForBoost()));
-        this.thresholdBoostEnding.setText(String.valueOf(unit.getThresholdBoostEnding()));
-        this.timeInBoost.setText(String.valueOf(unit.getTimeInBoost()));
-        this.delayBoost.setText(String.valueOf(unit.getDelayBoost()));
-
-        Tooltip tooltipmVAtZeroDeg = new Tooltip("put the number from 0 to 500");
-        tooltipmVAtZeroDeg.setText("put the number from 0 to 500");
-        mVAtZeroDeg.setTooltip(tooltipmVAtZeroDeg);
-
-        Tooltip tooltipchangingMVPerOneDeg = new Tooltip();
-        tooltipchangingMVPerOneDeg.setText("");
-        Tooltip tooltipminTempFloat = new Tooltip();
-        tooltipminTempFloat.setText("");
-        Tooltip tooltiptempFirstMidPointFloat = new Tooltip();
-        tooltiptempFirstMidPointFloat.setText("");
-        Tooltip tooltiptempSecondMidPointFloat = new Tooltip();
-        tooltiptempSecondMidPointFloat.setText("");
-        Tooltip tooltipmaxTempFloat = new Tooltip();
-        tooltipmaxTempFloat.setText("");
-        Tooltip tooltipminTempBoost = new Tooltip();
-        tooltipminTempBoost.setText("");
-        Tooltip tooltipmaxTempBoost = new Tooltip();
-        tooltipmaxTempBoost.setText("");
-        Tooltip tooltipoutputMaximum = new Tooltip();
-        tooltipoutputMaximum.setText("");
-        Tooltip tooltipoutputMiddle = new Tooltip();
-        tooltipoutputMiddle.setText("");
-        Tooltip tooltipoutputFloatMinimum = new Tooltip();
-        tooltipoutputFloatMinimum.setText("");
-        Tooltip tooltipoutputBoostMinimum = new Tooltip();
-        tooltipoutputBoostMinimum.setText("");
-        Tooltip tooltipcoefficientOfCalibration = new Tooltip();
-        tooltipcoefficientOfCalibration.setText("");
-        Tooltip tooltipmaxVoltShunt = new Tooltip();
-        tooltipmaxVoltShunt.setText("");
-        Tooltip tooltipmaxCurrentShunt = new Tooltip();
-        tooltipmaxCurrentShunt.setText("");
-        Tooltip tooltipcapacitanceOfBattery = new Tooltip();
-        tooltipcapacitanceOfBattery.setText("");
-        Tooltip tooltipnumberBattery = new Tooltip();
-        tooltipnumberBattery.setText("");
-        Tooltip tooltipcoeffAnalogueAmplifier = new Tooltip();
-        tooltipcoeffAnalogueAmplifier.setText("");
-        Tooltip tooltipchargingCurrent = new Tooltip();
-        tooltipchargingCurrent.setText("");
-        Tooltip tooltipmaxChargCurrent = new Tooltip();
-        tooltipmaxChargCurrent.setText("");
-        Tooltip tooltipthresholdForBoost = new Tooltip();
-        tooltipthresholdForBoost.setText("");
-        Tooltip tooltipthresholdBoostEnding = new Tooltip();
-        tooltipthresholdBoostEnding.setText("");
-        Tooltip tooltiptimeInBoost = new Tooltip();
-        tooltiptimeInBoost.setText("");
-        Tooltip tooltipdelayBoost = new Tooltip();
-        tooltipdelayBoost.setText("");
-
-        Tooltip tooltipButClear = new Tooltip();
-        tooltipButClear.setText("onetwo");
-        clear.setTooltip(tooltipButClear);
+        maxCurrentShunt.setTooltip(new Tooltip("введите значение от 100 до 1000 А"));
+//Ёмкость батарей
+        capacitanceOfBattery.setTooltip(new Tooltip("введите значение от 10 до 150"));
+//Количество батарей
+        numberBattery.setTooltip(new Tooltip("введите значение от 1 до 10"));
+//Коэффициент передачи аналогового усилителя
+        coeffAnalogueAmplifier.setTooltip(new Tooltip("введите значние от 2 до 100"));
+//Ток заряда
+        chargingCurrent.setTooltip(new Tooltip("введите значние от 1.01 до 5.01"));
+//Максимальный ток заряда
+        maxChargCurrent.setTooltip(new Tooltip("введите значние от 1.01 до 5.01"));
+//Порог применения ускоренного заряда
+        thresholdForBoost.setTooltip(new Tooltip("введите значние от 0.1 до 1.99"));
+//Порог окончания ускоренного заряда
+        thresholdBoostEnding.setTooltip(new Tooltip("введите значние от 0.1 до 1.99"));
+//Максимальное время работы в режиме Boost
+        timeInBoost.setTooltip(new Tooltip("введите значние от 10 до 1000 мин"));
+//Задержка повторного перехода в режим Буст
+        delayBoost.setTooltip(new Tooltip("введите значние от 10 до 60 мин"));
+//Кнопка возврата предыдущих значений
+        previousField.setTooltip(new Tooltip("Нажав на кнопку, Вы вернёте первоначальные значения"));
+//Кнопка полной очистки всех полей
+        clear.setTooltip(new Tooltip("Нажав на кнопку, Вы полностью очистите поля ввода значений"));
+//Кнопка создания скетча для загрузки
+        write.setTooltip(new Tooltip("Нажав на кнопку, Вы создадите скетч, который потом можно загрузить в Arduino"));
 
     }
-    */
+
     public void setMain(MainAppFX main){
         this.main=main;
     }
