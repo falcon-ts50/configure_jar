@@ -23,6 +23,8 @@ public class MainAppFX extends Application {
 
     Controller controller = loader.getController();
     controller.setMain(this);
+
+
 }
 
 
