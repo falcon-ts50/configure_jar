@@ -94,21 +94,80 @@ public class Controller {
     @FXML
     private Button write;
 
+
     private MainAppFX main;
 
+    @FXML
+    void initialize(){
 
+        mVAtZeroDeg.setTooltip(new Tooltip("введите значение от 0 до 500"));
 
+        changingMVPerOneDeg.setTooltip(new Tooltip("введите значение от 1 до 10"));
+
+        minTempFloat.setTooltip(new Tooltip("введите значение от 0 до 2260"));
+
+        tempFirstMidPointFloat.setTooltip(new Tooltip(""));
+
+        tempSecondMidPointFloat.setTooltip(new Tooltip(""));
+
+        maxTempFloat.setTooltip(new Tooltip(""));
+
+        minTempBoost.setTooltip(new Tooltip(""));
+
+        maxTempBoost.setTooltip(new Tooltip(""));
+
+        outputMaximum.setTooltip(new Tooltip(""));
+
+        outputMiddle.setTooltip(new Tooltip(""));
+
+        outputFloatMinimum.setTooltip(new Tooltip(""));
+
+        outputBoostMinimum.setTooltip(new Tooltip(""));
+
+        coefficientOfCalibration.setTooltip(new Tooltip(""));
+
+        maxVoltShunt.setTooltip(new Tooltip(""));
+
+        maxCurrentShunt.setTooltip(new Tooltip(""));
+
+        capacitanceOfBattery.setTooltip(new Tooltip(""));
+
+        numberBattery.setTooltip(new Tooltip(""));
+
+        coeffAnalogueAmplifier.setTooltip(new Tooltip(""));
+
+        chargingCurrent.setTooltip(new Tooltip(""));
+
+        maxChargCurrent.setTooltip(new Tooltip(""));
+
+        thresholdForBoost.setTooltip(new Tooltip(""));
+
+        thresholdBoostEnding.setTooltip(new Tooltip(""));
+
+        timeInBoost.setTooltip(new Tooltip(""));
+
+        delayBoost.setTooltip(new Tooltip(""));
+
+        previousField.setTooltip(new Tooltip(""));
+
+        clear.setTooltip(new Tooltip("а вот и кнопка"));
+
+        write.setTooltip(new Tooltip("а вот и кнопка"));
+
+    }
+
+    /*
     public Controller(){
 
         mVAtZeroDeg = new TextField();
 
         mVAtZeroDeg.setText(String.valueOf(unit.getmVAtZeroDeg()));
 
-        clear = new Button();
+        clear = new Button("Hover over me");
 
 
 
-        /*
+
         this.changingMVPerOneDeg.setText(String.valueOf(unit.getChangingMVPerOneDeg()));
         this.minTempFloat.setText(String.valueOf(unit.getMinTempFloat()));
         this.tempFirstMidPointFloat.setText(String.valueOf(unit.getTempFirstMidPointFloat()));
@@ -132,10 +191,11 @@ public class Controller {
         this.thresholdBoostEnding.setText(String.valueOf(unit.getThresholdBoostEnding()));
         this.timeInBoost.setText(String.valueOf(unit.getTimeInBoost()));
         this.delayBoost.setText(String.valueOf(unit.getDelayBoost()));
-*/
-        Tooltip tooltipmVAtZeroDeg = new Tooltip();
+
+        Tooltip tooltipmVAtZeroDeg = new Tooltip("put the number from 0 to 500");
         tooltipmVAtZeroDeg.setText("put the number from 0 to 500");
         mVAtZeroDeg.setTooltip(tooltipmVAtZeroDeg);
+
         Tooltip tooltipchangingMVPerOneDeg = new Tooltip();
         tooltipchangingMVPerOneDeg.setText("");
         Tooltip tooltipminTempFloat = new Tooltip();
@@ -188,7 +248,7 @@ public class Controller {
         clear.setTooltip(tooltipButClear);
 
     }
-
+    */
     public void setMain(MainAppFX main){
         this.main=main;
     }
