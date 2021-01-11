@@ -225,10 +225,10 @@ public class Controller {
         unit.setMaxTempFloat(50);
         unit.setMaxTempBoost(30);
         unit.setMinTempBoost(45);
-        unit.setOutputMaximum(2660);
-        unit.setOutputMiddle(2550);
-        unit.setOutputFloatMinimum(2468);
-        unit.setOutputBoostMinimum(2550);
+        unit.setOutputMaximum(2400);
+        unit.setOutputMiddle(2300);
+        unit.setOutputFloatMinimum(2225);
+        unit.setOutputBoostMinimum(2300);
         unit.setCoefficientOfCalibration(1.108);
         unit.setMaxVoltShunt(60);
         unit.setMaxCurrentShunt(400);
