@@ -37,19 +37,19 @@
       <Label layoutX="475.0" layoutY="346.0" text="град. С" />
       <Label layoutX="90.0" layoutY="384.0" text="Введите значения зарядного напряжения для режимов" />
       <Label layoutX="475.0" layoutY="492.0" text="мВ/эл" />
-      <TextField fx:id="outputFloatMinimum" layoutX="352.0" layoutY="487.0" prefHeight="25.0" prefWidth="98.0" text="2468" />
+      <TextField fx:id="outputFloatMinimum" layoutX="352.0" layoutY="487.0" prefHeight="25.0" prefWidth="98.0" text="2225" />
       <Label layoutX="14.0" layoutY="492.0" text="Минимальное значение для режима Float" />
       <Label layoutX="14.0" layoutY="525.0" text="Минимальное значение для режима Boost" />
-      <TextField fx:id="outputBoostMinimum" layoutX="352.0" layoutY="520.0" prefHeight="25.0" prefWidth="98.0" text="2550" />
+      <TextField fx:id="outputBoostMinimum" layoutX="352.0" layoutY="520.0" prefHeight="25.0" prefWidth="98.0" text="2300" />
       <Label layoutX="475.0" layoutY="525.0" text="мВ/эл" />
       <Label layoutX="14.0" layoutY="427.0" text="Максимальное значение для (Float и Boost)" />
-      <TextField fx:id="outputMaximum" layoutX="352.0" layoutY="422.0" prefHeight="25.0" prefWidth="98.0" text="2660" />
+      <TextField fx:id="outputMaximum" layoutX="352.0" layoutY="422.0" prefHeight="25.0" prefWidth="98.0" text="2400" />
       <Label layoutX="475.0" layoutY="427.0" text="мВ/эл" />
       <Button fx:id="write" layoutX="933.0" layoutY="694.0" mnemonicParsing="false" onAction="#setWriteParams" text="Записать" />
       <Button fx:id="clear" layoutX="836.0" layoutY="694.0" mnemonicParsing="false" onAction="#handleDelete" text="Очистить" />
       <Button fx:id="previousField" layoutX="555.0" layoutY="694.0" mnemonicParsing="false" onAction="#setBasicParams" text="Вернуть первоначальные значения" />
       <Label layoutX="475.0" layoutY="459.0" text="мВ/эл" />
-      <TextField fx:id="outputMiddle" layoutX="352.0" layoutY="454.0" prefHeight="25.0" prefWidth="98.0" text="2550" />
+      <TextField fx:id="outputMiddle" layoutX="352.0" layoutY="454.0" prefHeight="25.0" prefWidth="98.0" text="2300" />
       <Label layoutX="14.0" layoutY="459.0" text="Значение средней точки для режима Float" />
       <TextField fx:id="coefficientOfCalibration" layoutX="434.0" layoutY="599.0" prefHeight="25.0" prefWidth="83.0" text="1.108" />
       <Label layoutX="14.0" layoutY="579.0" text="Задайте коэффициент преобразования базовой шкалы &quot;мВ на элемент&quot;" />
