@@ -549,7 +549,7 @@ public class Controller {
                     "  //БЛОК 2. получение данных по температуре\n" +
                     "  if (!isTimerWork(timerTemperature, 1000)) {\n" +
                     "    averageTemperature = getMovAverageTemp(arrayTemp);\n" +
-                    "    timerVoltageShunt = millis();\n" +
+                    "    timerTemperature = millis();\n" +
                     "  }\n" +
                     "\n" +
                     "  //БЛОК 3. получение данных по Usupport\n" +
