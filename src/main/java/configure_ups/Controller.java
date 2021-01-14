@@ -473,6 +473,7 @@ public class Controller {
                     "\n" +
                     "boolean isUstart = false;\n" +
                     "boolean isLastSignalBoost = false;\n" +
+                    "boolean isStart = true;\n" +
                     "\n" +
                     "//переменные для хранения времени таймеров\n" +
                     "unsigned long timerFloatBoost;\n" +
@@ -563,7 +564,7 @@ public class Controller {
                     "  if (!isTimerWork(timerComparator, 330)) {\n" +
                     "    \n" +
                     "      //4.2 проверка на 15-ти мнунтный таймер\n" +
-                    "      if (isTimerWork(timerFloatBoost, delayBoostMillis)) {\n" +
+                    "      if (isTimerWork(timerFloatBoost, delayBoostMillis) && !isStart) {\n" +
                     "        mode = \"4.2 Float\";\n" +
                     "        voltageTemperature = outputFloat(averageTemperature);\n" +
                     "        timerMode = \"15-ти минутный таймер работает\";\n" +
@@ -577,6 +578,7 @@ public class Controller {
                     "        timerMode = \"15-ти минутный таймер запущен\";\n" +
                     "        isUstart = false;\n" +
                     "        isLastSignalBoost = false;\n" +
+                    "        isStart = false;\n" +
                     "      }\n" +
                     "      //4.4 проверка Ushunt <= Ustop\n" +
                     "      else if (valueOfCurrent <= switchBoostToFloatADC) {\n" +
@@ -587,6 +589,7 @@ public class Controller {
                     "          timerMode = \"15-ти минутный таймер запущен\";\n" +
                     "          isUstart = false;\n" +
                     "          isLastSignalBoost = false;\n" +
+                    "          isStart = false;\n" +
                     "        }\n" +
                     "        else {\n" +
                     "          mode = \"4.4 else Float\";\n" +
@@ -627,6 +630,7 @@ public class Controller {
                     "         timerFloatBoost = millis();\n" +
                     "         timerMode = \"15-ти минутный таймер запущен\";\n" +
                     "         isLastSignalBoost = false;\n" +
+                    "         isStart = false;\n" +
                     "      }\n" +
                     "      //4.9 предохранительная ветка\n" +
                     "      else {\n" +
