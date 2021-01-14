@@ -531,6 +531,7 @@ public class Controller {
                     "  timerVoltageSupport = millis();\n" +
                     "  timerComparator = millis();\n" +
                     "  timerDisplaying = millis();\n" +
+                    "  isStart = true;\n" +
                     "\n" +
                     "  //открываем передачу данных для мониторинга\n" +
                     "  Serial.begin(9600);\n" +
