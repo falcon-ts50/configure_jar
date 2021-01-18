@@ -38,10 +38,10 @@ public class Unit {
         this.setMaxTempFloat(50);
         this.setMaxTempBoost(30);
         this.setMinTempBoost(45);
-        this.setOutputMaximum(2660);
-        this.setOutputMiddle(2550);
-        this.setOutputFloatMinimum(2468);
-        this.setOutputBoostMinimum(2550);
+        this.setOutputMaximum(2400);
+        this.setOutputMiddle(2300);
+        this.setOutputFloatMinimum(2225);
+        this.setOutputBoostMinimum(2300);
         this.setCoefficientOfCalibration(1.108);
         this.setMaxVoltShunt(60);
         this.setMaxCurrentShunt(400);

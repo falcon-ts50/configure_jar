@@ -556,7 +556,7 @@ public class Controller {
                     "\n" +
                     "  //БЛОК 3. получение данных по Usupport\n" +
                     "  if (!isTimerWork(timerVoltageSupport, 15)) {\n" +
-                    "    voltageSupport = 2*getMovAverageSupport(arraySupport);\n" +
+                    "    voltageSupport = getMovAverageSupport(arraySupport);\n" +
                     "    timerVoltageSupport = millis();\n" +
                     "  }\n" +
                     "\n" +
