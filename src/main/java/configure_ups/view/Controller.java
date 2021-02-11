@@ -1,5 +1,7 @@
-package configure_ups;
+package configure_ups.view;
 
+import configure_ups.MainAppFX;
+import configure_ups.model.Unit;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -9,7 +11,7 @@ import java.io.PrintStream;
 
 public class Controller {
 
-    Unit unit = new Unit();
+    Unit unit;
 
     @FXML
     private TextField mVAtZeroDeg;
@@ -84,6 +86,9 @@ public class Controller {
     private TextField delayBoost;
 
     @FXML
+    private Button showGraph;
+
+    @FXML
     private Button previousField;
 
     @FXML
@@ -155,6 +160,10 @@ public class Controller {
 //Кнопка создания скетча для загрузки
         write.setTooltip(new Tooltip("Нажав на кнопку, Вы создадите скетч, который потом можно загрузить в Arduino"));
 
+    }
+
+    public void setUnit(Unit unit) {
+        this.unit = unit;
     }
 
     public void setMain(MainAppFX main){
@@ -270,33 +279,42 @@ public class Controller {
 
     }
     public void setWriteParams(){
+
+        writeParamToUnit();
+        makeFileIno();
+
+    }
+
+    public void writeParamToUnit(){
+        unit.setmVAtZeroDeg(Integer.parseInt(mVAtZeroDeg.getText()));
+        unit.setChangingMVPerOneDeg(Integer.parseInt(changingMVPerOneDeg.getText()));
+        unit.setMinTempFloat(Integer.parseInt(minTempFloat.getText()));
+        unit.setTempFirstMidPointFloat(Integer.parseInt(tempFirstMidPointFloat.getText()));
+        unit.setTempSecondMidPointFloat(Integer.parseInt(tempSecondMidPointFloat.getText()));
+        unit.setMaxTempFloat(Integer.parseInt(maxTempFloat.getText()));
+        unit.setMinTempBoost(Integer.parseInt(minTempBoost.getText()));
+        unit.setMaxTempBoost(Integer.parseInt(maxTempBoost.getText()));
+        unit.setOutputMaximum(Integer.parseInt(outputMaximum.getText()));
+        unit.setOutputMiddle(Integer.parseInt(outputMiddle.getText()));
+        unit.setOutputFloatMinimum(Integer.parseInt(outputFloatMinimum.getText()));
+        unit.setOutputBoostMinimum(Integer.parseInt(outputBoostMinimum.getText()));
+        unit.setCoefficientOfCalibration(Double.parseDouble(coefficientOfCalibration.getText()));
+        unit.setMaxVoltShunt(Integer.parseInt(maxVoltShunt.getText()));
+        unit.setMaxCurrentShunt(Integer.parseInt(maxCurrentShunt.getText()));
+        unit.setCapacitanceOfBattery(Integer.parseInt(capacitanceOfBattery.getText()));
+        unit.setNumberBattery(Integer.parseInt(numberBattery.getText()));
+        unit.setCoeffAnalogueAmplifier(Integer.parseInt(coeffAnalogueAmplifier.getText()));
+        unit.setChargingCurrent(Double.parseDouble(chargingCurrent.getText()));
+        unit.setMaxChargCurrent(Double.parseDouble(maxChargCurrent.getText()));
+        unit.setThresholdForBoost(Double.parseDouble(thresholdForBoost.getText()));
+        unit.setThresholdBoostEnding(Double.parseDouble(thresholdBoostEnding.getText()));
+        unit.setTimeInBoost(Integer.parseInt(timeInBoost.getText()));
+        unit.setDelayBoost(Integer.parseInt(delayBoost.getText()));
+    }
+
+    private void makeFileIno(){
         String[] strings = new String[28];
         try {
-            unit.setmVAtZeroDeg(Integer.parseInt(mVAtZeroDeg.getText()));
-            unit.setChangingMVPerOneDeg(Integer.parseInt(changingMVPerOneDeg.getText()));
-            unit.setMinTempFloat(Integer.parseInt(minTempFloat.getText()));
-            unit.setTempFirstMidPointFloat(Integer.parseInt(tempFirstMidPointFloat.getText()));
-            unit.setTempSecondMidPointFloat(Integer.parseInt(tempSecondMidPointFloat.getText()));
-            unit.setMaxTempFloat(Integer.parseInt(maxTempFloat.getText()));
-            unit.setMinTempBoost(Integer.parseInt(minTempBoost.getText()));
-            unit.setMaxTempBoost(Integer.parseInt(maxTempBoost.getText()));
-            unit.setOutputMaximum(Integer.parseInt(outputMaximum.getText()));
-            unit.setOutputMiddle(Integer.parseInt(outputMiddle.getText()));
-            unit.setOutputFloatMinimum(Integer.parseInt(outputFloatMinimum.getText()));
-            unit.setOutputBoostMinimum(Integer.parseInt(outputBoostMinimum.getText()));
-            unit.setCoefficientOfCalibration(Double.parseDouble(coefficientOfCalibration.getText()));
-            unit.setMaxVoltShunt(Integer.parseInt(maxVoltShunt.getText()));
-            unit.setMaxCurrentShunt(Integer.parseInt(maxCurrentShunt.getText()));
-            unit.setCapacitanceOfBattery(Integer.parseInt(capacitanceOfBattery.getText()));
-            unit.setNumberBattery(Integer.parseInt(numberBattery.getText()));
-            unit.setCoeffAnalogueAmplifier(Integer.parseInt(coeffAnalogueAmplifier.getText()));
-            unit.setChargingCurrent(Double.parseDouble(chargingCurrent.getText()));
-            unit.setMaxChargCurrent(Double.parseDouble(maxChargCurrent.getText()));
-            unit.setThresholdForBoost(Double.parseDouble(thresholdForBoost.getText()));
-            unit.setThresholdBoostEnding(Double.parseDouble(thresholdBoostEnding.getText()));
-            unit.setTimeInBoost(Integer.parseInt(timeInBoost.getText()));
-            unit.setDelayBoost(Integer.parseInt(delayBoost.getText()));
-
 
             PrintStream filePrintStream = new PrintStream("configure_UPS.ino");
 
@@ -864,5 +882,11 @@ public class Controller {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void handleShowGraph() {
+        writeParamToUnit();
+        main.showGraph();
     }
 }

@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="configure_ups.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="configure_ups.view.Controller">
    <children>
       <Label layoutX="123.0" layoutY="10.0" text="Введите характеристику датчика температуры" />
       <Label layoutX="14.0" layoutY="45.0" text="Введите значение напряжения при 0 град. С" />
@@ -51,9 +51,9 @@
       <Label layoutX="475.0" layoutY="459.0" text="мВ/эл" />
       <TextField fx:id="outputMiddle" layoutX="352.0" layoutY="454.0" prefHeight="25.0" prefWidth="98.0" text="2300" />
       <Label layoutX="14.0" layoutY="459.0" text="Значение средней точки для режима Float" />
-      <TextField fx:id="coefficientOfCalibration" layoutX="434.0" layoutY="599.0" prefHeight="25.0" prefWidth="83.0" text="1.108" />
-      <Label layoutX="14.0" layoutY="579.0" text="Задайте коэффициент преобразования базовой шкалы &quot;мВ на элемент&quot;" />
-      <Label layoutX="14.0" layoutY="604.0" text="для получения калиброванного управляющего напряжения" />
+      <TextField fx:id="coefficientOfCalibration" layoutX="434.0" layoutY="631.0" prefHeight="25.0" prefWidth="83.0" text="1.108" />
+      <Label layoutX="14.0" layoutY="611.0" text="Задайте коэффициент преобразования базовой шкалы &quot;мВ на элемент&quot;" />
+      <Label layoutX="14.0" layoutY="636.0" text="для получения калиброванного управляющего напряжения" />
       <Label layoutX="547.0" layoutY="393.0" text="(значение относительно номинального тока)" />
       <TextField fx:id="thresholdBoostEnding" layoutX="911.0" layoutY="381.0" prefHeight="25.0" prefWidth="68.0" text="0.25" />
       <Label layoutX="547.0" layoutY="380.0" text="Задайте условие окончания ускоренного заряда" />
@@ -92,5 +92,6 @@
       <Label layoutX="546.0" layoutY="453.0" text="Введите время задержки повторного включения" />
       <TextField fx:id="delayBoost" layoutX="911.0" layoutY="454.0" prefHeight="25.0" prefWidth="68.0" text="15" />
       <Label layoutX="546.0" layoutY="465.0" text="режима Boost" />
+      <Button fx:id="showGraph" layoutX="333.0" layoutY="564.0" mnemonicParsing="false" onAction="#handleShowGraph" text="Показать график" />
    </children>
 </AnchorPane>

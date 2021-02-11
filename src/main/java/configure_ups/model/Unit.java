@@ -1,4 +1,4 @@
-package configure_ups;
+package configure_ups.model;
 
 public class Unit {
 
