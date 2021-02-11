@@ -93,5 +93,8 @@
       <TextField fx:id="delayBoost" layoutX="911.0" layoutY="454.0" prefHeight="25.0" prefWidth="68.0" text="15" />
       <Label layoutX="546.0" layoutY="465.0" text="режима Boost" />
       <Button fx:id="showGraph" layoutX="333.0" layoutY="564.0" mnemonicParsing="false" onAction="#handleShowGraph" text="Показать график" />
+      <Line endX="415.0" layoutX="110.0" layoutY="555.0" startX="-100.0" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="554.0" />
+      <Line endX="415.0" layoutX="110.0" layoutY="107.0" startX="-100.0" AnchorPane.bottomAnchor="642.5" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="106.5" />
+      <Line endX="10.0" layoutX="400.0" layoutY="560.0" rotate="90.0" AnchorPane.bottomAnchor="189.5" AnchorPane.leftAnchor="399.5" AnchorPane.topAnchor="559.5" />
    </children>
 </AnchorPane>

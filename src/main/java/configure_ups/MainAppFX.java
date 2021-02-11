@@ -48,26 +48,28 @@ public class MainAppFX extends Application {
             dialogStage.setTitle("График заряда в зависимости от режима");
             dialogStage.initOwner(primaryStage);
 
-            int lowerBound = -10;
-            int upperBound = 50;
+            final int gapY = 50;
+            final int tickX = 10;
+            int lowerBound = unit.getMinTempFloat()<unit.getMinTempBoost()? unit.getMinTempFloat()-tickX: unit.getMinTempBoost() - tickX;
+            int upperBound = unit.getMaxTempFloat() > unit.getMaxTempBoost()? unit.getMaxTempFloat() + tickX : unit.getMaxTempBoost() + tickX;
 
-            final NumberAxis xAxis = new NumberAxis(lowerBound, upperBound, 10);
+            final NumberAxis xAxis = new NumberAxis(lowerBound, upperBound, tickX);
 
-
-            final int gap = 50;
-
-            final int yMaximum = unit.getOutputMaximum() + gap;
-            final int yMinimum = unit.getOutputBoostMinimum()<unit.getOutputFloatMinimum()? unit.getOutputBoostMinimum() - gap : unit.getOutputFloatMinimum()-gap ;
-
+            int yMaximum = unit.getOutputMaximum() + gapY;
+            int yMinimum = unit.getOutputBoostMinimum()<unit.getOutputFloatMinimum()? unit.getOutputBoostMinimum() - gapY : unit.getOutputFloatMinimum()-gapY ;
+            yMinimum = (int) (Math.round((double) yMinimum/100)*100);
             final NumberAxis yAxis = new NumberAxis(yMinimum, yMaximum , 500);
-            yAxis.setMinorTickCount(10);
-            yAxis.setTickUnit(100);
+            xAxis.setLabel("Градусы Цельсия");
+            yAxis.setMinorTickCount(5);
+            yAxis.setTickUnit(50);
+            yAxis.setMinorTickVisible(true);
+            yAxis.setLabel("мВ");
 
             final AreaChart<Number, Number> areaChart = new AreaChart<>(xAxis, yAxis);
 
 
                 areaChart.setTitle("Зависимость напряжения от температуры для режимов");
-                areaChart.setLegendSide(Side.LEFT);
+                areaChart.setLegendSide(Side.BOTTOM);
 
 
                 XYChart.Series<Number,Number> seriesFloat = new XYChart.Series<>();
@@ -97,6 +99,8 @@ public class MainAppFX extends Application {
 
 /*
 Код, приведённый ниже плохо работал, за что был безжалостно выпилен в комментарии из этой прогрммы мной 11.02.2021
+также не нужен класс GraphController. Я пока не смог сделать работу в этом методе через XML, возможно позже...
+
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainAppFX.class.getResource("/graph_charge_modes.fxml"));
