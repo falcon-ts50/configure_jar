@@ -29,7 +29,7 @@ public class MainAppFX extends Application {
 
     Parent root = loader.load();
 
-    primaryStage.setTitle("configure_ups");
+    primaryStage.setTitle("Конфигуратор файлов .ino для Arduino MKR ZERO для ИБП.");
     primaryStage.setScene(new Scene(root, 1055, 750));
     primaryStage.show();
 
@@ -101,7 +101,6 @@ public class MainAppFX extends Application {
 Код, приведённый ниже плохо работал, за что был безжалостно выпилен в комментарии из этой прогрммы мной 11.02.2021
 также не нужен класс GraphController. Я пока не смог сделать работу в этом методе через XML, возможно позже...
 
-
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainAppFX.class.getResource("/graph_charge_modes.fxml"));
             Parent page = loader.load();
@@ -115,9 +114,6 @@ public class MainAppFX extends Application {
             dialogStage.setScene(scene);
 
             dialogStage.show();*/
-
-
-
 
         }
         catch (Exception e){

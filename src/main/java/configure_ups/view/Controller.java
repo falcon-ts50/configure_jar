@@ -323,6 +323,7 @@ public class Controller {
                     "#define OUTPUT_SIGNAL     A0\n" +
                     "#define INPUT_TEMP        A2\n" +
                     "#define INPUT_SHUNT       A4\n" +
+                    "#define INPUT_8SHUNT      A5\n" +
                     "#define INPUT_SUPPORT     A6";
             strings[1] = "//Характеристика датчика температуры ТМР-36\n" +
                     "int millivoltAtZeroDegrees = " + unit.getmVAtZeroDeg() + ";";
@@ -427,6 +428,9 @@ public class Controller {
                     "//пересчёт в 10 бит\n" +
                     "int switchBoostToFloatADC = switchBoostToFloat/accuracyInput;\n" +
                     "\n" +
+                    "//получение порога переключения, пересчитанного в 10 бит с усилением в 8 раз\n" +
+                    "int switchBoostToFloat8ADC = 8 * switchBoostToFloat/accuracyInput;\n" +
+                    "\n" +
                     "//режим работы\n" +
                     "String mode;\n" +
                     "\n" +
@@ -479,6 +483,7 @@ public class Controller {
                     "//Созадём массив на 10 точек для скользящей средней по температуре без инициализации\n" +
                     "int arrayTemp[10];\n" +
                     "int arrayCurrent[10];\n" +
+                    "int array8Shunt[10];\n"+
                     "int arraySupport[20];\n" +
                     "\n" +
                     "//Создаём переменные для выходного сигнала и средней температуры для их использования в функции отображения на экране.\n" +
@@ -486,6 +491,7 @@ public class Controller {
                     "int averageTemperature;\n" +
                     "int shuntCurrent;\n" +
                     "int valueOfCurrent;\n" +
+                    "int value8Shunt; \n" +
                     "int voltageSupport;\n" +
                     "int voltageTemperature;\n" +
                     "\n" +
@@ -497,6 +503,7 @@ public class Controller {
                     "unsigned long timerFloatBoost;\n" +
                     "unsigned long timerBoost;\n" +
                     "unsigned long timerVoltageShunt;\n" +
+                    "unsigned long timer8Shunt;\n" +
                     "unsigned long timerTemperature;\n" +
                     "unsigned long timerVoltageSupport;\n" +
                     "unsigned long timerComparator;\n" +
@@ -510,6 +517,7 @@ public class Controller {
                     "  // put your setup code here, to run once:\n" +
                     "  pinMode(INPUT_TEMP, INPUT);\n" +
                     "  pinMode(INPUT_SHUNT, INPUT);\n" +
+                    "  pinMode(INPUT_8SHUNT, INPUT);\n" +
                     "  pinMode(INPUT_SUPPORT, INPUT);\n" +
                     "  //Устанавливаем разрешение для работы с входным сигналом\n" +
                     "  analogReference(AR_INTERNAL1V65);\n" +
@@ -530,6 +538,13 @@ public class Controller {
                     "    arrayCurrent[j] = analogRead(INPUT_SHUNT);\n" +
                     "    delay(10);\n" +
                     "  }\n" +
+                    "\n" +
+                    "  // инициализация массива усиленного в 8 раз Шунта (ниже блок 1.1) для скользящей средней\n" +
+                    "  for (int l = 0; l < 10; l++){\n" +
+                    "    array8Shunt[l] = analogRead(INPUT_8SHUNT);\n" +
+                    "    delay(10);\n" +
+                    "  }\n" +
+                    "\n"+
                     "  // инициализация массива Суппорта (ниже блок 3) для скользящей средней\n" +
                     "\n" +
                     "  for (int k = 0; k < 20; k++)\n" +
@@ -545,6 +560,7 @@ public class Controller {
                     "  timerFloatBoost = millis();\n" +
                     "  timerBoost = millis();\n" +
                     "  timerVoltageShunt = millis();\n" +
+                    "  timer8Shunt = millis();\n" +
                     "  timerTemperature = millis();\n" +
                     "  timerVoltageSupport = millis();\n" +
                     "  timerComparator = millis();\n" +
@@ -564,6 +580,13 @@ public class Controller {
                     "  if (!isTimerWork(timerVoltageShunt, 15)) {\n" +
                     "    valueOfCurrent = getMovAverageCurrent(arrayCurrent);\n" +
                     "    timerVoltageShunt = millis();\n" +
+                    "  }\n" +
+                    "\n" +
+                    "  //БЛОК 1.1 получение данных с шунта, усиленные в 8 раз\n" +
+                    "\n" +
+                    "  if(!isTimerWork(timer8Shunt, 15)) {\n" +
+                    "    value8Shunt = getMovAverage8Shunt(array8Shunt);\n" +
+                    "    timer8Shunt = millis();\n" +
                     "  }\n" +
                     "\n" +
                     "  //БЛОК 2. получение данных по температуре\n" +
@@ -600,7 +623,7 @@ public class Controller {
                     "        isStart = false;\n" +
                     "      }\n" +
                     "      //4.4 проверка Ushunt <= Ustop\n" +
-                    "      else if (valueOfCurrent <= switchBoostToFloatADC) {\n" +
+                    "      else if (value8Shunt <= switchBoostToFloat8ADC) {\n" +
                     "        if (isLastSignalBoost) {\n" +
                     "          mode = \"4.4 Float\";\n" +
                     "          voltageTemperature = outputFloat(averageTemperature);\n" +
@@ -779,6 +802,23 @@ public class Controller {
                     "  }\n" +
                     "\n" +
                     "  arrayCur[9] = analogRead(INPUT_SHUNT);\n" +
+                    "\n" +
+                    "  int sum = 0;\n" +
+                    "  for (byte i = 0; i < 10 ; i++) {\n" +
+                    "    sum += arrayCur[i];\n" +
+                    "  }\n" +
+                    "\n" +
+                    "  return sum / 10;\n" +
+                    "}\n" +
+                    "\n" +
+                    "//вычисление скользящей средней на 10 точек для данных по току усиленного Шунта\n" +
+                    "\n" +
+                    "int getMovAverage8Shunt (int arrayCur[10]) {\n" +
+                    "  for (byte j = 0; j < 9; j++) {\n" +
+                    "    arrayCur[j] = arrayCur[j + 1];\n" +
+                    "  }\n" +
+                    "\n" +
+                    "  arrayCur[9] = analogRead(INPUT_8SHUNT);\n" +
                     "\n" +
                     "  int sum = 0;\n" +
                     "  for (byte i = 0; i < 10 ; i++) {\n" +
