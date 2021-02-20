@@ -41,6 +41,11 @@ public class MainAppFX extends Application {
 
 }
 
+
+    public javafx.stage.Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
     public void showGraph(){
         try {
 
