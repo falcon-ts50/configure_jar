@@ -5,7 +5,7 @@
 #define INPUT_8SHUNT      A5
 #define INPUT_SUPPORT     A6
 //Характеристика датчика температуры ТМР-36
-int millivoltAtZeroDegrees = 100;
+int millivoltAtZeroDegrees = 500;
 int changingMillivoltPerOneDegrees = 10;
 //точка калибровки. Для датчика ТМР-36 задаём как минус 40 Цельсиев
 int tempCalibrationDeg = -40;

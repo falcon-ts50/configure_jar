@@ -30,7 +30,7 @@ public class MainAppFX extends Application {
     Parent root = loader.load();
 
     primaryStage.setTitle("Конфигуратор файлов .ino для Arduino MKR ZERO для ИБП.");
-    primaryStage.setScene(new Scene(root, 1055, 750));
+    primaryStage.setScene(new Scene(root, 1080, 750));
     primaryStage.show();
 
 
@@ -55,7 +55,7 @@ public class MainAppFX extends Application {
 
             final int gapY = 50;
             final int tickX = 10;
-            int lowerBound = unit.getMinTempFloat()<unit.getMinTempBoost()? unit.getMinTempFloat()-tickX: unit.getMinTempBoost() - tickX;
+            int lowerBound = unit.getMinTempFloat() < unit.getMinTempBoost()? unit.getMinTempFloat()-tickX: unit.getMinTempBoost() - tickX;
             int upperBound = unit.getMaxTempFloat() > unit.getMaxTempBoost()? unit.getMaxTempFloat() + tickX : unit.getMaxTempBoost() + tickX;
 
             final NumberAxis xAxis = new NumberAxis(lowerBound, upperBound, tickX);
