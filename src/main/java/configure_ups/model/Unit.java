@@ -57,195 +57,195 @@ public class Unit {
 
     }
 
-    public int getmVAtZeroDeg() {
+    public synchronized int getmVAtZeroDeg() {
         return mVAtZeroDeg;
     }
 
-    public void setmVAtZeroDeg(int mVAtZeroDeg) {
+    public synchronized void setmVAtZeroDeg(int mVAtZeroDeg) {
         Unit.mVAtZeroDeg = mVAtZeroDeg;
     }
 
-    public int getChangingMVPerOneDeg() {
+    public synchronized int getChangingMVPerOneDeg() {
         return changingMVPerOneDeg;
     }
 
-    public void setChangingMVPerOneDeg(int changingMVPerOneDeg) {
+    public synchronized void setChangingMVPerOneDeg(int changingMVPerOneDeg) {
         Unit.changingMVPerOneDeg = changingMVPerOneDeg;
     }
 
-    public int getMinTempFloat() {
+    public synchronized int getMinTempFloat() {
         return minTempFloat;
     }
 
-    public void setMinTempFloat(int minTempFloat) {
+    public synchronized void setMinTempFloat(int minTempFloat) {
         Unit.minTempFloat = minTempFloat;
     }
 
-    public int getTempFirstMidPointFloat() {
+    public synchronized int getTempFirstMidPointFloat() {
         return tempFirstMidPointFloat;
     }
 
-    public void setTempFirstMidPointFloat(int tempFirstMidPointFloat) {
+    public synchronized void setTempFirstMidPointFloat(int tempFirstMidPointFloat) {
         Unit.tempFirstMidPointFloat = tempFirstMidPointFloat;
     }
 
-    public int getTempSecondMidPointFloat() {
+    public synchronized int getTempSecondMidPointFloat() {
         return tempSecondMidPointFloat;
     }
 
-    public void setTempSecondMidPointFloat(int tempSecondMidPointFloat) {
+    public synchronized void setTempSecondMidPointFloat(int tempSecondMidPointFloat) {
         Unit.tempSecondMidPointFloat = tempSecondMidPointFloat;
     }
 
-    public int getMaxTempFloat() {
+    public synchronized int getMaxTempFloat() {
         return maxTempFloat;
     }
 
-    public void setMaxTempFloat(int maxTempFloat) {
+    public synchronized void setMaxTempFloat(int maxTempFloat) {
         Unit.maxTempFloat = maxTempFloat;
     }
 
-    public int getMinTempBoost() {
+    public synchronized int getMinTempBoost() {
         return minTempBoost;
     }
 
-    public void setMinTempBoost(int minTempBoost) {
+    public synchronized void setMinTempBoost(int minTempBoost) {
         Unit.minTempBoost = minTempBoost;
     }
 
-    public int getMaxTempBoost() {
+    public synchronized int getMaxTempBoost() {
         return maxTempBoost;
     }
 
-    public void setMaxTempBoost(int maxTempBoost) {
+    public synchronized void setMaxTempBoost(int maxTempBoost) {
         Unit.maxTempBoost = maxTempBoost;
     }
 
-    public int getOutputMaximum() {
+    public synchronized int getOutputMaximum() {
         return outputMaximum;
     }
 
-    public void setOutputMaximum(int outputMaximum) {
+    public synchronized void setOutputMaximum(int outputMaximum) {
         Unit.outputMaximum = outputMaximum;
     }
 
-    public int getOutputMiddle() {
+    public synchronized int getOutputMiddle() {
         return outputMiddle;
     }
 
-    public void setOutputMiddle(int outputMiddle) {
+    public synchronized void setOutputMiddle(int outputMiddle) {
         Unit.outputMiddle = outputMiddle;
     }
 
-    public int getOutputFloatMinimum() {
+    public synchronized int getOutputFloatMinimum() {
         return outputFloatMinimum;
     }
 
-    public void setOutputFloatMinimum(int outputFloatMinimum) {
+    public synchronized void setOutputFloatMinimum(int outputFloatMinimum) {
         Unit.outputFloatMinimum = outputFloatMinimum;
     }
 
-    public int getOutputBoostMinimum() {
+    public synchronized int getOutputBoostMinimum() {
         return outputBoostMinimum;
     }
 
-    public void setOutputBoostMinimum(int outputBoostMinimum) {
+    public synchronized void setOutputBoostMinimum(int outputBoostMinimum) {
         Unit.outputBoostMinimum = outputBoostMinimum;
     }
 
-    public double getCoefficientOfCalibration() {
+    public synchronized double getCoefficientOfCalibration() {
         return coefficientOfCalibration;
     }
 
-    public void setCoefficientOfCalibration(double coefficientOfCalibration) {
+    public synchronized void setCoefficientOfCalibration(double coefficientOfCalibration) {
         Unit.coefficientOfCalibration = coefficientOfCalibration;
     }
 
-    public int getMaxVoltShunt() {
+    public synchronized int getMaxVoltShunt() {
         return maxVoltShunt;
     }
 
-    public void setMaxVoltShunt(int maxVoltShunt) {
+    public synchronized void setMaxVoltShunt(int maxVoltShunt) {
         Unit.maxVoltShunt = maxVoltShunt;
     }
 
-    public int getMaxCurrentShunt() {
+    public synchronized int getMaxCurrentShunt() {
         return maxCurrentShunt;
     }
 
-    public void setMaxCurrentShunt(int maxCurrentShunt) {
+    public synchronized void setMaxCurrentShunt(int maxCurrentShunt) {
         Unit.maxCurrentShunt = maxCurrentShunt;
     }
 
-    public int getCapacitanceOfBattery() {
+    public synchronized int getCapacitanceOfBattery() {
         return capacitanceOfBattery;
     }
 
-    public void setCapacitanceOfBattery(int capacitanceOfBattery) {
+    public synchronized void setCapacitanceOfBattery(int capacitanceOfBattery) {
         Unit.capacitanceOfBattery = capacitanceOfBattery;
     }
 
-    public int getNumberBattery() {
+    public synchronized int getNumberBattery() {
         return numberBattery;
     }
 
-    public void setNumberBattery(int numberBattery) {
+    public synchronized void setNumberBattery(int numberBattery) {
         Unit.numberBattery = numberBattery;
     }
 
-    public int getCoeffAnalogueAmplifier() {
+    public synchronized int getCoeffAnalogueAmplifier() {
         return coeffAnalogueAmplifier;
     }
 
-    public void setCoeffAnalogueAmplifier(int coeffAnalogueAmplifier) {
+    public synchronized void setCoeffAnalogueAmplifier(int coeffAnalogueAmplifier) {
         Unit.coeffAnalogueAmplifier = coeffAnalogueAmplifier;
     }
 
-    public double getChargingCurrent() {
+    public synchronized double getChargingCurrent() {
         return chargingCurrent;
     }
 
-    public void setChargingCurrent(double chargingCurrent) {
+    public synchronized void setChargingCurrent(double chargingCurrent) {
         Unit.chargingCurrent = chargingCurrent;
     }
 
-    public double getMaxChargCurrent() {
+    public synchronized double getMaxChargCurrent() {
         return maxChargCurrent;
     }
 
-    public void setMaxChargCurrent(double maxChargCurrent) {
+    public synchronized void setMaxChargCurrent(double maxChargCurrent) {
         Unit.maxChargCurrent = maxChargCurrent;
     }
 
-    public double getThresholdForBoost() {
+    public synchronized double getThresholdForBoost() {
         return thresholdForBoost;
     }
 
-    public void setThresholdForBoost(double thresholdForBoost) {
+    public synchronized void setThresholdForBoost(double thresholdForBoost) {
         Unit.thresholdForBoost = thresholdForBoost;
     }
 
-    public double getThresholdBoostEnding() {
+    public synchronized double getThresholdBoostEnding() {
         return thresholdBoostEnding;
     }
 
-    public int getTimeInBoost() {
+    public synchronized int getTimeInBoost() {
         return timeInBoost;
     }
 
-    public void setTimeInBoost(int timeInBoost) {
+    public synchronized void setTimeInBoost(int timeInBoost) {
         Unit.timeInBoost = timeInBoost;
     }
 
-    public int getDelayBoost() {
+    public synchronized int getDelayBoost() {
         return delayBoost;
     }
 
-    public void setDelayBoost(int delayBoost) {
+    public synchronized void setDelayBoost(int delayBoost) {
         Unit.delayBoost = delayBoost;
     }
 
-    public void setThresholdBoostEnding(double thresholdBoostEnding) {
+    public synchronized void setThresholdBoostEnding(double thresholdBoostEnding) {
         Unit.thresholdBoostEnding = thresholdBoostEnding;
     }
 }

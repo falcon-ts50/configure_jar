@@ -17,6 +17,8 @@ public class Controller {
 
     Unit unit;
 
+    private boolean isThereIsError = false;
+
 //    Инициализируем все переменные - поля, которые будем использовать в нашем проекте
     @FXML
     private TextField mVAtZeroDeg;
@@ -390,15 +392,15 @@ public class Controller {
     }
     public void setWriteParams(){
 
-        writeParamToUnit();
-        handleWrongData();
-        makeFileIno();
-        showInformationContent("Файл создан", "Файл успешно создан", "Вы обнаружите файл .ino в той же папке, что и данная программа");
-
-
+        if(!writeParamToUnit()){
+            if(!handleWrongData()) {
+                makeFileIno();
+                showInformationContent("Файл создан", "Файл успешно создан", "Вы обнаружите файл .ino в той же папке, что и данная программа");
+            }
+        }
     }
 
-    public void writeParamToUnit(){
+    public boolean writeParamToUnit(){
         try {
             unit.setmVAtZeroDeg(Integer.parseInt(mVAtZeroDeg.getText()));
             unit.setChangingMVPerOneDeg(Integer.parseInt(changingMVPerOneDeg.getText()));
@@ -424,8 +426,10 @@ public class Controller {
             unit.setThresholdBoostEnding(Double.parseDouble(thresholdBoostEnding.getText()));
             unit.setTimeInBoost(Integer.parseInt(timeInBoost.getText()));
             unit.setDelayBoost(Integer.parseInt(delayBoost.getText()));
+            return false;
         } catch (NumberFormatException e) {
-            showAlert("Формат чисел", "Проверьте форматы чисел", "Где-то введён текст, вместо числа");
+            showAlert("Формат чисел", "Проверьте форматы чисел", "Где-то введён текст, вместо числа, либо запятая вместо точки в дробных числах");
+            return true;
         }
     }
 
@@ -1047,7 +1051,7 @@ public class Controller {
         main.showGraph();
     }
 
-    private void handleWrongData(){
+    private boolean handleWrongData(){
 
         String title = "ошибка";
 //        Обработка неправильного ввода данных по характеристике датчика
@@ -1056,6 +1060,7 @@ public class Controller {
             String header = "Неправильный ввод данных датчика температуры";
             String content = String.format("1.1 Напряжение при нуле гр. Цельсия должно быть от %d до %d мВ", lowBoundMVAtZeroDeg, upperBoundMVAtZeroDeg);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода поля приращение напряжения за 1 гр. С
@@ -1065,6 +1070,7 @@ public class Controller {
             String header = "Неправильный ввод данных датчика температуры";
             String content = String.format("1.2 Приращение напряжения за 1 гр.Цельсия должно быть от %d до %d мВ/гр.", lowBoundMVPerOneDeg, upperBoundMVPerOneDeg);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода минимальной температуры для режима Float
@@ -1074,6 +1080,7 @@ public class Controller {
             String header = "Неправильный ввод температурных данных режима Float";
             String content = String.format("2.1 Минимальное значение температуры должно быть от %d до %d градусов С", lowTempFirstPointFloat, upTempFristPointFloat);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода температуры первой средней точки режима Float
@@ -1082,6 +1089,7 @@ public class Controller {
             String header = "Неправильный ввод температурных данных режима Float";
             String content = String.format("2.2 Значение температуры первой ср. точки режима Float должно быть от %d до %d гр.С", lowTempFirstMidPoint, upTempFirstMidPoint);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода температуры второй средней точки режима Float
@@ -1090,6 +1098,7 @@ public class Controller {
             String header = "Неправильный ввод температурных данных режима Float";
             String content = String.format("2.3 Значение температуры второй ср. точки режима Float должно быть от %d до %d гр.С", lowTempSecondMidPoint, upTempSecondMidPoint);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильно ввода температуры последней точки
@@ -1098,6 +1107,7 @@ public class Controller {
             String header = "Неправильный ввод температурных данных режима Float";
             String content = String.format("2.4 Значение температуры последней точки режима Float должно быть от %d до %d гр.С", lowTempLastPointFloat, upTempLastPointFloat);
             showAlert(title, header, content);
+            return true;
         }
 //        Обработка неправильно ввода температуры режима Boost первой точки (минимальной)
 
@@ -1105,6 +1115,7 @@ public class Controller {
             String header = "Неправильный ввод температурных данных режима Boost";
             String content = String.format("2.5 Значение минимальной температуры режима Boost должно быть от %d до %d гр.С", lowFirstTempBoost, upFristTempBoost);
             showAlert(title, header, content);
+            return true;
         }
 //        Обработка неправильно ввода температуры режима Boost второй точки (максимальной)
 
@@ -1112,6 +1123,7 @@ public class Controller {
             String header = "Неправильный ввод температурных данных режима Boost";
             String content = String.format("2.6 Значение минимальной температуры режима Boost должно быть от %d до %d гр.С", lowLastTempBoost, upLastTempBoost);
             showAlert(title, header, content);
+            return true;
         }
 //        Обработка неправильного ввода напряжения максимальной точки для обоих режимов
 
@@ -1119,6 +1131,7 @@ public class Controller {
             String header = "Неправильный ввод данных по напряжению в разделе режимы";
             String content = String.format("3.1 Значение максимального напряжения должно быть в диапазоне от %d до %d мВ", lowOutputMaximum, upperOutputMaximum);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода напряжения средней точки Float
@@ -1126,18 +1139,21 @@ public class Controller {
             String header = "Неправильный ввод данных по напряжению в разделе режимы";
             String content = String.format("3.2 Значение напряжения средней точки режима Float должно быть в диапазоне от %d до %d мВ", lowMidPointOutFloat, upMidPointOutFloat);
             showAlert(title, header, content);
+            return true;
         }
 //        Обработка неправильного ввода напряжения минимальной точки режима Float
         if(unit.getOutputFloatMinimum() < lowMinPointOutFloat || unit.getOutputFloatMinimum() > upMinPointOutFloat){
             String header = "Неправильный ввод данных по напряжению в разделе режимы";
             String content = String.format("3.3 Значение минимального напряжения для Float должно быть в диапазоне от %d до %d мВ", lowMinPointOutFloat, upMinPointOutFloat);
             showAlert(title, header, content);
+            return true;
         }
 //       Обработка неправильного ввода напряжения минимальной точки режима Boost
         if(unit.getOutputBoostMinimum() < lowMinPointOutBoost || unit.getOutputBoostMinimum() > upperMinPointOutBoost){
             String header = "Неправильный ввод данных по напряжению в разделе режимы";
             String content = String.format("3.4 Значение минимального напряжения для Float должно быть в диапазоне от %d до %d мВ", lowMinPointOutBoost, upperMinPointOutBoost);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода значения коэффициента преобразования базовой шкалы
@@ -1145,6 +1161,7 @@ public class Controller {
             String header = "Неправильный ввод данных по коэффициента преобразования для базовой шкалы";
             String content = String.format(Locale.CANADA,"4. Значение коэффициента преобразования должно лежать в диапазоне от %.3f до %.3f", lowBoundCoeffCalib, upBoundCoeffCalib);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода значений для максимального напряжения шунта
@@ -1152,6 +1169,7 @@ public class Controller {
             String header = "Неправильный ввод данных по максимальному напряжению шунта";
             String content = String.format("5.1 Значение максимального напряжения шунта должно быть от %d до %d мВ", lowBoundMaxVoltShunt, upBoundMaxVoltShunt);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода значений для максимального тока шунта
@@ -1159,6 +1177,7 @@ public class Controller {
             String header = "Неправильный ввод данных по максимальному току шунта";
             String content = String.format("5.2 Значение максимального тока шунта должно быть в пределах от %d до %d А", lowBoundMaxCurrentShunt, upBoundMaxCurrentShunt);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода значений ёмкости батарей
@@ -1166,6 +1185,7 @@ public class Controller {
             String header = "Неправильный ввод данных значений ёмкости батарей";
             String content = String.format("6.1 Введите значение от %d до %d А*час", lowBoundCapacitanceBatt, upBoundCapacitanceBatt);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода количества батарей
@@ -1173,6 +1193,7 @@ public class Controller {
             String header = "Неправильный ввод данных значений количества батарей";
             String content = String.format("6.2 введите правильное количество батарей в диапазоне от %d до %d", lowBoundNumberBatt, upBoundNumberBatt);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода коэффициента аналогового предусилителя
@@ -1180,6 +1201,7 @@ public class Controller {
             String header = "Неправильный ввод данных коэффициента аналогового усилителя";
             String content = String.format("6.3 введите значние от %d до %d", lowBoundCoefAnalogueAmplif, upBoundCoefAnalogueAmplif);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода данных по току заряда
@@ -1187,6 +1209,7 @@ public class Controller {
             String header = "Неправильный ввод данных по множителю для зарядного тока";
             String content = String.format(Locale.CANADA,"6.4 введите значние от %.2f до %.2f", lowBoundChargingCurrent, upBoundChargingCurrent);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода данных по максимальному току заряда
@@ -1194,6 +1217,7 @@ public class Controller {
             String header = "Неправильный ввод данных по множителю для максимального тока заряда";
             String content = String.format(Locale.CANADA,"6.5 введите значние от %.2f до %.2f", lowBoundMaxChCurrent, upBoundMaxChCurrent);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода данных по порогу для переключения в режим Boost
@@ -1201,6 +1225,7 @@ public class Controller {
             String header = "Неправильный ввод данных по порогу для переключения в режиме ускоренного заряда";
             String content = String.format(Locale.CANADA,"6.6 введите значние от %.2f до %.2f", lowBoundThresholdForBoost, upBoundThresholdForBoost);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода данных по порогу окончания заряда в режиме Boost
@@ -1208,6 +1233,7 @@ public class Controller {
             String header = "Неправильный ввод данных по порогу окончания заряда в режиме ускоренного заряда";
             String content = String.format(Locale.CANADA,"6.7 введите значние от %.2f до %.2f", lowBoundThresholdBoostEnding, upBoundThresholdBoostEnding);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода данных по максимальному времени работы в режиме Boost
@@ -1215,6 +1241,7 @@ public class Controller {
             String header = "Неправильный ввод данных по максимальному времени работы в режиме ускоренного заряда";
             String content = String.format("6.8 введите время работы в минутах от %d до %d", lowBoundTimeInBoost, upBoundTimeInBoost);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Обработка неправильного ввода данных по времени задержки для повторного включения режима Boost
@@ -1222,6 +1249,7 @@ public class Controller {
             String header = "Неправильный ввод данных по времени задержки повторного включения режима ускоренного заряда";
             String content = String.format("6.9 введите время работы в минутах от %d до %d", lowBoundDelayBoost, upBoundDelayBoost);
             showAlert(title, header, content);
+            return true;
         }
 
 //        Проверка значений больше-меньше для температурной характеристики в режиме Флоат
@@ -1229,18 +1257,21 @@ public class Controller {
             String header = "Неправильный ввод данных по температуре в режиме Float";
             String content = "Температура в пункте 2.1 должна быть меньше, чем в пункте 2.2";
             showAlert(title, header, content);
+            return true;
         }
 
         if(unit.getTempFirstMidPointFloat() > unit.getTempSecondMidPointFloat()){
             String header = "Неправильный ввод данных по температуре в режиме Float";
             String content = "Температура в пункте 2.2 должна быть меньше, чем в пункте 2.3";
             showAlert(title, header, content);
+            return true;
         }
 
         if(unit.getTempSecondMidPointFloat() > unit.getMaxTempFloat()){
             String header = "Неправильный ввод данных по температуре в режиме Float";
             String content = "Температура в пункте 2.3 должна быть меньше, чем в пункте 2.4";
             showAlert(title, header, content);
+            return true;
         }
 
 //        Проверка значений больше-меньше по температурам для режима Boost
@@ -1249,6 +1280,7 @@ public class Controller {
             String header = "Неправильный ввод данных по температуре в режиме Boost";
             String content = "Температура в пункте 2.5 должна быть меньше, чем в пункте 2.6";
             showAlert(title, header, content);
+            return true;
         }
 
 //        Проверка значений больше-меньше по значению зарядного напряжения
@@ -1257,17 +1289,21 @@ public class Controller {
             String header = "Неправильный ввод данных по выходному сигналу";
             String content = "Напряжение в пункте 3.1  должно быть больше, чем в пункте 3.2";
             showAlert(title, header, content);
+            return true;
         }
+
         if(unit.getOutputMaximum() < unit.getOutputBoostMinimum()) {
             String header = "Неправильный ввод данных по выходному сигналу";
             String content = "Напряжение в пункте 3.1  должно быть больше, чем в пункте 3.4";
             showAlert(title, header, content);
+            return true;
         }
 
         if(unit.getOutputMiddle() < unit.getOutputFloatMinimum()){
             String header = "Неправильный ввод данных по выходному сигналу";
             String content = "Напряжение в пункте 3.2  должно быть больше, чем в пункте 3.3";
             showAlert(title, header, content);
+            return true;
         }
 
 //        Проверка больше-меньше по токам заряда
@@ -1275,9 +1311,10 @@ public class Controller {
             String header = "Неправильный ввод данных по току заряда";
             String content = "Значение коэффициентов в пункте 6.5  должно быть больше, чем в пункте 6.4";
             showAlert(title, header, content);
+            return true;
         }
 
-
+        return false;
     }
 
     private void showAlert(String title, String header, String content){
@@ -1304,8 +1341,5 @@ public class Controller {
         alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
 
         alert.showAndWait();
-
-
-
     }
 }
