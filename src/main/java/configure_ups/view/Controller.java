@@ -81,6 +81,9 @@ public class Controller {
     private TextField maxChargCurrent;
 
     @FXML
+    private TextField upThresholdCurrent;
+
+    @FXML
     private TextField thresholdForBoost;
 
     @FXML
@@ -304,6 +307,7 @@ public class Controller {
         unit.setCoeffAnalogueAmplifier(0);
         unit.setChargingCurrent(0.0);
         unit.setMaxChargCurrent(0.0);
+        unit.setUpThresholdCurrent(0.0);
         unit.setThresholdForBoost(0.0);
         unit.setThresholdBoostEnding(0.0);
         unit.setTimeInBoost(0);
@@ -330,6 +334,7 @@ public class Controller {
         coeffAnalogueAmplifier.setText("");
         chargingCurrent.setText("");
         maxChargCurrent.setText("");
+        upThresholdCurrent.setText("");
         thresholdForBoost.setText("");
         thresholdBoostEnding.setText("");
         timeInBoost.setText("");
@@ -356,8 +361,9 @@ public class Controller {
         unit.setCapacitanceOfBattery(75);
         unit.setNumberBattery(4);
         unit.setCoeffAnalogueAmplifier(25);
-        unit.setChargingCurrent(2.8);
-        unit.setMaxChargCurrent(3.5);
+        unit.setChargingCurrent(2.7);
+        unit.setMaxChargCurrent(5.0);
+        unit.setUpThresholdCurrent(3.7);
         unit.setThresholdForBoost(0.9);
         unit.setThresholdBoostEnding(0.25);
         unit.setTimeInBoost(480);
@@ -384,6 +390,7 @@ public class Controller {
         coeffAnalogueAmplifier.setText(String.valueOf(unit.getCoeffAnalogueAmplifier()));
         chargingCurrent.setText(String.valueOf(unit.getChargingCurrent()));
         maxChargCurrent.setText(String.valueOf(unit.getMaxChargCurrent()));
+        upThresholdCurrent.setText(String.valueOf(unit.getUpThresholdCurrent()));
         thresholdForBoost.setText(String.valueOf(unit.getThresholdForBoost()));
         thresholdBoostEnding.setText(String.valueOf(unit.getThresholdBoostEnding()));
         timeInBoost.setText(String.valueOf(unit.getTimeInBoost()));
@@ -422,6 +429,7 @@ public class Controller {
             unit.setCoeffAnalogueAmplifier(Integer.parseInt(coeffAnalogueAmplifier.getText()));
             unit.setChargingCurrent(Double.parseDouble(chargingCurrent.getText()));
             unit.setMaxChargCurrent(Double.parseDouble(maxChargCurrent.getText()));
+            unit.setUpThresholdCurrent(Double.parseDouble(upThresholdCurrent.getText()));
             unit.setThresholdForBoost(Double.parseDouble(thresholdForBoost.getText()));
             unit.setThresholdBoostEnding(Double.parseDouble(thresholdBoostEnding.getText()));
             unit.setTimeInBoost(Integer.parseInt(timeInBoost.getText()));
@@ -434,7 +442,7 @@ public class Controller {
     }
 
     private void makeFileIno(){
-        String[] strings = new String[28];
+        String[] strings = new String[29];
         try {
 
             PrintStream filePrintStream = new PrintStream("configure_UPS.ino");
@@ -507,19 +515,21 @@ public class Controller {
                     "double chargingCurrent = " + unit.getChargingCurrent() + ";\n";
             strings[21] = "//Задайте предельный ток заряда {P}\n" +
                     "double maxChargCurrent = " + unit.getMaxChargCurrent() + ";\n";
-            strings[22] = "//Задайте порог применения ускоренного заряда {B}\n" +
+            strings[22] = "//Задайте верхний порог ограничения тока {U reduce}\n" +
+                    "double upThresholdCurrent = " + unit.getUpThresholdCurrent() +";\n";
+            strings[23] = "//Задайте порог применения ускоренного заряда {B}\n" +
                     "double thresholdForBoost = " + unit.getThresholdForBoost() + ";\n";
-            strings[23] = "//Задайте условие окончания ускоренного заряда {R}\n" +
+            strings[24] = "//Задайте условие окончания ускоренного заряда {R}\n" +
                     "double thresholdBoostEnding = " + unit.getThresholdBoostEnding() + ";\n";
-            strings[24] = "//Задайте максимальное время работы в режиме boost в минутах\n" +
+            strings[25] = "//Задайте максимальное время работы в режиме boost в минутах\n" +
                     "byte timeInBoost = " + unit.getTimeInBoost() + ";\n";
-            strings[25] = "//Задайте время задержки между повторным включением режима boost в минутах\n" +
+            strings[26] = "//Задайте время задержки между повторным включением режима boost в минутах\n" +
                     "byte delayBoost = " + unit.getDelayBoost() + ";\n";
-            strings[26] = "\n" +
+            strings[27] = "\n" +
                     "// велечина напряжения сброса Ureset  в 10 битах\n" +
                     "\n" +
                     "int voltageReset = 575;\n";
-            strings[27] = "\n" +
+            strings[28] = "\n" +
                     "/******************************************************************************************************************************************************************/\n" +
                     "//ВЫЧИСЛЯЕМЫЕ ЗНАЧЕНИЯ\n" +
                     "\n" +
@@ -536,6 +546,11 @@ public class Controller {
                     "int limitVoltageOfCharge = valueOfNominalCurrentOnVoltage * maxChargCurrent;\n" +
                     "//Umax в 10-битном исчислении\n" +
                     "int limitVoltageChrgDAC = limitVoltageOfCharge/accuracyInput;\n" +
+                    "\n" +
+                    "//Напряжение, соответствующее верхнему порогу ограничения заряда\n" +
+                    "int upThrCurrentVoltage = valueOfNominalCurrentOnVoltage * upThresholdCurrent;\n" +
+                    "//U reduce в 10-битах\n" +
+                    "int upThrCurrDAC = upThrCurrentVoltage/accuracyInput;\n" +
                     "\n" +
                     "//Вычисляем значение Ustart при котором происходит начало ускоренного заряда (переключение с Float на Boost) Ustart\n" +
                     "\n" +
@@ -809,8 +824,8 @@ public class Controller {
                     "        outputSignal = voltageReset;\n" +
                     "        event = \"5.1 Ushunt > Umax; Uout = Ureset\";\n" +
                     "      }\n" +
-                    "      //5.2 проверка на Uout>Ut\n" +
-                    "      else if (outputSignal > voltageTemperature) {\n" +
+                    "      //5.2 проверка на Uout>Ut либо Ushunt > Ureset\n" +
+                    "      else if (outputSignal > voltageTemperature || valueOfCurrent > upThrCurrDAC) {\n" +
                     "        outputSignal--;\n" +
                     "        event = \"5.2 Uout > Ut; Uout--\";\n" +
                     "      }\n" +

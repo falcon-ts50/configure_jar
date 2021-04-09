@@ -22,6 +22,7 @@ public class Unit {
     private static int coeffAnalogueAmplifier;
     private static double chargingCurrent;
     private static double maxChargCurrent;
+    private static double upThresholdCurrent;
     private static double thresholdForBoost;
     private static double thresholdBoostEnding;
     private static int timeInBoost;
@@ -48,8 +49,9 @@ public class Unit {
         this.setCapacitanceOfBattery(75);
         this.setNumberBattery(4);
         this.setCoeffAnalogueAmplifier(25);
-        this.setChargingCurrent(2.8);
-        this.setMaxChargCurrent(3.5);
+        this.setChargingCurrent(2.7);
+        this.setMaxChargCurrent(5.0);
+        this.setUpThresholdCurrent(3.7);
         this.setThresholdForBoost(0.9);
         this.setThresholdBoostEnding(0.25);
         this.setTimeInBoost(480);
@@ -215,6 +217,14 @@ public class Unit {
 
     public synchronized void setMaxChargCurrent(double maxChargCurrent) {
         Unit.maxChargCurrent = maxChargCurrent;
+    }
+
+    public static double getUpThresholdCurrent() {
+        return upThresholdCurrent;
+    }
+
+    public static void setUpThresholdCurrent(double upThresholdCurrent) {
+        Unit.upThresholdCurrent = upThresholdCurrent;
     }
 
     public synchronized double getThresholdForBoost() {
