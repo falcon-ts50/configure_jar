@@ -2,31 +2,31 @@ package configure_ups.model;
 
 public class Unit {
 
-    private static int mVAtZeroDeg;
-    private static int changingMVPerOneDeg;
-    private static int minTempFloat;
-    private static int tempFirstMidPointFloat;
-    private static int tempSecondMidPointFloat;
-    private static int maxTempFloat;
-    private static int minTempBoost;
-    private static int maxTempBoost;
-    private static int outputMaximum;
-    private static int outputMiddle;
-    private static int outputFloatMinimum;
-    private static int outputBoostMinimum;
-    private static double coefficientOfCalibration;
-    private static int maxVoltShunt;
-    private static int maxCurrentShunt;
-    private static int capacitanceOfBattery;
-    private static int numberBattery;
-    private static int coeffAnalogueAmplifier;
-    private static double chargingCurrent;
-    private static double maxChargCurrent;
-    private static double upThresholdCurrent;
-    private static double thresholdForBoost;
-    private static double thresholdBoostEnding;
-    private static int timeInBoost;
-    private static int delayBoost;
+    private int mVAtZeroDeg;
+    private int changingMVPerOneDeg;
+    private int minTempFloat;
+    private int tempFirstMidPointFloat;
+    private int tempSecondMidPointFloat;
+    private int maxTempFloat;
+    private int minTempBoost;
+    private int maxTempBoost;
+    private int outputMaximum;
+    private int outputMiddle;
+    private int outputFloatMinimum;
+    private int outputBoostMinimum;
+    private double coefficientOfCalibration;
+    private int maxVoltShunt;
+    private int maxCurrentShunt;
+    private int capacitanceOfBattery;
+    private int numberBattery;
+    private int coeffAnalogueAmplifier;
+    private double chargingCurrent;
+    private double maxChargCurrent;
+    private double upThresholdCurrent;
+    private double thresholdForBoost;
+    private double thresholdBoostEnding;
+    private int timeInBoost;
+    private int delayBoost;
     
 
     public Unit(){
@@ -64,7 +64,7 @@ public class Unit {
     }
 
     public synchronized void setmVAtZeroDeg(int mVAtZeroDeg) {
-        Unit.mVAtZeroDeg = mVAtZeroDeg;
+        this.mVAtZeroDeg = mVAtZeroDeg;
     }
 
     public synchronized int getChangingMVPerOneDeg() {
@@ -72,7 +72,7 @@ public class Unit {
     }
 
     public synchronized void setChangingMVPerOneDeg(int changingMVPerOneDeg) {
-        Unit.changingMVPerOneDeg = changingMVPerOneDeg;
+        this.changingMVPerOneDeg = changingMVPerOneDeg;
     }
 
     public synchronized int getMinTempFloat() {
@@ -80,7 +80,7 @@ public class Unit {
     }
 
     public synchronized void setMinTempFloat(int minTempFloat) {
-        Unit.minTempFloat = minTempFloat;
+        this.minTempFloat = minTempFloat;
     }
 
     public synchronized int getTempFirstMidPointFloat() {
@@ -88,7 +88,7 @@ public class Unit {
     }
 
     public synchronized void setTempFirstMidPointFloat(int tempFirstMidPointFloat) {
-        Unit.tempFirstMidPointFloat = tempFirstMidPointFloat;
+        this.tempFirstMidPointFloat = tempFirstMidPointFloat;
     }
 
     public synchronized int getTempSecondMidPointFloat() {
@@ -96,7 +96,7 @@ public class Unit {
     }
 
     public synchronized void setTempSecondMidPointFloat(int tempSecondMidPointFloat) {
-        Unit.tempSecondMidPointFloat = tempSecondMidPointFloat;
+        this.tempSecondMidPointFloat = tempSecondMidPointFloat;
     }
 
     public synchronized int getMaxTempFloat() {
@@ -104,7 +104,7 @@ public class Unit {
     }
 
     public synchronized void setMaxTempFloat(int maxTempFloat) {
-        Unit.maxTempFloat = maxTempFloat;
+        this.maxTempFloat = maxTempFloat;
     }
 
     public synchronized int getMinTempBoost() {
@@ -112,7 +112,7 @@ public class Unit {
     }
 
     public synchronized void setMinTempBoost(int minTempBoost) {
-        Unit.minTempBoost = minTempBoost;
+        this.minTempBoost = minTempBoost;
     }
 
     public synchronized int getMaxTempBoost() {
@@ -120,7 +120,7 @@ public class Unit {
     }
 
     public synchronized void setMaxTempBoost(int maxTempBoost) {
-        Unit.maxTempBoost = maxTempBoost;
+        this.maxTempBoost = maxTempBoost;
     }
 
     public synchronized int getOutputMaximum() {
@@ -128,7 +128,7 @@ public class Unit {
     }
 
     public synchronized void setOutputMaximum(int outputMaximum) {
-        Unit.outputMaximum = outputMaximum;
+        this.outputMaximum = outputMaximum;
     }
 
     public synchronized int getOutputMiddle() {
@@ -136,7 +136,7 @@ public class Unit {
     }
 
     public synchronized void setOutputMiddle(int outputMiddle) {
-        Unit.outputMiddle = outputMiddle;
+        this.outputMiddle = outputMiddle;
     }
 
     public synchronized int getOutputFloatMinimum() {
@@ -144,7 +144,7 @@ public class Unit {
     }
 
     public synchronized void setOutputFloatMinimum(int outputFloatMinimum) {
-        Unit.outputFloatMinimum = outputFloatMinimum;
+        this.outputFloatMinimum = outputFloatMinimum;
     }
 
     public synchronized int getOutputBoostMinimum() {
@@ -152,7 +152,7 @@ public class Unit {
     }
 
     public synchronized void setOutputBoostMinimum(int outputBoostMinimum) {
-        Unit.outputBoostMinimum = outputBoostMinimum;
+        this.outputBoostMinimum = outputBoostMinimum;
     }
 
     public synchronized double getCoefficientOfCalibration() {
@@ -160,7 +160,7 @@ public class Unit {
     }
 
     public synchronized void setCoefficientOfCalibration(double coefficientOfCalibration) {
-        Unit.coefficientOfCalibration = coefficientOfCalibration;
+        this.coefficientOfCalibration = coefficientOfCalibration;
     }
 
     public synchronized int getMaxVoltShunt() {
@@ -168,7 +168,7 @@ public class Unit {
     }
 
     public synchronized void setMaxVoltShunt(int maxVoltShunt) {
-        Unit.maxVoltShunt = maxVoltShunt;
+        this.maxVoltShunt = maxVoltShunt;
     }
 
     public synchronized int getMaxCurrentShunt() {
@@ -176,7 +176,7 @@ public class Unit {
     }
 
     public synchronized void setMaxCurrentShunt(int maxCurrentShunt) {
-        Unit.maxCurrentShunt = maxCurrentShunt;
+        this.maxCurrentShunt = maxCurrentShunt;
     }
 
     public synchronized int getCapacitanceOfBattery() {
@@ -184,7 +184,7 @@ public class Unit {
     }
 
     public synchronized void setCapacitanceOfBattery(int capacitanceOfBattery) {
-        Unit.capacitanceOfBattery = capacitanceOfBattery;
+        this.capacitanceOfBattery = capacitanceOfBattery;
     }
 
     public synchronized int getNumberBattery() {
@@ -192,7 +192,7 @@ public class Unit {
     }
 
     public synchronized void setNumberBattery(int numberBattery) {
-        Unit.numberBattery = numberBattery;
+        this.numberBattery = numberBattery;
     }
 
     public synchronized int getCoeffAnalogueAmplifier() {
@@ -200,7 +200,7 @@ public class Unit {
     }
 
     public synchronized void setCoeffAnalogueAmplifier(int coeffAnalogueAmplifier) {
-        Unit.coeffAnalogueAmplifier = coeffAnalogueAmplifier;
+        this.coeffAnalogueAmplifier = coeffAnalogueAmplifier;
     }
 
     public synchronized double getChargingCurrent() {
@@ -208,7 +208,7 @@ public class Unit {
     }
 
     public synchronized void setChargingCurrent(double chargingCurrent) {
-        Unit.chargingCurrent = chargingCurrent;
+        this.chargingCurrent = chargingCurrent;
     }
 
     public synchronized double getMaxChargCurrent() {
@@ -216,15 +216,15 @@ public class Unit {
     }
 
     public synchronized void setMaxChargCurrent(double maxChargCurrent) {
-        Unit.maxChargCurrent = maxChargCurrent;
+        this.maxChargCurrent = maxChargCurrent;
     }
 
-    public static double getUpThresholdCurrent() {
+    public synchronized double getUpThresholdCurrent() {
         return upThresholdCurrent;
     }
 
-    public static void setUpThresholdCurrent(double upThresholdCurrent) {
-        Unit.upThresholdCurrent = upThresholdCurrent;
+    public synchronized void setUpThresholdCurrent(double upThresholdCurrent) {
+        this.upThresholdCurrent = upThresholdCurrent;
     }
 
     public synchronized double getThresholdForBoost() {
@@ -232,7 +232,7 @@ public class Unit {
     }
 
     public synchronized void setThresholdForBoost(double thresholdForBoost) {
-        Unit.thresholdForBoost = thresholdForBoost;
+        this.thresholdForBoost = thresholdForBoost;
     }
 
     public synchronized double getThresholdBoostEnding() {
@@ -244,7 +244,7 @@ public class Unit {
     }
 
     public synchronized void setTimeInBoost(int timeInBoost) {
-        Unit.timeInBoost = timeInBoost;
+        this.timeInBoost = timeInBoost;
     }
 
     public synchronized int getDelayBoost() {
@@ -252,10 +252,10 @@ public class Unit {
     }
 
     public synchronized void setDelayBoost(int delayBoost) {
-        Unit.delayBoost = delayBoost;
+        this.delayBoost = delayBoost;
     }
 
     public synchronized void setThresholdBoostEnding(double thresholdBoostEnding) {
-        Unit.thresholdBoostEnding = thresholdBoostEnding;
+        this.thresholdBoostEnding = thresholdBoostEnding;
     }
 }

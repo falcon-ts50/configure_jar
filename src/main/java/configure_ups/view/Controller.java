@@ -195,6 +195,11 @@ public class Controller {
     private final double lowBoundMaxChCurrent = 1.01;
     private final double upBoundMaxChCurrent = 5.01;
 
+//    пределы по верхней границе заряда
+
+    private final double lowBoundUpThresholdCurrent = 1.01;
+    private final double upBoundUpThresholdCurrent = 5.01;
+
 //    пределы по порогу для применения ускоренного заряда (включение режима Boost)
     private final double lowBoundThresholdForBoost = 0.1;
     private final double upBoundThresholdForBoost = 1.99;
@@ -258,6 +263,10 @@ public class Controller {
         chargingCurrent.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", lowBoundChargingCurrent, upBoundChargingCurrent)));
 //Максимальный ток заряда
         maxChargCurrent.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", lowBoundMaxChCurrent, upBoundMaxChCurrent)));
+
+//        Верхняя граница предельного тока заряда
+        upThresholdCurrent.setTooltip(new Tooltip(String.format(Locale.CANADA, "введите значние от %.2f до %.2f", lowBoundUpThresholdCurrent, upBoundUpThresholdCurrent)));
+
 //Порог применения ускоренного заряда
         thresholdForBoost.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", lowBoundThresholdForBoost, upBoundThresholdForBoost)));
 //Порог окончания ускоренного заряда
@@ -1235,10 +1244,19 @@ public class Controller {
             return true;
         }
 
+//        Обработка вводаа данных по верхней границе тока заряда
+        if(unit.getUpThresholdCurrent() < lowBoundMaxChCurrent || unit.getUpThresholdCurrent() > upBoundMaxChCurrent){
+            String header = "Неправильный ввод данных по множителю для верхней границы тока заряда";
+            String content = String.format(Locale.CANADA,"6.6 введите значние от %.2f до %.2f", lowBoundUpThresholdCurrent, upBoundUpThresholdCurrent);
+            showAlert(title, header, content);
+            return true;
+        }
+
+
 //        Обработка неправильного ввода данных по порогу для переключения в режим Boost
         if(unit.getThresholdForBoost() < lowBoundThresholdForBoost || unit.getThresholdForBoost() > upBoundThresholdForBoost){
             String header = "Неправильный ввод данных по порогу для переключения в режиме ускоренного заряда";
-            String content = String.format(Locale.CANADA,"6.6 введите значние от %.2f до %.2f", lowBoundThresholdForBoost, upBoundThresholdForBoost);
+            String content = String.format(Locale.CANADA,"6.7 введите значние от %.2f до %.2f", lowBoundThresholdForBoost, upBoundThresholdForBoost);
             showAlert(title, header, content);
             return true;
         }
@@ -1246,7 +1264,7 @@ public class Controller {
 //        Обработка неправильного ввода данных по порогу окончания заряда в режиме Boost
         if(unit.getThresholdBoostEnding() < lowBoundThresholdBoostEnding || unit.getThresholdBoostEnding() > upBoundThresholdBoostEnding){
             String header = "Неправильный ввод данных по порогу окончания заряда в режиме ускоренного заряда";
-            String content = String.format(Locale.CANADA,"6.7 введите значние от %.2f до %.2f", lowBoundThresholdBoostEnding, upBoundThresholdBoostEnding);
+            String content = String.format(Locale.CANADA,"6.8 введите значние от %.2f до %.2f", lowBoundThresholdBoostEnding, upBoundThresholdBoostEnding);
             showAlert(title, header, content);
             return true;
         }
@@ -1254,7 +1272,7 @@ public class Controller {
 //        Обработка неправильного ввода данных по максимальному времени работы в режиме Boost
         if(unit.getTimeInBoost() < lowBoundTimeInBoost || unit.getTimeInBoost() > upBoundTimeInBoost){
             String header = "Неправильный ввод данных по максимальному времени работы в режиме ускоренного заряда";
-            String content = String.format("6.8 введите время работы в минутах от %d до %d", lowBoundTimeInBoost, upBoundTimeInBoost);
+            String content = String.format("6.9 введите время работы в минутах от %d до %d", lowBoundTimeInBoost, upBoundTimeInBoost);
             showAlert(title, header, content);
             return true;
         }
@@ -1262,7 +1280,7 @@ public class Controller {
 //        Обработка неправильного ввода данных по времени задержки для повторного включения режима Boost
         if(unit.getDelayBoost() < lowBoundDelayBoost || unit.getDelayBoost() > upBoundDelayBoost){
             String header = "Неправильный ввод данных по времени задержки повторного включения режима ускоренного заряда";
-            String content = String.format("6.9 введите время работы в минутах от %d до %d", lowBoundDelayBoost, upBoundDelayBoost);
+            String content = String.format("6.10 введите время работы в минутах от %d до %d", lowBoundDelayBoost, upBoundDelayBoost);
             showAlert(title, header, content);
             return true;
         }
