@@ -664,6 +664,7 @@ public class Controller {
                     "  pinMode(INPUT_SHUNT, INPUT);\n" +
                     "  pinMode(INPUT_8SHUNT, INPUT);\n" +
                     "  pinMode(INPUT_SUPPORT, INPUT);\n" +
+                    "  pinMode(LED_BUILTIN, OUTPUT);\n" +
                     "  //Устанавливаем разрешение для работы с входным сигналом\n" +
                     "  analogReference(AR_INTERNAL1V65);\n" +
                     "\n" +
@@ -860,6 +861,10 @@ public class Controller {
                     "      }\n" +
                     "    \n" +
                     "\n" +
+                    "//    Проверка на уровень сигнала, чтобы понимать, что можно включить светодиод\n" +
+                    "      if(outputSignal == outputMidFloatDAC){\n" +
+                    "          digitalWrite(LED_BUILTIN, HIGH);\n" +
+                    "        } else digitalWrite(LED_BUILTIN, LOW);\n" +
                     "    timerComparator = millis();\n" +
                     "\n" +
                     "  }\n" +
