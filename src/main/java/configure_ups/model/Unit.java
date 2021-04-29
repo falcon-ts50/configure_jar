@@ -1,8 +1,8 @@
 package configure_ups.model;
 
-public class Unit {
+public final class Unit {
 
-    private static Unit unit;
+    private static final Unit unit = new Unit();
 
     private int mVAtZeroDeg;
     private int changingMVPerOneDeg;
@@ -62,9 +62,6 @@ public class Unit {
     }
 
     public static Unit getUnit() {
-        if(unit == null){
-            unit = new Unit();
-        }
         return unit;
     }
 
