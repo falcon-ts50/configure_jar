@@ -2,6 +2,8 @@ package configure_ups.model;
 
 public class Unit {
 
+    private static Unit unit;
+
     private int mVAtZeroDeg;
     private int changingMVPerOneDeg;
     private int minTempFloat;
@@ -29,7 +31,7 @@ public class Unit {
     private int delayBoost;
     
 
-    public Unit(){
+    private Unit(){
 
         this.setmVAtZeroDeg(500);
         this.setChangingMVPerOneDeg(10);
@@ -57,6 +59,13 @@ public class Unit {
         this.setTimeInBoost(480);
         this.setDelayBoost(15);
 
+    }
+
+    public static Unit getUnit() {
+        if(unit == null){
+            unit = new Unit();
+        }
+        return unit;
     }
 
     public synchronized int getmVAtZeroDeg() {

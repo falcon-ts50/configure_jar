@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class MainAppFX extends Application {
 
     private Stage primaryStage;
-    private Unit unit = new Unit();
+    private Unit unit = Unit.getUnit();
 
     @Override
     public void start(Stage primaryStage) throws Exception{

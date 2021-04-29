@@ -219,6 +219,7 @@ void setup() {
   pinMode(INPUT_SHUNT, INPUT);
   pinMode(INPUT_8SHUNT, INPUT);
   pinMode(INPUT_SUPPORT, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
   //Устанавливаем разрешение для работы с входным сигналом
   analogReference(AR_INTERNAL1V65);
 
@@ -415,6 +416,10 @@ void loop() {
       }
     
 
+//    Проверка на уровень сигнала, чтобы понимать, что можно включить светодиод
+      if(outputSignal == outputMidFloatDAC){
+          digitalWrite(LED_BUILTIN, HIGH);
+        } else digitalWrite(LED_BUILTIN, LOW);
     timerComparator = millis();
 
   }
