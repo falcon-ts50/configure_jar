@@ -11,9 +11,16 @@ import javafx.scene.layout.Region;
 
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-import java.util.Locale;
+import java.lang.reflect.Field;
+import java.util.*;
+import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class Controller {
+
+    private static final Logger logger = LoggerFactory.getLogger(Controller.class);
 
     Unit unit;
 
@@ -218,8 +225,29 @@ public class Controller {
 
     private MainAppFX main;
 
+    private Map<TextField, Number[]> textFields = new LinkedHashMap<>();
+
     @FXML
     void initialize(){
+        LinkedList<Number> numbersFields = new LinkedList<>();
+        Arrays.stream(Controller.class.getDeclaredFields()).filter(x -> x.getClass().equals(Number.class)).forEach(x -> {
+            try {
+                numbersFields.add((Number) x.get(this));
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        });
+        Arrays.stream(Controller.class.getDeclaredFields()).filter(x -> x.getClass().equals(TextField.class)).forEach(x ->
+                {
+                    try {
+                        textFields.put((TextField) x.get(this), new Number[]{numbersFields.pollFirst(), numbersFields.pollFirst()});
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                }
+                );
+
+        textFields.entrySet().stream().forEach(x -> Arrays.stream(x.getValue()).forEach(System.out::println));
 //Ниже идёт создание подсказок с текстовым наполнением. Краткие пояснения перед каждым для быстрой навигации по коду
 
 // Харакетристика датчика температуры
@@ -248,7 +276,7 @@ public class Controller {
 
         outputBoostMinimum.setTooltip(new Tooltip(String.format("введите значение от %d до %d мВ на элемент", lowMinPointOutBoost, upperMinPointOutBoost)));
         //коэффициент преобразования для базовой шкалы
-        coefficientOfCalibration.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значени от %.3f до %.3f", lowBoundCoeffCalib, upBoundCoeffCalib)));
+        coefficientOfCalibration.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значение от %.3f до %.3f", lowBoundCoeffCalib, upBoundCoeffCalib)));
 //Характеристика шунта
         maxVoltShunt.setTooltip(new Tooltip(String.format("введите значени от %d до %d мВ", lowBoundMaxVoltShunt, upBoundMaxVoltShunt)));
 
@@ -282,6 +310,11 @@ public class Controller {
 //Кнопка создания скетча для загрузки
         write.setTooltip(new Tooltip("Нажав на кнопку, Вы создадите скетч, который потом можно загрузить в Arduino"));
 
+    }
+
+    public static void main(String[] args) {
+        Controller controller = new Controller();
+        controller.textFields.entrySet().stream().forEach(x -> Arrays.stream(x.getValue()).forEach(System.out::println));
     }
 
     public void setUnit(Unit unit) {
