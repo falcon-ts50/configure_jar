@@ -1,4 +1,4 @@
-package configure_ups.view;
+package configure_ups.controller;
 
 import configure_ups.MainAppFX;
 import configure_ups.model.Unit;
@@ -11,9 +11,8 @@ import javafx.scene.layout.Region;
 
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-import java.lang.reflect.Field;
 import java.util.*;
-import java.util.stream.Collectors;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -225,29 +224,50 @@ public class Controller {
 
     private MainAppFX main;
 
-    private Map<TextField, Number[]> textFields = new LinkedHashMap<>();
+    private Map<TextField, Number[]> textFields = new LinkedHashMap<TextField, Number[]>();
 
     @FXML
     void initialize(){
         LinkedList<Number> numbersFields = new LinkedList<>();
-        Arrays.stream(Controller.class.getDeclaredFields()).filter(x -> x.getClass().equals(Number.class)).forEach(x -> {
+        Arrays.stream(Controller.class.getDeclaredFields()).filter(x -> {
             try {
-                numbersFields.add((Number) x.get(this));
+                if (x.get(this) != null) {
+//                    logger.debug("Value " + x.get(this) + " Class " + x.get(this).getClass().getSimpleName());
+                    return x.get(this) instanceof Number;
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            return false;
+        }).forEach(s -> {
+            try {
+                numbersFields.add((Number) s.get(this));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
         });
-        Arrays.stream(Controller.class.getDeclaredFields()).filter(x -> x.getClass().equals(TextField.class)).forEach(x ->
+
+        Arrays.stream(Controller.class.getDeclaredFields()).filter(x -> {
+            try {
+                if (x.get(this) != null) {
+                    return x.get(this).getClass().equals(TextField.class);
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            return false;
+        }).forEach(s ->
                 {
                     try {
-                        textFields.put((TextField) x.get(this), new Number[]{numbersFields.pollFirst(), numbersFields.pollFirst()});
+                        textFields.put((TextField) s.get(this), new Number[]{numbersFields.pollFirst(), numbersFields.pollFirst()});
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     }
-                }
-                );
+                });
+        logger.debug("---------------------------------------------------");
+        logger.debug("Array of TextFields and boundary value");
+        textFields.entrySet().stream().forEach(x -> logger.debug("TextField name-" + x.getKey().getId() + " value Low: " + x.getValue()[0] + " value High: " + x.getValue()[1]));
 
-        textFields.entrySet().stream().forEach(x -> Arrays.stream(x.getValue()).forEach(System.out::println));
 //Ниже идёт создание подсказок с текстовым наполнением. Краткие пояснения перед каждым для быстрой навигации по коду
 
 // Харакетристика датчика температуры
@@ -310,11 +330,6 @@ public class Controller {
 //Кнопка создания скетча для загрузки
         write.setTooltip(new Tooltip("Нажав на кнопку, Вы создадите скетч, который потом можно загрузить в Arduino"));
 
-    }
-
-    public static void main(String[] args) {
-        Controller controller = new Controller();
-        controller.textFields.entrySet().stream().forEach(x -> Arrays.stream(x.getValue()).forEach(System.out::println));
     }
 
     public void setUnit(Unit unit) {

@@ -1,5 +1,5 @@
-/home/kirill/Arduino/configure_jar/src/main/java/configure_ups/view/GraphController.java
+/home/kirill/Arduino/configure_jar/src/main/java/configure_ups/controller/GraphController.java
 /home/kirill/Arduino/configure_jar/src/main/java/module-info.java
-/home/kirill/Arduino/configure_jar/src/main/java/configure_ups/view/Controller.java
+/home/kirill/Arduino/configure_jar/src/main/java/configure_ups/controller/Controller.java
 /home/kirill/Arduino/configure_jar/src/main/java/configure_ups/MainAppFX.java
 /home/kirill/Arduino/configure_jar/src/main/java/configure_ups/model/Unit.java

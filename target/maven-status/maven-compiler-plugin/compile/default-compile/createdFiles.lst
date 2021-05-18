@@ -1,3 +1,3 @@
-configure_ups/view/Controller.class
+configure_ups/controller/Controller.class
 configure_ups/model/Unit.class
-configure_ups/view/GraphController.class
+configure_ups/controller/GraphController.class

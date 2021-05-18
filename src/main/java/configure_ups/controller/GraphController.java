@@ -1,4 +1,4 @@
-package configure_ups.view;
+package configure_ups.controller;
 
 import configure_ups.model.Unit;
 import javafx.fxml.FXML;

@@ -1,4 +1,4 @@
-import configure_ups.view.Controller;
+import configure_ups.controller.Controller;
 import javafx.scene.control.TextField;
 import org.junit.Before;
 import org.junit.Test;

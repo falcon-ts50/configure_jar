@@ -1,7 +1,7 @@
 package configure_ups;
 
 import configure_ups.model.Unit;
-import configure_ups.view.Controller;
+import configure_ups.controller.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
