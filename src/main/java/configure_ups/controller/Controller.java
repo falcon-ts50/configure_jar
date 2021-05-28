@@ -355,37 +355,17 @@ public class Controller {
                     if(x.get(this).getClass().equals(TextField.class)){
                         TextField textField = (TextField) x.get(this);
                         String value = textField.getText();
-//                        TODO
+                        if(value.contains(".") || value.contains(",")){
+                            if(value.contains(",")){
+                                value = value.replaceAll("," , ".");
+                            }
+                            unitFields.get(x.getName()).setValue(Double.parseDouble(value));
+                        }else unitFields.get(x.getName()).setValue(Integer.parseInt(value));
                     }
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
             });
-            unit.setmVAtZeroDeg(Integer.parseInt(mVAtZeroDeg.getText()));
-            unit.setChangingMVPerOneDeg(Integer.parseInt(changingMVPerOneDeg.getText()));
-            unit.setMinTempFloat(Integer.parseInt(minTempFloat.getText()));
-            unit.setTempFirstMidPointFloat(Integer.parseInt(tempFirstMidPointFloat.getText()));
-            unit.setTempSecondMidPointFloat(Integer.parseInt(tempSecondMidPointFloat.getText()));
-            unit.setMaxTempFloat(Integer.parseInt(maxTempFloat.getText()));
-            unit.setMinTempBoost(Integer.parseInt(minTempBoost.getText()));
-            unit.setMaxTempBoost(Integer.parseInt(maxTempBoost.getText()));
-            unit.setOutputMaximum(Integer.parseInt(outputMaximum.getText()));
-            unit.setOutputMiddle(Integer.parseInt(outputMiddle.getText()));
-            unit.setOutputFloatMinimum(Integer.parseInt(outputFloatMinimum.getText()));
-            unit.setOutputBoostMinimum(Integer.parseInt(outputBoostMinimum.getText()));
-            unit.setCoefficientOfCalibration(Double.parseDouble(coefficientOfCalibration.getText()));
-            unit.setMaxVoltShunt(Integer.parseInt(maxVoltShunt.getText()));
-            unit.setMaxCurrentShunt(Integer.parseInt(maxCurrentShunt.getText()));
-            unit.setCapacitanceOfBattery(Integer.parseInt(capacitanceOfBattery.getText()));
-            unit.setNumberBattery(Integer.parseInt(numberBattery.getText()));
-            unit.setCoeffAnalogueAmplifier(Integer.parseInt(coeffAnalogueAmplifier.getText()));
-            unit.setChargingCurrent(Double.parseDouble(chargingCurrent.getText()));
-            unit.setMaxChargCurrent(Double.parseDouble(maxChargCurrent.getText()));
-            unit.setUpThresholdCurrent(Double.parseDouble(upThresholdCurrent.getText()));
-            unit.setThresholdForBoost(Double.parseDouble(thresholdForBoost.getText()));
-            unit.setThresholdBoostEnding(Double.parseDouble(thresholdBoostEnding.getText()));
-            unit.setTimeInBoost(Integer.parseInt(timeInBoost.getText()));
-            unit.setDelayBoost(Integer.parseInt(delayBoost.getText()));
             return false;
         } catch (NumberFormatException e) {
             showAlert("Формат чисел", "Проверьте форматы чисел", "Где-то введён текст, вместо числа, либо запятая вместо точки в дробных числах");
@@ -407,8 +387,8 @@ public class Controller {
                     "#define INPUT_8SHUNT      A5\n" +
                     "#define INPUT_SUPPORT     A6";
             strings[1] = "//Характеристика датчика температуры ТМР-36\n" +
-                    "int millivoltAtZeroDegrees = " + unit.getmVAtZeroDeg() + ";";
-            strings[2] = "int changingMillivoltPerOneDegrees = " + unit.getChangingMVPerOneDeg() + ";";
+                    "int millivoltAtZeroDegrees = " + unitFields.get("mVAtZeroDeg").getValue() + ";";
+            strings[2] = "int changingMillivoltPerOneDegrees = " + unitFields.get("changingMVPerOneDeg").getValue() + ";";
             strings[3] = "//точка калибровки. Для датчика ТМР-36 задаём как минус 40 Цельсиев\n" +
                     "int tempCalibrationDeg = -40;\n" +
                     "\n" +
@@ -424,59 +404,59 @@ public class Controller {
                     "\n" +
                     "//Режим Float\n" +
                     "// задайте минимальную температуру в градусах Цельсия, ниже которой напряжение заряда не изменяется\n" +
-                    "int minTempFloatDeg = " + unit.getMinTempFloat() + ";";
+                    "int minTempFloatDeg = " + unitFields.get("minTempFloat").getValue() + ";";
             strings[5] = "//задайте первую точку в градусах Цельсия, при которой не изменяется напряжение\n" +
-                    "int tempFirstMidPointFloat = " + unit.getTempFirstMidPointFloat() + ";";
+                    "int tempFirstMidPointFloat = " + unitFields.get("tempFirstMidPointFloat").getValue() + ";";
             strings[6] = "//Задайте вторую точку при которой температура не изменяется\n" +
-                    "int tempSecondMidFloatDeg = " + unit.getTempSecondMidPointFloat() + ";";
+                    "int tempSecondMidFloatDeg = " + unitFields.get("tempSecondMidPointFloat").getValue() + ";";
             strings[7] = "//Задайте максимальную температуру в градусах Цельсия, после которой напряжение заряда не изменяется\n" +
-                    "int maxTempFloatDeg = " + unit.getMaxTempFloat() + ";";
+                    "int maxTempFloatDeg = " + unitFields.get("maxTempFloat").getValue() + ";";
             strings[8] = "\n" +
                     "//Режим Boost\n" +
                     "// задайте минимальную температуру в градусах Цельсия, ниже которой напряжение заряда не изменяется\n" +
-                    "int minTempBoostDeg = " + unit.getMinTempBoost() + ";";
+                    "int minTempBoostDeg = " + unitFields.get("minTempBoost").getValue() + ";";
             strings[9] = "// задайте максимальную температуру, после которой происходит переход к графику Float\n" +
-                    "int maxTempBoostDeg = " + unit.getMaxTempBoost() + ";";
+                    "int maxTempBoostDeg = " + unitFields.get("maxTempBoost").getValue() + ";";
             strings[10] = "\n" +
                     "//задайте максимальное значение выходного напряжения в милливольтах для Boost и Float\n" +
-                    "int outputMaximum = " + unit.getOutputMaximum() + ";";
+                    "int outputMaximum = " + unitFields.get("outputMaximum").getValue() + ";";
             strings[11] = "// задайте уровень напряжения средних температурных точек в милливольтах для режима Float\n" +
-                    "int outputMiddleFloat = " + unit.getOutputMiddle() + ";";
+                    "int outputMiddleFloat = " + unitFields.get("outputMiddle").getValue() + ";";
             strings[12] = "//задайте значение минимального выходного напряжения в милливольтах для режима Float\n" +
-                    "int  outputFloatMinimum = " + unit.getOutputFloatMinimum() + ";";
+                    "int  outputFloatMinimum = " + unitFields.get("outputFloatMinimum").getValue() + ";";
             strings[13] = "//задайте значение минимального выходного напряжения в милливольтах для режима Boost\n" +
-                    "int outputBoostMinimum = " + unit.getOutputBoostMinimum() + ";";
+                    "int outputBoostMinimum = " + unitFields.get("outputBoostMinimum").getValue() + ";";
             strings[14] = "\n" +
                     "//задайте коэффициент преобразования для базовой шкалы \"мВ на элемент\" для получения калиброванного напряжения\n" +
                     "\n" +
-                    "double coefficientOfCalibration = " + unit.getCoefficientOfCalibration() + ";\n";
+                    "double coefficientOfCalibration = " + unitFields.get("coefficientOfCalibration").getValue() + ";\n";
             strings[15] = "\n" +
                     "//Характеристика шунта\n" +
                     "\n" +
                     "//Задайте максимальное напряжение шунта {U шунт макс}\n" +
-                    "int maxVoltShunt = " + unit.getMaxVoltShunt() + ";\n";
+                    "int maxVoltShunt = " + unitFields.get("maxVoltShunt").getValue() + ";\n";
             strings[16] = "//Задайте максимальный ток шунта {I шунт макс}\n" +
-                    "int maxCurrentShunt = " + unit.getMaxCurrentShunt() + ";\n";
+                    "int maxCurrentShunt = " + unitFields.get("maxCurrentShunt").getValue() + ";\n";
             strings[17] = "//Введите паспортную ёмкость для марки испольуемых аккумуляторов {C}\n" +
-                    "int capacitanceOfBattery = " + unit.getCapacitanceOfBattery() + ";\n";
+                    "int capacitanceOfBattery = " + unitFields.get("capacitanceOfBattery").getValue() + ";\n";
             strings[18] = "//Укажите число параллельных цепочек из аккумуляторов {N}\n" +
-                    "int numberBattery = " + unit.getNumberBattery() + ";\n";
+                    "int numberBattery = " + unitFields.get("numberBattery").getValue() + ";\n";
             strings[19] = "//Введите значение коэффициента передачи аналогового предусилителя {K}\n" +
-                    "int coeffAnalogueAmplifier = " + unit.getCoeffAnalogueAmplifier() + ";\n";
+                    "int coeffAnalogueAmplifier = " + unitFields.get("coeffAnalogueAmplifier").getValue() + ";\n";
             strings[20] = "//Задайте ток заряда {S}\n" +
-                    "double chargingCurrent = " + unit.getChargingCurrent() + ";\n";
+                    "double chargingCurrent = " + unitFields.get("chargingCurrent").getValue() + ";\n";
             strings[21] = "//Задайте предельный ток заряда {P}\n" +
-                    "double maxChargCurrent = " + unit.getMaxChargCurrent() + ";\n";
+                    "double maxChargCurrent = " + unitFields.get("maxChargCurrent").getValue() + ";\n";
             strings[22] = "//Задайте верхний порог ограничения тока {U reduce}\n" +
-                    "double upThresholdCurrent = " + unit.getUpThresholdCurrent() +";\n";
+                    "double upThresholdCurrent = " + unitFields.get("upThresholdCurrent").getValue() +";\n";
             strings[23] = "//Задайте порог применения ускоренного заряда {B}\n" +
-                    "double thresholdForBoost = " + unit.getThresholdForBoost() + ";\n";
+                    "double thresholdForBoost = " + unitFields.get("thresholdForBoost").getValue() + ";\n";
             strings[24] = "//Задайте условие окончания ускоренного заряда {R}\n" +
-                    "double thresholdBoostEnding = " + unit.getThresholdBoostEnding() + ";\n";
+                    "double thresholdBoostEnding = " + unitFields.get("thresholdBoostEnding").getValue() + ";\n";
             strings[25] = "//Задайте максимальное время работы в режиме boost в минутах\n" +
-                    "byte timeInBoost = " + unit.getTimeInBoost() + ";\n";
+                    "byte timeInBoost = " + unitFields.get("timeInBoost").getValue() + ";\n";
             strings[26] = "//Задайте время задержки между повторным включением режима boost в минутах\n" +
-                    "byte delayBoost = " + unit.getDelayBoost() + ";\n";
+                    "byte delayBoost = " + unitFields.get("delayBoost").getValue() + ";\n";
             strings[27] = "\n" +
                     "// велечина напряжения сброса Ureset  в 10 битах\n" +
                     "\n" +
