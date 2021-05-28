@@ -4,12 +4,23 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class UnitDataArray {
-    Unit unit;
-    ArrayList<UnitField> dataArray = new ArrayList<>();
+    private Unit unit = Unit.getUnit();
+    private volatile LinkedHashMap<String, UnitField> dataArray = new LinkedHashMap<>();
+    private static final UnitDataArray unitDataArray = new UnitDataArray();
 
-    public UnitDataArray(Unit unit) {
-        this.unit = unit;
+    private UnitDataArray() {
+        setBasicParams();
+    }
 
+    public LinkedHashMap<String, UnitField> getDataArray() {
+        return dataArray;
+    }
+
+    public static UnitDataArray getUnitDataArray() {
+        return unitDataArray;
+    }
+
+    public synchronized void setBasicParams(){
         Arrays.stream(Unit.class.getDeclaredFields()).filter(s -> {
             try {
                 s.setAccessible(true);
@@ -20,7 +31,7 @@ public class UnitDataArray {
             return false;
         }).forEach(x -> {
             try {
-                dataArray.add(new UnitField(x.getName(), (Number) x.get(unit)));
+                dataArray.put(x.getName(), new UnitField(x.getName(), (Number) x.get(unit)));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -36,20 +47,16 @@ public class UnitDataArray {
             }
         });
 
-        dataArray.forEach(x -> {
-            x.setLowBoundValue(boundaryValues.pollFirst());
-            x.setHighBoundValue(boundaryValues.pollFirst());
+        dataArray.entrySet().stream().forEach(x -> {
+            x.getValue().setLowBoundValue(boundaryValues.pollFirst());
+            x.getValue().setHighBoundValue(boundaryValues.pollFirst());
         });
-    }
-
-    public ArrayList<UnitField> getDataArray() {
-        return dataArray;
     }
 
     @Override
     public String toString() {
         return "UnitDataArray{" +
-                "dataArray: \n" + dataArray.stream().map(x -> x.toString() + "\n").collect(Collectors.toList()) +
+                "dataArray: \n" + dataArray.entrySet().stream().map(x -> x.getValue().toString() + "\n").collect(Collectors.toList()) +
                 '}';
     }
 

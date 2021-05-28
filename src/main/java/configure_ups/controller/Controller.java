@@ -2,6 +2,8 @@ package configure_ups.controller;
 
 import configure_ups.MainAppFX;
 import configure_ups.model.Unit;
+import configure_ups.model.UnitDataArray;
+import configure_ups.model.UnitField;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -21,7 +23,9 @@ public class Controller {
 
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
 
-    Unit unit;
+    UnitDataArray unitDataArray = UnitDataArray.getUnitDataArray();
+
+    LinkedHashMap<String, UnitField> unitFields = unitDataArray.getDataArray();
 
     private boolean isThereIsError = false;
 
@@ -224,51 +228,10 @@ public class Controller {
 
     private MainAppFX main;
 
-    private Map<TextField, Number[]> textFields = new LinkedHashMap<TextField, Number[]>();
-
     @FXML
     void initialize(){
-        LinkedList<Number> numbersFields = new LinkedList<>();
-        Arrays.stream(Controller.class.getDeclaredFields()).filter(x -> {
-            try {
-                if (x.get(this) != null) {
-//                    logger.debug("Value " + x.get(this) + " Class " + x.get(this).getClass().getSimpleName());
-                    return x.get(this) instanceof Number;
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            return false;
-        }).forEach(s -> {
-            try {
-                numbersFields.add((Number) s.get(this));
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        });
-
-        Arrays.stream(Controller.class.getDeclaredFields()).filter(x -> {
-            try {
-                if (x.get(this) != null) {
-                    return x.get(this).getClass().equals(TextField.class);
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            return false;
-        }).forEach(s ->
-                {
-                    try {
-                        textFields.put((TextField) s.get(this), new Number[]{numbersFields.pollFirst(), numbersFields.pollFirst()});
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    }
-                });
-        logger.debug("---------------------------------------------------");
-        logger.debug("Array of TextFields and boundary value");
-        textFields.entrySet().stream().forEach(x -> logger.debug("TextField name-" + x.getKey().getId() + " value Low: " + x.getValue()[0] + " value High: " + x.getValue()[1]));
-
 //Ниже идёт создание подсказок с текстовым наполнением. Краткие пояснения перед каждым для быстрой навигации по коду
+
 
 // Харакетристика датчика температуры
         mVAtZeroDeg.setTooltip(new Tooltip(String.format("введите значение от %d до %d мВ, см характеристика датчика", lowBoundMVAtZeroDeg, upperBoundMVAtZeroDeg)));
@@ -332,102 +295,45 @@ public class Controller {
 
     }
 
-    public void setUnit(Unit unit) {
-        this.unit = unit;
-    }
-
     public void setMain(MainAppFX main){
         this.main=main;
     }
 
     public void handleDelete(){
-
 //        Нажатие на кнопку Удалить
+        Arrays.stream(Controller.class.getDeclaredFields()).forEach(x ->
+        {
+            try {
+                if (x.get(this).getClass().equals(TextField.class)) {
+                    TextField textField = (TextField) x.get(this);
+                    textField.setText("");
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        });
 
-        unit.setmVAtZeroDeg(0);
-        unit.setChangingMVPerOneDeg(0);
-        unit.setMinTempFloat(0);
-        unit.setTempFirstMidPointFloat(0);
-        unit.setTempSecondMidPointFloat(0);
-        unit.setMaxTempFloat(0);
-        unit.setMaxTempBoost(0);
-        unit.setMinTempBoost(0);
-        unit.setOutputMaximum(0);
-        unit.setOutputMiddle(0);
-        unit.setOutputFloatMinimum(0);
-        unit.setOutputBoostMinimum(0);
-        unit.setCoefficientOfCalibration(0.0);
-        unit.setMaxVoltShunt(0);
-        unit.setMaxCurrentShunt(0);
-        unit.setCapacitanceOfBattery(0);
-        unit.setNumberBattery(0);
-        unit.setCoeffAnalogueAmplifier(0);
-        unit.setChargingCurrent(0.0);
-        unit.setMaxChargCurrent(0.0);
-        unit.setUpThresholdCurrent(0.0);
-        unit.setThresholdForBoost(0.0);
-        unit.setThresholdBoostEnding(0.0);
-        unit.setTimeInBoost(0);
-        unit.setDelayBoost(0);
-
-
-        mVAtZeroDeg.setText("");
-        changingMVPerOneDeg.setText("");
-        minTempFloat.setText("");
-        tempFirstMidPointFloat.setText("");
-        tempSecondMidPointFloat.setText("");
-        maxTempFloat.setText("");
-        minTempBoost.setText("");
-        maxTempBoost.setText("");
-        outputMaximum.setText("");
-        outputMiddle.setText("");
-        outputFloatMinimum.setText("");
-        outputBoostMinimum.setText("");
-        coefficientOfCalibration.setText("");
-        maxVoltShunt.setText("");
-        maxCurrentShunt.setText("");
-        capacitanceOfBattery.setText("");
-        numberBattery.setText("");
-        coeffAnalogueAmplifier.setText("");
-        chargingCurrent.setText("");
-        maxChargCurrent.setText("");
-        upThresholdCurrent.setText("");
-        thresholdForBoost.setText("");
-        thresholdBoostEnding.setText("");
-        timeInBoost.setText("");
-        delayBoost.setText("");
-
+        unitFields.entrySet().stream().forEach(x -> {
+            x.getValue().setValue(0);
+        });
     }
 
     public void setBasicParams(){
-        unit.setBasicParams();
 
+        unitDataArray.setBasicParams();
 
-        mVAtZeroDeg.setText(String.valueOf(unit.getmVAtZeroDeg()));
-        changingMVPerOneDeg.setText(String.valueOf(unit.getChangingMVPerOneDeg()));
-        minTempFloat.setText(String.valueOf(unit.getMinTempFloat()));
-        tempFirstMidPointFloat.setText(String.valueOf(unit.getTempFirstMidPointFloat()));
-        tempSecondMidPointFloat.setText(String.valueOf(unit.getTempSecondMidPointFloat()));
-        maxTempFloat.setText(String.valueOf(unit.getMaxTempFloat()));
-        minTempBoost.setText(String.valueOf(unit.getMaxTempBoost()));
-        maxTempBoost.setText(String.valueOf(unit.getMinTempBoost()));
-        outputMaximum.setText(String.valueOf(unit.getOutputMaximum()));
-        outputMiddle.setText(String.valueOf(unit.getOutputMiddle()));
-        outputFloatMinimum.setText(String.valueOf(unit.getOutputFloatMinimum()));
-        outputBoostMinimum.setText(String.valueOf(unit.getOutputBoostMinimum()));
-        coefficientOfCalibration.setText(String.valueOf(unit.getCoefficientOfCalibration()));
-        maxVoltShunt.setText(String.valueOf(unit.getMaxVoltShunt()));
-        maxCurrentShunt.setText(String.valueOf(unit.getMaxCurrentShunt()));
-        capacitanceOfBattery.setText(String.valueOf(unit.getCapacitanceOfBattery()));
-        numberBattery.setText(String.valueOf(unit.getNumberBattery()));
-        coeffAnalogueAmplifier.setText(String.valueOf(unit.getCoeffAnalogueAmplifier()));
-        chargingCurrent.setText(String.valueOf(unit.getChargingCurrent()));
-        maxChargCurrent.setText(String.valueOf(unit.getMaxChargCurrent()));
-        upThresholdCurrent.setText(String.valueOf(unit.getUpThresholdCurrent()));
-        thresholdForBoost.setText(String.valueOf(unit.getThresholdForBoost()));
-        thresholdBoostEnding.setText(String.valueOf(unit.getThresholdBoostEnding()));
-        timeInBoost.setText(String.valueOf(unit.getTimeInBoost()));
-        delayBoost.setText(String.valueOf(unit.getDelayBoost()));
+        Arrays.stream(Controller.class.getDeclaredFields()).forEach(x ->
+        {
+            try {
+                if(x.get(this).getClass().equals(TextField.class)){
+                    TextField textField = (TextField) x.get(this);
+                    Number value = unitFields.get(x.getName()).getValue();
+                    textField.setText(String.valueOf(value));
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        });
 
     }
     public void setWriteParams(){
@@ -442,6 +348,19 @@ public class Controller {
 
     public boolean writeParamToUnit(){
         try {
+
+            Arrays.stream(Controller.class.getDeclaredFields()).forEach(x ->
+            {
+                try {
+                    if(x.get(this).getClass().equals(TextField.class)){
+                        TextField textField = (TextField) x.get(this);
+                        String value = textField.getText();
+//                        TODO
+                    }
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            });
             unit.setmVAtZeroDeg(Integer.parseInt(mVAtZeroDeg.getText()));
             unit.setChangingMVPerOneDeg(Integer.parseInt(changingMVPerOneDeg.getText()));
             unit.setMinTempFloat(Integer.parseInt(minTempFloat.getText()));

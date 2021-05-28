@@ -8,7 +8,7 @@ public class TestUnitDataArray {
 
     @Test
     public void testDataArray(){
-        UnitDataArray unitDataArray = new UnitDataArray(Unit.getUnit());
+        UnitDataArray unitDataArray = UnitDataArray.getUnitDataArray();
         System.out.println(unitDataArray);
     }
 }

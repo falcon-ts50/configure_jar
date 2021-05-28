@@ -1,7 +1,5 @@
 package configure_ups.model;
 
-import java.util.Map;
-
 public class UnitField {
 
     String name;
