@@ -1,38 +1,43 @@
 package configure_ups.model;
 
+import java.util.Map;
+
 public final class Unit {
 
     private static final Unit unit = new Unit();
 
-    private int mVAtZeroDeg;
-    private int changingMVPerOneDeg;
-    private int minTempFloat;
-    private int tempFirstMidPointFloat;
-    private int tempSecondMidPointFloat;
-    private int maxTempFloat;
-    private int minTempBoost;
-    private int maxTempBoost;
-    private int outputMaximum;
-    private int outputMiddle;
-    private int outputFloatMinimum;
-    private int outputBoostMinimum;
-    private double coefficientOfCalibration;
-    private int maxVoltShunt;
-    private int maxCurrentShunt;
-    private int capacitanceOfBattery;
-    private int numberBattery;
-    private int coeffAnalogueAmplifier;
-    private double chargingCurrent;
-    private double maxChargCurrent;
-    private double upThresholdCurrent;
-    private double thresholdForBoost;
-    private double thresholdBoostEnding;
-    private int timeInBoost;
-    private int delayBoost;
+    protected int mVAtZeroDeg;
+    protected int changingMVPerOneDeg;
+    protected int minTempFloat;
+    protected int tempFirstMidPointFloat;
+    protected int tempSecondMidPointFloat;
+    protected int maxTempFloat;
+    protected int minTempBoost;
+    protected int maxTempBoost;
+    protected int outputMaximum;
+    protected int outputMiddle;
+    protected int outputFloatMinimum;
+    protected int outputBoostMinimum;
+    protected double coefficientOfCalibration;
+    protected int maxVoltShunt;
+    protected int maxCurrentShunt;
+    protected int capacitanceOfBattery;
+    protected int numberBattery;
+    protected int coeffAnalogueAmplifier;
+    protected double chargingCurrent;
+    protected double maxChargCurrent;
+    protected double upThresholdCurrent;
+    protected double thresholdForBoost;
+    protected double thresholdBoostEnding;
+    protected int timeInBoost;
+    protected int delayBoost;
     
 
     private Unit(){
+        setBasicParams();
+    }
 
+    public void setBasicParams(){
         this.setmVAtZeroDeg(500);
         this.setChangingMVPerOneDeg(10);
         this.setMinTempFloat(0);
@@ -58,7 +63,6 @@ public final class Unit {
         this.setThresholdBoostEnding(0.25);
         this.setTimeInBoost(480);
         this.setDelayBoost(15);
-
     }
 
     public static Unit getUnit() {
@@ -264,4 +268,116 @@ public final class Unit {
     public synchronized void setThresholdBoostEnding(double thresholdBoostEnding) {
         this.thresholdBoostEnding = thresholdBoostEnding;
     }
+
+    protected static class UnitBoundaryValues{
+        //    Ниже описаны пределы для системы алармов - защиты от некорректного ввода данных
+
+        //    Пределы данных по датчику температуры
+//    пределеы значений мВ при нуле
+        protected static final int lowBoundMVAtZeroDeg = 400;
+        protected static final int upperBoundMVAtZeroDeg = 600;
+
+        //    пределы изменений мВ за один градус
+        protected static final int lowBoundMVPerOneDeg = 9;
+        protected static final int upperBoundMVPerOneDeg = 11;
+
+        //    Пределы данных заряда по температурно-вольтовой характеристике аккумулятора
+//    Пределы значений температуры для режима Float
+//    пределы минимальной температуры Float
+        protected static final int lowTempFirstPointFloat = -15;
+        protected static final int upTempFristPointFloat = 30;
+
+        //    пределы температуры первой средней точки Float
+        protected static final int lowTempFirstMidPoint = 15;
+        protected static final int upTempFirstMidPoint = 25;
+
+        //    пределы температуры второй средней точки Float
+        protected static final int lowTempSecondMidPoint = 20;
+        protected static final int upTempSecondMidPoint = 35;
+
+        //    пределы максимальной температуры режима Float
+        protected static final int lowTempLastPointFloat = 40;
+        protected static final int upTempLastPointFloat = 55;
+
+        //    Пределы значений режима Boost
+//    пределы минимальной температуры режима Boost
+        protected static final int lowFirstTempBoost = 15;
+        protected static final int upFristTempBoost = 35;
+
+        //    пределы максимальной температуры режима Boost
+        protected static final int lowLastTempBoost = 35;
+        protected static final int upLastTempBoost = 50;
+
+        //    Пределы зарядного напряжения для режимов
+//    пределы максимального значения для обоих режимов
+        protected static final int lowOutputMaximum = 2350;
+        protected static final int upperOutputMaximum = 2450;
+
+        //    пределы напряжения для средней точки режима Float
+        protected static final int lowMidPointOutFloat = 2250;
+        protected static final int upMidPointOutFloat = 2330;
+
+        //    пределы напряжения для минимального напряжения режима Float
+        protected static final int lowMinPointOutFloat = 2130;
+        protected static final int upMinPointOutFloat = 2250;
+
+        //    пределы напряжения для минимального напряжения режима Boost
+        protected static final int lowMinPointOutBoost = 2215;
+        protected static final int upperMinPointOutBoost = 2400;
+
+        //    пределы для коэффициента преобразования для базовой шкалы
+        protected static final double lowBoundCoeffCalib = 1.000;
+        protected static final double upBoundCoeffCalib = 1.131;
+
+        //    Раздел характеристик шунта
+//    пределы для максимального напряжения шунта
+        protected static final int lowBoundMaxVoltShunt = 50;
+        protected static final int upBoundMaxVoltShunt = 100;
+
+        //    пределы для максимального тока шунта
+        protected final int lowBoundMaxCurrentShunt = 100;
+        protected static final int upBoundMaxCurrentShunt = 500;
+
+        //    пределы по ёмкости батарей
+        protected static final int lowBoundCapacitanceBatt = 10;
+        protected static final int upBoundCapacitanceBatt = 300;
+
+        //    пределы по количеству батарей
+        protected static final int lowBoundNumberBatt = 1;
+        protected static final int upBoundNumberBatt = 10;
+
+        //    пределы по коэффициенту передачи аналогового усилителя
+        protected static final int lowBoundCoefAnalogueAmplif = 20;
+        protected static final int upBoundCoefAnalogueAmplif = 400;
+
+        //    пределы по зарядному току, множитель относительно номинального
+        protected static final double lowBoundChargingCurrent = 1.00;
+        protected static final double upBoundChargingCurrent = 3.50;
+
+        //    пределы по максимальному току заряда
+        protected static final double lowBoundMaxChCurrent = 2.40;
+        protected static final double upBoundMaxChCurrent = 5.01;
+
+//    пределы по верхней границе заряда
+
+        protected static final double lowBoundUpThresholdCurrent = 1.70;
+        protected static final double upBoundUpThresholdCurrent = 4.20;
+
+        //    пределы по порогу для применения ускоренного заряда (включение режима Boost)
+        protected static final double lowBoundThresholdForBoost = 0.60;
+        protected static final double upBoundThresholdForBoost = 1.00;
+
+        //    пределы по порогу для окончания ускоренного заряда (выключение режима Boost)
+        protected static final double lowBoundThresholdBoostEnding = 0.1;
+        protected static final double upBoundThresholdBoostEnding = 0.6;
+
+        //    пределы по времени работы в режиме Boost в минутах
+        protected static final int lowBoundTimeInBoost = 0;
+        protected static final int upBoundTimeInBoost = 480;
+
+        //    пределы по времени задержки между повторными включениями режима Boost в минутах
+        protected static final int lowBoundDelayBoost = 0;
+        protected static final int upBoundDelayBoost = 60;
+    }
+
 }

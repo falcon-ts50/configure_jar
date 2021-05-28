@@ -400,31 +400,7 @@ public class Controller {
     }
 
     public void setBasicParams(){
-        unit.setmVAtZeroDeg(500);
-        unit.setChangingMVPerOneDeg(10);
-        unit.setMinTempFloat(0);
-        unit.setTempFirstMidPointFloat(15);
-        unit.setTempSecondMidPointFloat(35);
-        unit.setMaxTempFloat(50);
-        unit.setMaxTempBoost(30);
-        unit.setMinTempBoost(45);
-        unit.setOutputMaximum(2400);
-        unit.setOutputMiddle(2300);
-        unit.setOutputFloatMinimum(2225);
-        unit.setOutputBoostMinimum(2300);
-        unit.setCoefficientOfCalibration(1.108);
-        unit.setMaxVoltShunt(60);
-        unit.setMaxCurrentShunt(400);
-        unit.setCapacitanceOfBattery(75);
-        unit.setNumberBattery(4);
-        unit.setCoeffAnalogueAmplifier(25);
-        unit.setChargingCurrent(2.7);
-        unit.setMaxChargCurrent(5.0);
-        unit.setUpThresholdCurrent(3.7);
-        unit.setThresholdForBoost(0.9);
-        unit.setThresholdBoostEnding(0.25);
-        unit.setTimeInBoost(480);
-        unit.setDelayBoost(15);
+        unit.setBasicParams();
 
 
         mVAtZeroDeg.setText(String.valueOf(unit.getmVAtZeroDeg()));

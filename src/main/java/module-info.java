@@ -5,5 +5,7 @@ module configure_ups {
     requires javafx.fxml;
     requires org.slf4j;
     exports configure_ups;
+    exports configure_ups.model;
+    exports configure_ups.controller;
     opens configure_ups;
 }
