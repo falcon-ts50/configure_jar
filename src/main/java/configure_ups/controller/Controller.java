@@ -1,7 +1,6 @@
 package configure_ups.controller;
 
 import configure_ups.MainAppFX;
-import configure_ups.model.Unit;
 import configure_ups.model.UnitDataArray;
 import configure_ups.model.UnitField;
 import javafx.fxml.FXML;
@@ -10,14 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.Region;
-
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.*;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 public class Controller {
 
@@ -31,116 +27,118 @@ public class Controller {
 
 //    Инициализируем все переменные - поля, которые будем использовать в нашем проекте
     @FXML
-    private TextField mVAtZeroDeg;
+    private TextField mVAtZeroDeg = new TextField();
 
     @FXML
-    private TextField changingMVPerOneDeg;
+    private TextField changingMVPerOneDeg = new TextField();
 
     @FXML
-    private TextField minTempFloat;
+    private TextField minTempFloat= new TextField();
 
     @FXML
-    private TextField tempFirstMidPointFloat;
+    private TextField tempFirstMidPointFloat= new TextField();
 
     @FXML
-    private TextField tempSecondMidPointFloat;
+    private TextField tempSecondMidPointFloat= new TextField();
 
     @FXML
-    private TextField maxTempFloat;
+    private TextField maxTempFloat= new TextField();
 
     @FXML
-    private TextField minTempBoost;
+    private TextField minTempBoost= new TextField();
 
     @FXML
-    private TextField maxTempBoost;
+    private TextField maxTempBoost= new TextField();
 
     @FXML
-    private TextField outputMaximum;
+    private TextField outputMaximum= new TextField();
 
     @FXML
-    private TextField outputMiddle;
+    private TextField outputMiddle= new TextField();
 
     @FXML
-    private TextField outputFloatMinimum;
+    private TextField outputFloatMinimum= new TextField();
 
     @FXML
-    private TextField outputBoostMinimum;
+    private TextField outputBoostMinimum= new TextField();
 
     @FXML
-    private TextField coefficientOfCalibration;
+    private TextField coefficientOfCalibration= new TextField();
 
     @FXML
-    private TextField maxVoltShunt;
+    private TextField maxVoltShunt= new TextField();
 
     @FXML
-    private TextField maxCurrentShunt;
+    private TextField maxCurrentShunt= new TextField();
 
     @FXML
-    private TextField capacitanceOfBattery;
+    private TextField capacitanceOfBattery= new TextField();
 
     @FXML
-    private TextField numberBattery;
+    private TextField numberBattery= new TextField();
 
     @FXML
-    private TextField coeffAnalogueAmplifier;
+    private TextField coeffAnalogueAmplifier= new TextField();
 
     @FXML
-    private TextField chargingCurrent;
+    private TextField chargingCurrent= new TextField();
 
     @FXML
-    private TextField maxChargCurrent;
+    private TextField maxChargCurrent= new TextField();
 
     @FXML
-    private TextField upThresholdCurrent;
+    private TextField upThresholdCurrent= new TextField();
 
     @FXML
-    private TextField thresholdForBoost;
+    private TextField thresholdForBoost= new TextField();
 
     @FXML
-    private TextField thresholdBoostEnding;
+    private TextField thresholdBoostEnding= new TextField();
 
     @FXML
-    private TextField timeInBoost;
+    private TextField timeInBoost= new TextField();
 
     @FXML
-    private TextField delayBoost;
+    private TextField delayBoost= new TextField();
 
     @FXML
-    private Button showGraph;
+    private Button showGraph = new Button();
 
     @FXML
-    private Button previousField;
+    private Button previousField = new Button();
 
     @FXML
-    private Button clear;
+    private Button clear = new Button();
 
     @FXML
-    private Button write;
-
+    private Button write = new Button();
 
     private MainAppFX main;
 
-    @FXML
-    void initialize(){
-//Ниже идёт создание подсказок с текстовым наполнением. Краткие пояснения перед каждым для быстрой навигации по коду
-
-        Arrays.stream(Controller.class.getDeclaredFields()).forEach(x -> {
-            try {
+    public void setTooltip(){
+       Arrays.stream(Controller.class.getDeclaredFields()).filter(x -> {
+           try {
+               return x.get(this).getClass().equals(TextField.class);
+           } catch (IllegalAccessException e) {
+               e.printStackTrace();
+           }
+           return false;
+       }).forEach(x -> {
                 x.setAccessible(true);
-                if(x.get(this).getClass().equals(TextField.class)){
-                    TextField textField = (TextField) x.get(this);
-                    UnitField unitField = unitFields.get(x.getName());
-                    if(x.getName().equals("coefficientOfCalibration")){
-                        textField.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значение от %.3f до %.3f", unitField.getLowBoundValue(), unitField.getHighBoundValue())));
-                    } else if(unitField.getValue() instanceof Double){
-                        textField.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", unitField.getLowBoundValue(), unitField.getHighBoundValue())));
-                    } else
-                    textField.setTooltip(new Tooltip(String.format("введите значение от %d до %d", unitField.getLowBoundValue(), unitField.getHighBoundValue())));
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        });
+           try {
+               if(x.get(this).getClass().equals(TextField.class)){
+                   TextField textField = (TextField) x.get(this);
+                   UnitField unitField = unitFields.get(x.getName());
+                   if(x.getName().equals("coefficientOfCalibration")){
+                       textField.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значение от %.3f до %.3f", unitField.getLowBoundValue(), unitField.getHighBoundValue())));
+                   } else if(unitField.getValue() instanceof Double){
+                       textField.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", unitField.getLowBoundValue(), unitField.getHighBoundValue())));
+                   } else
+                   textField.setTooltip(new Tooltip(String.format("введите значение от %d до %d", unitField.getLowBoundValue(), unitField.getHighBoundValue())));
+       }
+           } catch (IllegalAccessException e) {
+               e.printStackTrace();
+           }});
 
 //Кнопка возврата предыдущих значений
         previousField.setTooltip(new Tooltip("Нажав на кнопку, Вы вернёте первоначальные значения"));
@@ -148,7 +146,6 @@ public class Controller {
         clear.setTooltip(new Tooltip("Нажав на кнопку, Вы полностью очистите поля ввода значений"));
 //Кнопка создания скетча для загрузки
         write.setTooltip(new Tooltip("Нажав на кнопку, Вы создадите скетч, который потом можно загрузить в Arduino"));
-
     }
 
     public void setMain(MainAppFX main){
@@ -175,9 +172,7 @@ public class Controller {
     }
 
     public void setBasicParams(){
-
         unitDataArray.setBasicParams();
-
         Arrays.stream(Controller.class.getDeclaredFields()).forEach(x ->
         {
             try {
@@ -190,10 +185,8 @@ public class Controller {
                 e.printStackTrace();
             }
         });
-
     }
     public void setWriteParams(){
-
         if(!writeParamToUnit()){
             if(!handleWrongData()) {
                 makeFileIno();
@@ -204,7 +197,6 @@ public class Controller {
 
     public boolean writeParamToUnit(){
         try {
-
             Arrays.stream(Controller.class.getDeclaredFields()).forEach(x ->
             {
                 try {
@@ -232,9 +224,7 @@ public class Controller {
     private void makeFileIno(){
         String[] strings = new String[29];
         try {
-
             PrintStream filePrintStream = new PrintStream("configure_UPS.ino");
-
 
             strings[0] = "//создаём макроопределения для используемых пинов\n" +
                     "#define OUTPUT_SIGNAL     A0\n" +
@@ -839,13 +829,10 @@ public class Controller {
                     "  Serial.println(\" \");\n" +
                     "  Serial.println(\" \");\n" +
                     "}";
-
             for (String string : strings) {
                 filePrintStream.println(string);
             }
-
             filePrintStream.close();
-
         } catch (NumberFormatException e) {
             showAlert("Формат чисел", "Проверьте форматы чисел", "Где-то введён текст, вместо числа");
         } catch (FileNotFoundException e) {
@@ -860,237 +847,66 @@ public class Controller {
     }
 
     private boolean handleWrongData(){
-
+ //         Проверка на вхождение значения в диапазон границ
         String title = "ошибка";
-       /* for (UnitField x : unitFields.values()) {
-
-            if (x.getValue() < x.getLowBoundValue() || x.getValue() > x.getHighBoundValue()) {
-
+        for (UnitField x : unitFields.values()) {
+            if(x.getLowBoundValue() instanceof Double){
+                Double value = Double.valueOf(x.getValue().toString());
+                Double lowBoundValue = Double.valueOf(x.getLowBoundValue().toString());
+                Double highBoundValue = Double.valueOf(x.getHighBoundValue().toString());
+                if (value < lowBoundValue || value > highBoundValue) {
+                    String header = "Неправильный ввод данных";
+                    String content;
+                    if(x.getName().equals("coefficientOfCalibration")){
+                        content = String.format(Locale.CANADA, "Введите значние от %.3f до %.3f в пункте %.1f", lowBoundValue, highBoundValue, x.getPosition());
+                    }else{
+                        content = String.format(Locale.CANADA, "Введите значние от %.2f до %.2f в пункте %.1f", lowBoundValue, highBoundValue, x.getPosition());
+                    }
+                    showAlert(title, header, content);
+                    return true;
+                }
+            } else {
+                Integer value = (Integer) x.getValue();
+                Integer lowBoundValue = (Integer) x.getLowBoundValue();
+                Integer highBoundValue = (Integer) x.getHighBoundValue();
+                if (value < lowBoundValue || value > highBoundValue) {
+                    String header = "Неправильный ввод данных";
+                    String content = String.format(Locale.CANADA, "Введите значение от %d до %d в пункте %.1f", lowBoundValue, highBoundValue, x.getPosition());
+                    showAlert(title, header, content);
+                    return true;
+                }
             }
-        }
-//        Обработка неправильного ввода данных по характеристике датчика
-        if( unit.getmVAtZeroDeg() < lowBoundMVAtZeroDeg || unit.getmVAtZeroDeg() > upperBoundMVAtZeroDeg){
-//            String title = "Ошибка";
-            String header = "Неправильный ввод данных датчика температуры";
-            String content = String.format("1.1 Напряжение при нуле гр. Цельсия должно быть от %d до %d мВ", lowBoundMVAtZeroDeg, upperBoundMVAtZeroDeg);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода поля приращение напряжения за 1 гр. С
-
-        if(unit.getChangingMVPerOneDeg() < lowBoundMVPerOneDeg || unit.getChangingMVPerOneDeg() > upperBoundMVPerOneDeg){
-//            String title = "";
-            String header = "Неправильный ввод данных датчика температуры";
-            String content = String.format("1.2 Приращение напряжения за 1 гр.Цельсия должно быть от %d до %d мВ/гр.", lowBoundMVPerOneDeg, upperBoundMVPerOneDeg);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода минимальной температуры для режима Float
-
-        if (unit.getMinTempFloat() < lowTempFirstPointFloat || unit.getMinTempFloat() > upTempFristPointFloat) {
-//            String title = ;
-            String header = "Неправильный ввод температурных данных режима Float";
-            String content = String.format("2.1 Минимальное значение температуры должно быть от %d до %d градусов С", lowTempFirstPointFloat, upTempFristPointFloat);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода температуры первой средней точки режима Float
-        if (unit.getTempFirstMidPointFloat() < lowTempFirstMidPoint || unit.getTempFirstMidPointFloat() > upTempFirstMidPoint) {
-//            String title = ;
-            String header = "Неправильный ввод температурных данных режима Float";
-            String content = String.format("2.2 Значение температуры первой ср. точки режима Float должно быть от %d до %d гр.С", lowTempFirstMidPoint, upTempFirstMidPoint);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода температуры второй средней точки режима Float
-        if (unit.getTempSecondMidPointFloat() < lowTempSecondMidPoint || unit.getTempSecondMidPointFloat() > upTempSecondMidPoint) {
-//            String title = ;
-            String header = "Неправильный ввод температурных данных режима Float";
-            String content = String.format("2.3 Значение температуры второй ср. точки режима Float должно быть от %d до %d гр.С", lowTempSecondMidPoint, upTempSecondMidPoint);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильно ввода температуры последней точки
-
-        if (unit.getMaxTempFloat() < lowTempLastPointFloat || unit.getMaxTempFloat() > upTempLastPointFloat) {
-            String header = "Неправильный ввод температурных данных режима Float";
-            String content = String.format("2.4 Значение температуры последней точки режима Float должно быть от %d до %d гр.С", lowTempLastPointFloat, upTempLastPointFloat);
-            showAlert(title, header, content);
-            return true;
-        }
-//        Обработка неправильно ввода температуры режима Boost первой точки (минимальной)
-
-        if(unit.getMinTempBoost() < lowFirstTempBoost || unit.getMinTempBoost() > upFristTempBoost){
-            String header = "Неправильный ввод температурных данных режима Boost";
-            String content = String.format("2.5 Значение минимальной температуры режима Boost должно быть от %d до %d гр.С", lowFirstTempBoost, upFristTempBoost);
-            showAlert(title, header, content);
-            return true;
-        }
-//        Обработка неправильно ввода температуры режима Boost второй точки (максимальной)
-
-        if(unit.getMaxTempBoost() < lowLastTempBoost || unit.getMaxTempBoost() > upLastTempBoost){
-            String header = "Неправильный ввод температурных данных режима Boost";
-            String content = String.format("2.6 Значение минимальной температуры режима Boost должно быть от %d до %d гр.С", lowLastTempBoost, upLastTempBoost);
-            showAlert(title, header, content);
-            return true;
-        }
-//        Обработка неправильного ввода напряжения максимальной точки для обоих режимов
-
-        if(unit.getOutputMaximum() < lowOutputMaximum || unit.getOutputMaximum() > upperOutputMaximum){
-            String header = "Неправильный ввод данных по напряжению в разделе режимы";
-            String content = String.format("3.1 Значение максимального напряжения должно быть в диапазоне от %d до %d мВ", lowOutputMaximum, upperOutputMaximum);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода напряжения средней точки Float
-        if(unit.getOutputMiddle() < lowMidPointOutFloat || unit.getOutputMiddle() > upMidPointOutFloat){
-            String header = "Неправильный ввод данных по напряжению в разделе режимы";
-            String content = String.format("3.2 Значение напряжения средней точки режима Float должно быть в диапазоне от %d до %d мВ", lowMidPointOutFloat, upMidPointOutFloat);
-            showAlert(title, header, content);
-            return true;
-        }
-//        Обработка неправильного ввода напряжения минимальной точки режима Float
-        if(unit.getOutputFloatMinimum() < lowMinPointOutFloat || unit.getOutputFloatMinimum() > upMinPointOutFloat){
-            String header = "Неправильный ввод данных по напряжению в разделе режимы";
-            String content = String.format("3.3 Значение минимального напряжения для Float должно быть в диапазоне от %d до %d мВ", lowMinPointOutFloat, upMinPointOutFloat);
-            showAlert(title, header, content);
-            return true;
-        }
-//       Обработка неправильного ввода напряжения минимальной точки режима Boost
-        if(unit.getOutputBoostMinimum() < lowMinPointOutBoost || unit.getOutputBoostMinimum() > upperMinPointOutBoost){
-            String header = "Неправильный ввод данных по напряжению в разделе режимы";
-            String content = String.format("3.4 Значение минимального напряжения для Float должно быть в диапазоне от %d до %d мВ", lowMinPointOutBoost, upperMinPointOutBoost);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода значения коэффициента преобразования базовой шкалы
-        if(unit.getCoefficientOfCalibration() < lowBoundCoeffCalib || unit.getCoefficientOfCalibration() > upBoundCoeffCalib){
-            String header = "Неправильный ввод данных по коэффициента преобразования для базовой шкалы";
-            String content = String.format(Locale.CANADA,"4. Значение коэффициента преобразования должно лежать в диапазоне от %.3f до %.3f", lowBoundCoeffCalib, upBoundCoeffCalib);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода значений для максимального напряжения шунта
-        if(unit.getMaxVoltShunt() < lowBoundMaxVoltShunt || unit.getMaxVoltShunt() > upBoundMaxVoltShunt){
-            String header = "Неправильный ввод данных по максимальному напряжению шунта";
-            String content = String.format("5.1 Значение максимального напряжения шунта должно быть от %d до %d мВ", lowBoundMaxVoltShunt, upBoundMaxVoltShunt);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода значений для максимального тока шунта
-        if(unit.getMaxCurrentShunt() < lowBoundMaxCurrentShunt || unit.getMaxCurrentShunt() > upBoundMaxCurrentShunt){
-            String header = "Неправильный ввод данных по максимальному току шунта";
-            String content = String.format("5.2 Значение максимального тока шунта должно быть в пределах от %d до %d А", lowBoundMaxCurrentShunt, upBoundMaxCurrentShunt);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода значений ёмкости батарей
-        if(unit.getCapacitanceOfBattery() < lowBoundCapacitanceBatt || unit.getCapacitanceOfBattery() > upBoundCapacitanceBatt){
-            String header = "Неправильный ввод данных значений ёмкости батарей";
-            String content = String.format("6.1 Введите значение от %d до %d А*час", lowBoundCapacitanceBatt, upBoundCapacitanceBatt);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода количества батарей
-        if(unit.getNumberBattery() < lowBoundNumberBatt || unit.getNumberBattery() > upBoundNumberBatt){
-            String header = "Неправильный ввод данных значений количества батарей";
-            String content = String.format("6.2 введите правильное количество батарей в диапазоне от %d до %d", lowBoundNumberBatt, upBoundNumberBatt);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода коэффициента аналогового предусилителя
-        if(unit.getCoeffAnalogueAmplifier() < lowBoundCoefAnalogueAmplif || unit.getCoeffAnalogueAmplifier() > upBoundCoefAnalogueAmplif){
-            String header = "Неправильный ввод данных коэффициента аналогового усилителя";
-            String content = String.format("6.3 введите значние от %d до %d", lowBoundCoefAnalogueAmplif, upBoundCoefAnalogueAmplif);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода данных по току заряда
-        if(unit.getChargingCurrent() < lowBoundChargingCurrent || unit.getChargingCurrent() > upBoundChargingCurrent){
-            String header = "Неправильный ввод данных по множителю для зарядного тока";
-            String content = String.format(Locale.CANADA,"6.4 введите значние от %.2f до %.2f", lowBoundChargingCurrent, upBoundChargingCurrent);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода данных по максимальному току заряда
-        if(unit.getMaxChargCurrent() < lowBoundMaxChCurrent || unit.getMaxChargCurrent() > upBoundMaxChCurrent){
-            String header = "Неправильный ввод данных по множителю для максимального тока заряда";
-            String content = String.format(Locale.CANADA,"6.5 введите значние от %.2f до %.2f", lowBoundMaxChCurrent, upBoundMaxChCurrent);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка вводаа данных по верхней границе тока заряда
-        if(unit.getUpThresholdCurrent() < lowBoundMaxChCurrent || unit.getUpThresholdCurrent() > upBoundMaxChCurrent){
-            String header = "Неправильный ввод данных по множителю для верхней границы тока заряда";
-            String content = String.format(Locale.CANADA,"6.6 введите значние от %.2f до %.2f", lowBoundUpThresholdCurrent, upBoundUpThresholdCurrent);
-            showAlert(title, header, content);
-            return true;
-        }
-
-
-//        Обработка неправильного ввода данных по порогу для переключения в режим Boost
-        if(unit.getThresholdForBoost() < lowBoundThresholdForBoost || unit.getThresholdForBoost() > upBoundThresholdForBoost){
-            String header = "Неправильный ввод данных по порогу для переключения в режиме ускоренного заряда";
-            String content = String.format(Locale.CANADA,"6.7 введите значние от %.2f до %.2f", lowBoundThresholdForBoost, upBoundThresholdForBoost);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода данных по порогу окончания заряда в режиме Boost
-        if(unit.getThresholdBoostEnding() < lowBoundThresholdBoostEnding || unit.getThresholdBoostEnding() > upBoundThresholdBoostEnding){
-            String header = "Неправильный ввод данных по порогу окончания заряда в режиме ускоренного заряда";
-            String content = String.format(Locale.CANADA,"6.8 введите значние от %.2f до %.2f", lowBoundThresholdBoostEnding, upBoundThresholdBoostEnding);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода данных по максимальному времени работы в режиме Boost
-        if(unit.getTimeInBoost() < lowBoundTimeInBoost || unit.getTimeInBoost() > upBoundTimeInBoost){
-            String header = "Неправильный ввод данных по максимальному времени работы в режиме ускоренного заряда";
-            String content = String.format("6.9 введите время работы в минутах от %d до %d", lowBoundTimeInBoost, upBoundTimeInBoost);
-            showAlert(title, header, content);
-            return true;
-        }
-
-//        Обработка неправильного ввода данных по времени задержки для повторного включения режима Boost
-        if(unit.getDelayBoost() < lowBoundDelayBoost || unit.getDelayBoost() > upBoundDelayBoost){
-            String header = "Неправильный ввод данных по времени задержки повторного включения режима ускоренного заряда";
-            String content = String.format("6.10 введите время работы в минутах от %d до %d", lowBoundDelayBoost, upBoundDelayBoost);
-            showAlert(title, header, content);
-            return true;
         }
 
 //        Проверка значений больше-меньше для температурной характеристики в режиме Флоат
-        if(unit.getMinTempFloat() > unit.getTempFirstMidPointFloat()){
+        int minTempFloat = (int) unitFields.get("minTempFloat").getValue();
+        int tempFirstMidPointFloat = (int) unitFields.get("tempFirstMidPointFloat").getValue();
+        int tempSecondMidPointFloat = (int) unitFields.get("tempSecondMidPointFloat").getValue();
+        int maxTempFloat = (int) unitFields.get("maxTempFloat").getValue();
+        int minTempBoost = (int) unitFields.get("minTempBoost").getValue();
+        int maxTempBoost = (int) unitFields.get("maxTempBoost").getValue();
+        int outputMaximum = (int) unitFields.get("outputMaximum").getValue();
+        int outputMiddle = (int) unitFields.get("outputMiddle").getValue();
+        int outputFloatMinimum = (int) unitFields.get("outputFloatMinimum").getValue();
+        int outputBoostMinimum = (int) unitFields.get("outputBoostMinimum").getValue();
+        double chargingCurrent = (double) unitFields.get("chargingCurrent").getValue();
+        double maxChargCurrent = (double) unitFields.get("maxChargCurrent").getValue();
+
+        if(minTempFloat > tempFirstMidPointFloat){
             String header = "Неправильный ввод данных по температуре в режиме Float";
             String content = "Температура в пункте 2.1 должна быть меньше, чем в пункте 2.2";
             showAlert(title, header, content);
             return true;
         }
 
-        if(unit.getTempFirstMidPointFloat() > unit.getTempSecondMidPointFloat()){
+        if(tempFirstMidPointFloat > tempSecondMidPointFloat){
             String header = "Неправильный ввод данных по температуре в режиме Float";
             String content = "Температура в пункте 2.2 должна быть меньше, чем в пункте 2.3";
             showAlert(title, header, content);
             return true;
         }
 
-        if(unit.getTempSecondMidPointFloat() > unit.getMaxTempFloat()){
+        if(tempSecondMidPointFloat > maxTempFloat){
             String header = "Неправильный ввод данных по температуре в режиме Float";
             String content = "Температура в пункте 2.3 должна быть меньше, чем в пункте 2.4";
             showAlert(title, header, content);
@@ -1099,7 +915,7 @@ public class Controller {
 
 //        Проверка значений больше-меньше по температурам для режима Boost
 
-        if(unit.getMinTempBoost() > unit.getMaxTempBoost()){
+        if(minTempBoost > maxTempBoost){
             String header = "Неправильный ввод данных по температуре в режиме Boost";
             String content = "Температура в пункте 2.5 должна быть меньше, чем в пункте 2.6";
             showAlert(title, header, content);
@@ -1108,21 +924,21 @@ public class Controller {
 
 //        Проверка значений больше-меньше по значению зарядного напряжения
 
-        if(unit.getOutputMaximum() < unit.getOutputMiddle()){
+        if(outputMaximum < outputMiddle){
             String header = "Неправильный ввод данных по выходному сигналу";
             String content = "Напряжение в пункте 3.1  должно быть больше, чем в пункте 3.2";
             showAlert(title, header, content);
             return true;
         }
 
-        if(unit.getOutputMaximum() < unit.getOutputBoostMinimum()) {
+        if(outputMaximum < outputBoostMinimum) {
             String header = "Неправильный ввод данных по выходному сигналу";
             String content = "Напряжение в пункте 3.1  должно быть больше, чем в пункте 3.4";
             showAlert(title, header, content);
             return true;
         }
 
-        if(unit.getOutputMiddle() < unit.getOutputFloatMinimum()){
+        if(outputMiddle < outputFloatMinimum){
             String header = "Неправильный ввод данных по выходному сигналу";
             String content = "Напряжение в пункте 3.2  должно быть больше, чем в пункте 3.3";
             showAlert(title, header, content);
@@ -1130,13 +946,12 @@ public class Controller {
         }
 
 //        Проверка больше-меньше по токам заряда
-        if(unit.getMaxChargCurrent() < unit.getChargingCurrent()){
+        if(maxChargCurrent < chargingCurrent){
             String header = "Неправильный ввод данных по току заряда";
             String content = "Значение коэффициентов в пункте 6.5  должно быть больше, чем в пункте 6.4";
             showAlert(title, header, content);
             return true;
-        }*/
-
+        }
         return false;
     }
 
@@ -1147,9 +962,7 @@ public class Controller {
         alert.setHeaderText(header);
         alert.setContentText(content);
         alert.setResizable(true);
-
         alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-
         alert.showAndWait();
     }
 

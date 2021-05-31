@@ -6,27 +6,26 @@ public class UnitField {
     Number value;
     Number lowBoundValue;
     Number highBoundValue;
+    Double position;
 
     public UnitField(String name, Number value) {
         this.name = name;
         this.value = value;
         this.lowBoundValue = 0;
         this.highBoundValue = 0;
+        this.position = 0.0;
     }
 
-    public UnitField(String name, Number value, Number lowBoundValue, Number highBoundValue) {
+    public UnitField(String name, Number value, Number lowBoundValue, Number highBoundValue, Double position) {
         this.name = name;
         this.value = value;
         this.lowBoundValue = lowBoundValue;
         this.highBoundValue = highBoundValue;
+        this.position = position;
     }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Number getValue() {
@@ -53,11 +52,21 @@ public class UnitField {
         this.highBoundValue = highBoundValue;
     }
 
+    public Double getPosition() {
+        return position;
+    }
+
+    public void setPosition(Double position) {
+        this.position = position;
+    }
+
+
     @Override
     public String toString() {
         return "UnitField{" +
                 "name='" + name + '\'' +
                 ", value=" + value +
+                ", position=" + position +
                 ", lowBoundValue=" + lowBoundValue +
                 ", highBoundValue=" + highBoundValue +
                 '}';

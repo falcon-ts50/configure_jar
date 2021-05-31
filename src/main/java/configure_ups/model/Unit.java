@@ -40,7 +40,7 @@ public final class Unit {
     }
 
 
-    protected static class UnitBoundaryValues{
+    protected static final class UnitBoundaryValues{
         //    Ниже описаны пределы для системы алармов - защиты от некорректного ввода данных
 
         //    Пределы данных по датчику температуры
@@ -149,6 +149,34 @@ public final class Unit {
         //    пределы по времени задержки между повторными включениями режима Boost в минутах
         protected static final int lowBoundDelayBoost = 0;
         protected static final int upBoundDelayBoost = 60;
+    }
+
+    public static final class NumberOfPosition{
+        protected static final double MV_AT_ZERO_DEG = 1.1;
+        protected static final double CHANGING_MV_PER_ONE_DEG = 1.2;
+        protected static final double MIN_TEMP_FLOAT = 2.1;
+        protected static final double TEMP_FIRST_MID_POINT_FLOAT = 2.2;
+        protected static final double TEMP_SECOND_MID_POINT_FLOAT = 2.3;
+        protected static final double MAX_TEMP_FLOAT = 2.4;
+        protected static final double MIN_TEMP_BOOST = 2.5;
+        protected static final double MAX_TEMP_BOOST = 2.6;
+        protected static final double OUTPUT_MAXIMUM = 3.1;
+        protected static final double OUTPUT_MIDDLE = 3.2;
+        protected static final double OUTPUT_FLOAT_MINIMUM = 3.3;
+        protected static final double OUTPUT_BOOST_MINIMUM = 3.4;
+        protected static final double COEFFICIENT_OF_CALIBRATION = 4;
+        protected static final double MAX_VOLT_SHUNT = 5.1;
+        protected static final double MAX_CURRENT_SHUNT = 5.2;
+        protected static final double CAPACITANCE_OF_BATTERY = 6.1;
+        protected static final double NUMBER_BATTERY = 6.2;
+        protected static final double COEFF_ANALOGUE_AMPLIFIER = 6.3;
+        protected static final double CHARGING_CURRENT = 6.4;
+        protected static final double MAX_CHARG_CURRENT = 6.5;
+        protected static final double UP_THRESHOLD_CURRENT = 6.6;
+        protected static final double THRESHOLD_FOR_BOOST = 6.7;
+        protected static final double THRESHOLD_BOOST_ENDING = 6.8;
+        protected static final double TIME_IN_BOOST = 6.9;
+        protected static final double DELAY_BOOST = 6.10;
     }
 
 }

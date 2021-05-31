@@ -38,6 +38,7 @@ public class UnitDataArray {
         });
 
         LinkedList<Number> boundaryValues = new LinkedList<>();
+
         Arrays.stream(Unit.UnitBoundaryValues.class.getDeclaredFields()).forEach(x -> {
             try {
                 x.setAccessible(true);
@@ -51,6 +52,19 @@ public class UnitDataArray {
             x.getValue().setLowBoundValue(boundaryValues.pollFirst());
             x.getValue().setHighBoundValue(boundaryValues.pollFirst());
         });
+
+        LinkedList<Double> numbersOfPositions = new LinkedList<>();
+        Arrays.stream(Unit.NumberOfPosition.class.getDeclaredFields()).forEach(x -> {
+            try {
+                x.setAccessible(true);
+                numbersOfPositions.add((Double) x.get(new Unit.NumberOfPosition()));
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        });
+
+        dataArray.entrySet().stream().forEach(x -> x.getValue().setPosition(numbersOfPositions.pollFirst()));
+
     }
 
     @Override
