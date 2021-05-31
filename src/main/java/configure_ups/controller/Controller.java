@@ -117,114 +117,6 @@ public class Controller {
     @FXML
     private Button write;
 
-//    Ниже описаны пределы для системы алармов - защиты от некорректного ввода данных
-
-//    Пределы данных по датчику температуры
-//    пределеы значений мВ при нуле
-    private final int lowBoundMVAtZeroDeg = 400;
-    private final int upperBoundMVAtZeroDeg = 600;
-
-//    пределы изменений мВ за один градус
-    private final int lowBoundMVPerOneDeg = 9;
-    private final int upperBoundMVPerOneDeg = 11;
-
-//    Пределы данных заряда по температурно-вольтовой характеристике аккумулятора
-//    Пределы значений температуры для режима Float
-//    пределы минимальной температуры Float
-    private final int lowTempFirstPointFloat = -15;
-    private final int upTempFristPointFloat = 30;
-
-//    пределы температуры первой средней точки Float
-    private final int lowTempFirstMidPoint = 15;
-    private final int upTempFirstMidPoint = 25;
-
-//    пределы температуры второй средней точки Float
-    private final int lowTempSecondMidPoint = 20;
-    private final int upTempSecondMidPoint = 35;
-
-//    пределы максимальной температуры режима Float
-    private final int lowTempLastPointFloat = 40;
-    private final int upTempLastPointFloat = 55;
-
-//    Пределы значений режима Boost
-//    пределы минимальной температуры режима Boost
-    private final int lowFirstTempBoost = 15;
-    private final int upFristTempBoost = 35;
-
-//    пределы максимальной температуры режима Boost
-    private final int lowLastTempBoost = 35;
-    private final int upLastTempBoost = 50;
-
-//    Пределы зарядного напряжения для режимов
-//    пределы максимального значения для обоих режимов
-    private final int lowOutputMaximum = 2350;
-    private final int upperOutputMaximum = 2450;
-
-//    пределы напряжения для средней точки режима Float
-    private final int lowMidPointOutFloat = 2250;
-    private final int upMidPointOutFloat = 2330;
-
-//    пределы напряжения для минимального напряжения режима Float
-    private final int lowMinPointOutFloat = 2130;
-    private final int upMinPointOutFloat = 2250;
-
-//    пределы напряжения для минимального напряжения режима Boost
-    private final int lowMinPointOutBoost = 2215;
-    private final int upperMinPointOutBoost = 2400;
-
-//    пределы для коэффициента преобразования для базовой шкалы
-    private final double lowBoundCoeffCalib = 1.000;
-    private final double upBoundCoeffCalib = 1.131;
-
-//    Раздел характеристик шунта
-//    пределы для максимального напряжения шунта
-    private final int lowBoundMaxVoltShunt = 50;
-    private final int upBoundMaxVoltShunt = 100;
-
-//    пределы для максимального тока шунта
-    private final int lowBoundMaxCurrentShunt = 100;
-    private final int upBoundMaxCurrentShunt = 500;
-
-//    пределы по ёмкости батарей
-    private final int lowBoundCapacitanceBatt = 10;
-    private final int upBoundCapacitanceBatt = 300;
-
-//    пределы по количеству батарей
-    private final int lowBoundNumberBatt = 1;
-    private final int upBoundNumberBatt = 10;
-
-//    пределы по коэффициенту передачи аналогового усилителя
-    private final int lowBoundCoefAnalogueAmplif = 20;
-    private final int upBoundCoefAnalogueAmplif = 400;
-
-//    пределы по зарядному току, множитель относительно номинального
-    private final double lowBoundChargingCurrent = 1.00;
-    private final double upBoundChargingCurrent = 3.50;
-
-//    пределы по максимальному току заряда
-    private final double lowBoundMaxChCurrent = 2.40;
-    private final double upBoundMaxChCurrent = 5.01;
-
-//    пределы по верхней границе заряда
-
-    private final double lowBoundUpThresholdCurrent = 1.70;
-    private final double upBoundUpThresholdCurrent = 4.20;
-
-//    пределы по порогу для применения ускоренного заряда (включение режима Boost)
-    private final double lowBoundThresholdForBoost = 0.60;
-    private final double upBoundThresholdForBoost = 1.00;
-
-//    пределы по порогу для окончания ускоренного заряда (выключение режима Boost)
-    private final double lowBoundThresholdBoostEnding = 0.1;
-    private final double upBoundThresholdBoostEnding = 0.6;
-
-//    пределы по времени работы в режиме Boost в минутах
-    private final int lowBoundTimeInBoost = 0;
-    private final int upBoundTimeInBoost = 480;
-
-//    пределы по времени задержки между повторными включениями режима Boost в минутах
-    private final int lowBoundDelayBoost = 0;
-    private final int upBoundDelayBoost = 60;
 
     private MainAppFX main;
 
@@ -232,60 +124,24 @@ public class Controller {
     void initialize(){
 //Ниже идёт создание подсказок с текстовым наполнением. Краткие пояснения перед каждым для быстрой навигации по коду
 
+        Arrays.stream(Controller.class.getDeclaredFields()).forEach(x -> {
+            try {
+                x.setAccessible(true);
+                if(x.get(this).getClass().equals(TextField.class)){
+                    TextField textField = (TextField) x.get(this);
+                    UnitField unitField = unitFields.get(x.getName());
+                    if(x.getName().equals("coefficientOfCalibration")){
+                        textField.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значение от %.3f до %.3f", unitField.getLowBoundValue(), unitField.getHighBoundValue())));
+                    } else if(unitField.getValue() instanceof Double){
+                        textField.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", unitField.getLowBoundValue(), unitField.getHighBoundValue())));
+                    } else
+                    textField.setTooltip(new Tooltip(String.format("введите значение от %d до %d", unitField.getLowBoundValue(), unitField.getHighBoundValue())));
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        });
 
-// Харакетристика датчика температуры
-        mVAtZeroDeg.setTooltip(new Tooltip(String.format("введите значение от %d до %d мВ, см характеристика датчика", lowBoundMVAtZeroDeg, upperBoundMVAtZeroDeg)));
-
-        changingMVPerOneDeg.setTooltip(new Tooltip(String.format("введите значение от %d до %d мВ за один градус Цельсия", lowBoundMVPerOneDeg, upperBoundMVPerOneDeg)));
-// Температурно-вольтовая характеристика
-        //режим Флоат
-        minTempFloat.setTooltip(new Tooltip(String.format("введите значение от %d до %d град Цельсия", lowTempFirstPointFloat, upTempFristPointFloat)));
-
-        tempFirstMidPointFloat.setTooltip(new Tooltip(String.format("введите значение от %d до %d град Цельсия", lowTempFirstMidPoint, upTempFirstMidPoint)));
-
-        tempSecondMidPointFloat.setTooltip(new Tooltip(String.format("введите значение от %d до %d град Цельсия", lowTempSecondMidPoint, upTempSecondMidPoint)));
-
-        maxTempFloat.setTooltip(new Tooltip(String.format("введите значение от %d до %d град Цельсия", lowTempLastPointFloat, upTempLastPointFloat)));
-        //режим Буст
-        minTempBoost.setTooltip(new Tooltip(String.format("введите значение от %d до %d град Цельсия", lowFirstTempBoost, upFristTempBoost)));
-
-        maxTempBoost.setTooltip(new Tooltip(String.format("введите значение от %d до %d град Цельсия", lowLastTempBoost, upLastTempBoost)));
-        //выходное напряжение
-        outputMaximum.setTooltip(new Tooltip(String.format("введите значение от %d до %d мВ на элемент", lowOutputMaximum, upperOutputMaximum)));
-
-        outputMiddle.setTooltip(new Tooltip(String.format("введите значение от %d до %d мВ на элемент", lowMidPointOutFloat, upMidPointOutFloat)));
-
-        outputFloatMinimum.setTooltip(new Tooltip(String.format("введите значение от %d до %d мВ на элемент", lowMinPointOutFloat, upMinPointOutFloat)));
-
-        outputBoostMinimum.setTooltip(new Tooltip(String.format("введите значение от %d до %d мВ на элемент", lowMinPointOutBoost, upperMinPointOutBoost)));
-        //коэффициент преобразования для базовой шкалы
-        coefficientOfCalibration.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значение от %.3f до %.3f", lowBoundCoeffCalib, upBoundCoeffCalib)));
-//Характеристика шунта
-        maxVoltShunt.setTooltip(new Tooltip(String.format("введите значени от %d до %d мВ", lowBoundMaxVoltShunt, upBoundMaxVoltShunt)));
-
-        maxCurrentShunt.setTooltip(new Tooltip(String.format("введите значение от %d до %d А", lowBoundMaxCurrentShunt, upBoundMaxCurrentShunt)));
-//Ёмкость батарей
-        capacitanceOfBattery.setTooltip(new Tooltip(String.format("введите значение от %d до %d", lowBoundCapacitanceBatt, upBoundCapacitanceBatt)));
-//Количество батарей
-        numberBattery.setTooltip(new Tooltip(String.format("введите значение от %d до %d", lowBoundNumberBatt, upBoundNumberBatt)));
-//Коэффициент передачи аналогового усилителя
-        coeffAnalogueAmplifier.setTooltip(new Tooltip(String.format("введите значние от %d до %d", lowBoundCoefAnalogueAmplif, upBoundCoefAnalogueAmplif)));
-//Ток заряда
-        chargingCurrent.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", lowBoundChargingCurrent, upBoundChargingCurrent)));
-//Максимальный ток заряда
-        maxChargCurrent.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", lowBoundMaxChCurrent, upBoundMaxChCurrent)));
-
-//        Верхняя граница предельного тока заряда
-        upThresholdCurrent.setTooltip(new Tooltip(String.format(Locale.CANADA, "введите значние от %.2f до %.2f", lowBoundUpThresholdCurrent, upBoundUpThresholdCurrent)));
-
-//Порог применения ускоренного заряда
-        thresholdForBoost.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", lowBoundThresholdForBoost, upBoundThresholdForBoost)));
-//Порог окончания ускоренного заряда
-        thresholdBoostEnding.setTooltip(new Tooltip(String.format(Locale.CANADA,"введите значние от %.2f до %.2f", lowBoundThresholdBoostEnding, upBoundThresholdBoostEnding)));
-//Максимальное время работы в режиме Boost
-        timeInBoost.setTooltip(new Tooltip(String.format("введите значние от %d до %d мин", lowBoundTimeInBoost, upBoundTimeInBoost)));
-//Задержка повторного перехода в режим Буст
-        delayBoost.setTooltip(new Tooltip(String.format("введите значние от %d до %d мин", lowBoundDelayBoost, upBoundDelayBoost)));
 //Кнопка возврата предыдущих значений
         previousField.setTooltip(new Tooltip("Нажав на кнопку, Вы вернёте первоначальные значения"));
 //Кнопка полной очистки всех полей
@@ -1006,6 +862,12 @@ public class Controller {
     private boolean handleWrongData(){
 
         String title = "ошибка";
+       /* for (UnitField x : unitFields.values()) {
+
+            if (x.getValue() < x.getLowBoundValue() || x.getValue() > x.getHighBoundValue()) {
+
+            }
+        }
 //        Обработка неправильного ввода данных по характеристике датчика
         if( unit.getmVAtZeroDeg() < lowBoundMVAtZeroDeg || unit.getmVAtZeroDeg() > upperBoundMVAtZeroDeg){
 //            String title = "Ошибка";
@@ -1273,7 +1135,7 @@ public class Controller {
             String content = "Значение коэффициентов в пункте 6.5  должно быть больше, чем в пункте 6.4";
             showAlert(title, header, content);
             return true;
-        }
+        }*/
 
         return false;
     }

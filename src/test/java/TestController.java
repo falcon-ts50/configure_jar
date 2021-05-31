@@ -16,19 +16,6 @@ public class TestController {
 
     @Test
     public void getTextFieldsMap(){
-        try {
-            Field field = Controller.class.getDeclaredField("textFields");
-            field.setAccessible(true);
-            Map<TextField, Number[]> map = (Map<TextField, Number[]>) field.get(controller);
 
-            map.forEach((x, y) -> {
-                for (Number n: y) {
-                    System.out.println(n);
-                }
-            });
-
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
     }
 }
