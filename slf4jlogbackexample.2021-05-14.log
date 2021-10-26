@@ -1,0 +1,24 @@
+14.05.2021 14:29:14.546 [main] DEBUG  c.view.Controller - {}
+14.05.2021 14:31:27.572 [main] DEBUG  c.view.Controller - {}
+14.05.2021 14:31:51.631 [main] DEBUG  c.view.Controller - {}
+14.05.2021 15:20:53.817 [JavaFX Application Thread] DEBUG  c.view.Controller - 400
+14.05.2021 15:23:11.413 [JavaFX Application Thread] DEBUG  c.view.Controller - []
+14.05.2021 15:24:00.057 [JavaFX Application Thread] DEBUG  c.view.Controller - []
+14.05.2021 15:25:21.408 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: 
+14.05.2021 15:25:56.575 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: 
+14.05.2021 15:26:21.537 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: []
+14.05.2021 17:12:04.699 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: 0
+14.05.2021 17:13:53.404 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: 400
+14.05.2021 17:15:44.198 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: java.util.stream.ReferencePipeline$2@2d4672be
+14.05.2021 17:18:22.921 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: {}
+14.05.2021 17:19:49.023 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: {}
+14.05.2021 17:22:11.586 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: []
+14.05.2021 17:23:34.996 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: [] 0
+14.05.2021 17:25:30.419 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: {}
+14.05.2021 17:25:49.356 [JavaFX Application Thread] DEBUG  c.view.Controller - numberFields Array: []
+14.05.2021 23:48:36.827 [JavaFX Application Thread] DEBUG  c.view.Controller - Fields class Integer
+14.05.2021 23:55:24.983 [JavaFX Application Thread] DEBUG  c.view.Controller - Is this Instance of Number :false
+14.05.2021 23:55:58.738 [JavaFX Application Thread] DEBUG  c.view.Controller - Is this Instance of Integer :false
+14.05.2021 23:56:36.275 [JavaFX Application Thread] DEBUG  c.view.Controller - Is this Instance of Integer :Integer
+14.05.2021 23:57:24.151 [JavaFX Application Thread] DEBUG  c.view.Controller - Is this Instance of Number :false
+14.05.2021 23:57:50.600 [JavaFX Application Thread] DEBUG  c.view.Controller - Is this Instance of Integer :true

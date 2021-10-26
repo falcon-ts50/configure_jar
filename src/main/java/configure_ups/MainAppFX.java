@@ -1,7 +1,9 @@
 package configure_ups;
 
 import configure_ups.model.Unit;
-import configure_ups.view.Controller;
+import configure_ups.controller.Controller;
+import configure_ups.model.UnitDataArray;
+import configure_ups.model.UnitField;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Side;
@@ -12,10 +14,13 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
 
+import java.util.LinkedHashMap;
+
 public class MainAppFX extends Application {
 
     private Stage primaryStage;
-    private Unit unit = Unit.getUnit();
+    private UnitDataArray unitDataArray = UnitDataArray.getUnitDataArray();
+    private LinkedHashMap<String, UnitField> unitFields = unitDataArray.getDataArray();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -32,12 +37,10 @@ public class MainAppFX extends Application {
 
 
     Controller controller = loader.getController();
-    controller.setUnit(unit);
     controller.setMain(this);
-
+    controller.setTooltip();
 
 }
-
 
     public javafx.stage.Stage getPrimaryStage() {
         return primaryStage;
@@ -52,13 +55,22 @@ public class MainAppFX extends Application {
 
             final int gapY = 50;
             final int tickX = 10;
-            int lowerBound = unit.getMinTempFloat() < unit.getMinTempBoost()? unit.getMinTempFloat()-tickX: unit.getMinTempBoost() - tickX;
-            int upperBound = unit.getMaxTempFloat() > unit.getMaxTempBoost()? unit.getMaxTempFloat() + tickX : unit.getMaxTempBoost() + tickX;
+            int minTempFloat = (Integer) unitFields.get("minTempFloat").getValue();
+            int minTempBoost = (Integer) unitFields.get("minTempBoost").getValue();
+            int maxTempBoost = (Integer) unitFields.get("maxTempBoost").getValue();
+            int maxTempFloat = (Integer) unitFields.get("maxTempFloat").getValue();
+            int outputMaximum = (Integer) unitFields.get("outputMaximum").getValue();
+            int outputMiddle = (Integer) unitFields.get("outputMiddle").getValue();
+            int outputBoostMinimum = (Integer) unitFields.get("outputBoostMinimum").getValue();
+            int outputFloatMinimum = (Integer) unitFields.get("outputFloatMinimum").getValue();
+
+            int lowerBound = minTempFloat < minTempBoost ? minTempFloat - tickX: minTempBoost - tickX;
+            int upperBound = maxTempFloat > maxTempBoost? maxTempFloat + tickX : maxTempBoost + tickX;
 
             final NumberAxis xAxis = new NumberAxis(lowerBound, upperBound, tickX);
 
-            int yMaximum = unit.getOutputMaximum() + gapY;
-            int yMinimum = unit.getOutputBoostMinimum()<unit.getOutputFloatMinimum()? unit.getOutputBoostMinimum() - gapY : unit.getOutputFloatMinimum()-gapY ;
+            int yMaximum = outputMaximum + gapY;
+            int yMinimum = outputBoostMinimum < outputFloatMinimum? outputBoostMinimum - gapY : outputFloatMinimum-gapY ;
             yMinimum = (int) (Math.round((double) yMinimum/100)*100);
             final NumberAxis yAxis = new NumberAxis(yMinimum, yMaximum , 500);
             xAxis.setLabel("Градусы Цельсия");
@@ -77,20 +89,23 @@ public class MainAppFX extends Application {
                 XYChart.Series<Number,Number> seriesFloat = new XYChart.Series<>();
 
                 seriesFloat.setName("Float");
+                int tempFirstMidPointFloat = (Integer) unitFields.get("tempFirstMidPointFloat").getValue();
+                int tempSecondMidPointFloat = (Integer) unitFields.get("tempSecondMidPointFloat").getValue();
 
-                seriesFloat.getData().add(new XYChart.Data<>(lowerBound, unit.getOutputMaximum()));
-                seriesFloat.getData().add(new XYChart.Data<>(unit.getMinTempFloat(), unit.getOutputMaximum()));
-                seriesFloat.getData().add(new XYChart.Data<>(unit.getTempFirstMidPointFloat(), unit.getOutputMiddle()));
-                seriesFloat.getData().add(new XYChart.Data<>(unit.getTempSecondMidPointFloat(), unit.getOutputMiddle()));
-                seriesFloat.getData().add(new XYChart.Data<>(unit.getMaxTempFloat(), unit.getOutputFloatMinimum()));
+
+                seriesFloat.getData().add(new XYChart.Data<>(lowerBound, outputMaximum));
+                seriesFloat.getData().add(new XYChart.Data<>(minTempFloat, outputMaximum));
+                seriesFloat.getData().add(new XYChart.Data<>(tempFirstMidPointFloat, outputMiddle));
+                seriesFloat.getData().add(new XYChart.Data<>(tempSecondMidPointFloat, outputMiddle));
+                seriesFloat.getData().add(new XYChart.Data<>(maxTempFloat, outputFloatMinimum));
 
                 XYChart.Series<Number, Number> seriesBoost = new XYChart.Series<>();
 
                 seriesBoost.setName("Boost");
 
-                seriesBoost.getData().add(new XYChart.Data<>(lowerBound, unit.getOutputMaximum()));
-                seriesBoost.getData().add(new XYChart.Data<>(unit.getMinTempBoost(), unit.getOutputMaximum()));
-                seriesBoost.getData().add(new XYChart.Data<>(unit.getMaxTempBoost(), unit.getOutputBoostMinimum()));
+                seriesBoost.getData().add(new XYChart.Data<>(lowerBound, outputMaximum));
+                seriesBoost.getData().add(new XYChart.Data<>(minTempBoost, outputMaximum));
+                seriesBoost.getData().add(new XYChart.Data<>(maxTempBoost, outputBoostMinimum));
 
                 areaChart.getData().addAll(seriesFloat, seriesBoost);
 

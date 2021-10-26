@@ -1,0 +1,560 @@
+15.05.2021 00:05:56.139 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: class ch.qos.logback.classic.Logger
+15.05.2021 00:09:04.973 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Logger
+15.05.2021 00:22:45.082 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.083 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.083 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.083 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.083 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.084 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.085 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.085 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.085 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.085 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.085 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.085 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.085 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.086 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.086 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.086 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.086 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.086 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.086 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.086 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.086 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.087 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.088 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.089 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.090 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.091 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.091 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.091 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.091 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Field
+15.05.2021 00:22:45.092 [JavaFX Application Thread] DEBUG  c.view.Controller - Is this Instance of Integer :true
+15.05.2021 00:25:30.571 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Logger
+15.05.2021 00:27:23.110 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Logger
+15.05.2021 00:27:23.112 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Boolean
+15.05.2021 00:27:23.112 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.112 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.113 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.113 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.113 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.113 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.113 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.113 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.113 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.114 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.114 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.114 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.114 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.114 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.114 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.114 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.114 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.114 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.115 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.115 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.115 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.115 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.115 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.115 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.116 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: TextField
+15.05.2021 00:27:23.116 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Button
+15.05.2021 00:27:23.116 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Button
+15.05.2021 00:27:23.116 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Button
+15.05.2021 00:27:23.116 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Button
+15.05.2021 00:27:23.116 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.117 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.117 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.117 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.117 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.117 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.117 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.117 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.117 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.117 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.118 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.118 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.118 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.118 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.118 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.118 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.118 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.119 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.119 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.119 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.119 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.119 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.119 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.119 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.133 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.134 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.134 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.135 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.135 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.135 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.136 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.136 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.136 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.137 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.137 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.137 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.138 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.138 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.138 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.139 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.139 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.139 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.139 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.139 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.139 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.140 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Double
+15.05.2021 00:27:23.140 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.140 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.140 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.140 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: Integer
+15.05.2021 00:27:23.141 [JavaFX Application Thread] DEBUG  c.view.Controller - Class: LinkedHashMap
+15.05.2021 00:27:23.142 [JavaFX Application Thread] DEBUG  c.view.Controller - Is this Instance of Integer :true
+15.05.2021 00:44:26.577 [JavaFX Application Thread] DEBUG  c.view.Controller - int400
+15.05.2021 00:44:26.594 [JavaFX Application Thread] DEBUG  c.view.Controller - int600
+15.05.2021 00:44:26.594 [JavaFX Application Thread] DEBUG  c.view.Controller - int9
+15.05.2021 00:44:26.594 [JavaFX Application Thread] DEBUG  c.view.Controller - int11
+15.05.2021 00:44:26.595 [JavaFX Application Thread] DEBUG  c.view.Controller - int-15
+15.05.2021 00:44:26.595 [JavaFX Application Thread] DEBUG  c.view.Controller - int30
+15.05.2021 00:44:26.595 [JavaFX Application Thread] DEBUG  c.view.Controller - int15
+15.05.2021 00:44:26.596 [JavaFX Application Thread] DEBUG  c.view.Controller - int25
+15.05.2021 00:44:26.596 [JavaFX Application Thread] DEBUG  c.view.Controller - int20
+15.05.2021 00:44:26.596 [JavaFX Application Thread] DEBUG  c.view.Controller - int35
+15.05.2021 00:44:26.597 [JavaFX Application Thread] DEBUG  c.view.Controller - int40
+15.05.2021 00:44:26.597 [JavaFX Application Thread] DEBUG  c.view.Controller - int55
+15.05.2021 00:44:26.597 [JavaFX Application Thread] DEBUG  c.view.Controller - int15
+15.05.2021 00:44:26.598 [JavaFX Application Thread] DEBUG  c.view.Controller - int35
+15.05.2021 00:44:26.598 [JavaFX Application Thread] DEBUG  c.view.Controller - int35
+15.05.2021 00:44:26.599 [JavaFX Application Thread] DEBUG  c.view.Controller - int50
+15.05.2021 00:44:26.599 [JavaFX Application Thread] DEBUG  c.view.Controller - int2350
+15.05.2021 00:44:26.599 [JavaFX Application Thread] DEBUG  c.view.Controller - int2450
+15.05.2021 00:44:26.600 [JavaFX Application Thread] DEBUG  c.view.Controller - int2250
+15.05.2021 00:44:26.600 [JavaFX Application Thread] DEBUG  c.view.Controller - int2330
+15.05.2021 00:44:26.600 [JavaFX Application Thread] DEBUG  c.view.Controller - int2130
+15.05.2021 00:44:26.601 [JavaFX Application Thread] DEBUG  c.view.Controller - int2250
+15.05.2021 00:44:26.601 [JavaFX Application Thread] DEBUG  c.view.Controller - int2215
+15.05.2021 00:44:26.601 [JavaFX Application Thread] DEBUG  c.view.Controller - int2400
+15.05.2021 00:44:26.602 [JavaFX Application Thread] DEBUG  c.view.Controller - int50
+15.05.2021 00:44:26.602 [JavaFX Application Thread] DEBUG  c.view.Controller - int100
+15.05.2021 00:44:26.603 [JavaFX Application Thread] DEBUG  c.view.Controller - int100
+15.05.2021 00:44:26.603 [JavaFX Application Thread] DEBUG  c.view.Controller - int500
+15.05.2021 00:44:26.603 [JavaFX Application Thread] DEBUG  c.view.Controller - int10
+15.05.2021 00:44:26.603 [JavaFX Application Thread] DEBUG  c.view.Controller - int300
+15.05.2021 00:44:26.604 [JavaFX Application Thread] DEBUG  c.view.Controller - int1
+15.05.2021 00:44:26.604 [JavaFX Application Thread] DEBUG  c.view.Controller - int10
+15.05.2021 00:44:26.604 [JavaFX Application Thread] DEBUG  c.view.Controller - int20
+15.05.2021 00:44:26.604 [JavaFX Application Thread] DEBUG  c.view.Controller - int400
+15.05.2021 00:44:26.605 [JavaFX Application Thread] DEBUG  c.view.Controller - int0
+15.05.2021 00:44:26.605 [JavaFX Application Thread] DEBUG  c.view.Controller - int480
+15.05.2021 00:44:26.605 [JavaFX Application Thread] DEBUG  c.view.Controller - int0
+15.05.2021 00:44:26.606 [JavaFX Application Thread] DEBUG  c.view.Controller - int60
+15.05.2021 00:44:26.606 [JavaFX Application Thread] DEBUG  c.view.Controller - instance of Number?
+15.05.2021 00:46:17.399 [JavaFX Application Thread] DEBUG  c.view.Controller - true
+15.05.2021 00:49:51.226 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Logger[configure_ups.controller.Controller] Class Logger
+15.05.2021 00:49:51.228 [JavaFX Application Thread] DEBUG  c.view.Controller - Value false Class Boolean
+15.05.2021 00:49:51.229 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=mVAtZeroDeg, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.229 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=changingMVPerOneDeg, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.229 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=minTempFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.230 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=tempFirstMidPointFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.230 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=tempSecondMidPointFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.230 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxTempFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.230 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=minTempBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.230 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxTempBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.230 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputMaximum, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.230 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputMiddle, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.231 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputFloatMinimum, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.231 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputBoostMinimum, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.231 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=coefficientOfCalibration, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.231 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxVoltShunt, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.231 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxCurrentShunt, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.231 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=capacitanceOfBattery, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.231 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=numberBattery, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.231 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=coeffAnalogueAmplifier, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.232 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=chargingCurrent, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.232 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxChargCurrent, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.232 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=upThresholdCurrent, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.232 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=thresholdForBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.232 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=thresholdBoostEnding, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.232 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=timeInBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.232 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=delayBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:49:51.232 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=showGraph, styleClass=button]'Показать график' Class Button
+15.05.2021 00:49:51.233 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=previousField, styleClass=button]'Вернуть первоначальные значения' Class Button
+15.05.2021 00:49:51.233 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=clear, styleClass=button]'Очистить' Class Button
+15.05.2021 00:49:51.233 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=write, styleClass=button]'Записать' Class Button
+15.05.2021 00:49:51.234 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 400 Class Integer
+15.05.2021 00:49:51.234 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 600 Class Integer
+15.05.2021 00:49:51.234 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 9 Class Integer
+15.05.2021 00:49:51.235 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 11 Class Integer
+15.05.2021 00:49:51.235 [JavaFX Application Thread] DEBUG  c.view.Controller - Value -15 Class Integer
+15.05.2021 00:49:51.235 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 30 Class Integer
+15.05.2021 00:49:51.235 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 15 Class Integer
+15.05.2021 00:49:51.235 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 25 Class Integer
+15.05.2021 00:49:51.235 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 20 Class Integer
+15.05.2021 00:49:51.236 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 35 Class Integer
+15.05.2021 00:49:51.236 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 40 Class Integer
+15.05.2021 00:49:51.236 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 55 Class Integer
+15.05.2021 00:49:51.236 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 15 Class Integer
+15.05.2021 00:49:51.236 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 35 Class Integer
+15.05.2021 00:49:51.236 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 35 Class Integer
+15.05.2021 00:49:51.236 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 50 Class Integer
+15.05.2021 00:49:51.236 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2350 Class Integer
+15.05.2021 00:49:51.237 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2450 Class Integer
+15.05.2021 00:49:51.237 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2250 Class Integer
+15.05.2021 00:49:51.237 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2330 Class Integer
+15.05.2021 00:49:51.237 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2130 Class Integer
+15.05.2021 00:49:51.238 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2250 Class Integer
+15.05.2021 00:49:51.238 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2215 Class Integer
+15.05.2021 00:49:51.238 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2400 Class Integer
+15.05.2021 00:49:51.239 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 1.0 Class Double
+15.05.2021 00:51:08.908 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Logger[configure_ups.controller.Controller] Class Logger
+15.05.2021 00:51:08.909 [JavaFX Application Thread] DEBUG  c.view.Controller - Value false Class Boolean
+15.05.2021 00:51:08.910 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=mVAtZeroDeg, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.910 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=changingMVPerOneDeg, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.910 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=minTempFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.910 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=tempFirstMidPointFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.911 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=tempSecondMidPointFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.911 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxTempFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.911 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=minTempBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.911 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxTempBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.911 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputMaximum, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.911 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputMiddle, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.911 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputFloatMinimum, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.912 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputBoostMinimum, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.912 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=coefficientOfCalibration, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.912 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxVoltShunt, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.912 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxCurrentShunt, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.912 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=capacitanceOfBattery, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.912 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=numberBattery, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.912 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=coeffAnalogueAmplifier, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.913 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=chargingCurrent, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.913 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxChargCurrent, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.913 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=upThresholdCurrent, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.913 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=thresholdForBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.913 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=thresholdBoostEnding, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.913 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=timeInBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.913 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=delayBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:08.914 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=showGraph, styleClass=button]'Показать график' Class Button
+15.05.2021 00:51:08.914 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=previousField, styleClass=button]'Вернуть первоначальные значения' Class Button
+15.05.2021 00:51:08.915 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=clear, styleClass=button]'Очистить' Class Button
+15.05.2021 00:51:08.915 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=write, styleClass=button]'Записать' Class Button
+15.05.2021 00:51:08.915 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 400 Class Integer
+15.05.2021 00:51:08.916 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 600 Class Integer
+15.05.2021 00:51:08.916 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 9 Class Integer
+15.05.2021 00:51:08.916 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 11 Class Integer
+15.05.2021 00:51:08.916 [JavaFX Application Thread] DEBUG  c.view.Controller - Value -15 Class Integer
+15.05.2021 00:51:08.916 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 30 Class Integer
+15.05.2021 00:51:08.916 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 15 Class Integer
+15.05.2021 00:51:08.916 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 25 Class Integer
+15.05.2021 00:51:08.917 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 20 Class Integer
+15.05.2021 00:51:08.917 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 35 Class Integer
+15.05.2021 00:51:08.917 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 40 Class Integer
+15.05.2021 00:51:08.917 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 55 Class Integer
+15.05.2021 00:51:08.917 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 15 Class Integer
+15.05.2021 00:51:08.917 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 35 Class Integer
+15.05.2021 00:51:08.917 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 35 Class Integer
+15.05.2021 00:51:08.918 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 50 Class Integer
+15.05.2021 00:51:08.918 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2350 Class Integer
+15.05.2021 00:51:08.918 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2450 Class Integer
+15.05.2021 00:51:08.918 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2250 Class Integer
+15.05.2021 00:51:08.918 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2330 Class Integer
+15.05.2021 00:51:08.918 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2130 Class Integer
+15.05.2021 00:51:08.918 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2250 Class Integer
+15.05.2021 00:51:08.918 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2215 Class Integer
+15.05.2021 00:51:08.919 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2400 Class Integer
+15.05.2021 00:51:08.919 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 1.0 Class Double
+15.05.2021 00:51:41.627 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Logger[configure_ups.controller.Controller] Class Logger
+15.05.2021 00:51:41.629 [JavaFX Application Thread] DEBUG  c.view.Controller - Value false Class Boolean
+15.05.2021 00:51:41.629 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=mVAtZeroDeg, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.629 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=changingMVPerOneDeg, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.629 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=minTempFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.629 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=tempFirstMidPointFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.629 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=tempSecondMidPointFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.629 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxTempFloat, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.630 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=minTempBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.630 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxTempBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.630 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputMaximum, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.630 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputMiddle, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.630 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputFloatMinimum, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.630 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=outputBoostMinimum, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.631 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=coefficientOfCalibration, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.631 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxVoltShunt, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.631 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxCurrentShunt, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.631 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=capacitanceOfBattery, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.631 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=numberBattery, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.631 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=coeffAnalogueAmplifier, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.631 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=chargingCurrent, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.632 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=maxChargCurrent, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.632 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=upThresholdCurrent, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.632 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=thresholdForBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.632 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=thresholdBoostEnding, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.632 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=timeInBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.632 [JavaFX Application Thread] DEBUG  c.view.Controller - Value TextField[id=delayBoost, styleClass=text-input text-field] Class TextField
+15.05.2021 00:51:41.632 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=showGraph, styleClass=button]'Показать график' Class Button
+15.05.2021 00:51:41.633 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=previousField, styleClass=button]'Вернуть первоначальные значения' Class Button
+15.05.2021 00:51:41.633 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=clear, styleClass=button]'Очистить' Class Button
+15.05.2021 00:51:41.633 [JavaFX Application Thread] DEBUG  c.view.Controller - Value Button[id=write, styleClass=button]'Записать' Class Button
+15.05.2021 00:51:41.634 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 400 Class Integer
+15.05.2021 00:51:41.634 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 600 Class Integer
+15.05.2021 00:51:41.634 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 9 Class Integer
+15.05.2021 00:51:41.634 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 11 Class Integer
+15.05.2021 00:51:41.634 [JavaFX Application Thread] DEBUG  c.view.Controller - Value -15 Class Integer
+15.05.2021 00:51:41.635 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 30 Class Integer
+15.05.2021 00:51:41.635 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 15 Class Integer
+15.05.2021 00:51:41.635 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 25 Class Integer
+15.05.2021 00:51:41.635 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 20 Class Integer
+15.05.2021 00:51:41.635 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 35 Class Integer
+15.05.2021 00:51:41.635 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 40 Class Integer
+15.05.2021 00:51:41.635 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 55 Class Integer
+15.05.2021 00:51:41.635 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 15 Class Integer
+15.05.2021 00:51:41.636 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 35 Class Integer
+15.05.2021 00:51:41.636 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 35 Class Integer
+15.05.2021 00:51:41.636 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 50 Class Integer
+15.05.2021 00:51:41.636 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2350 Class Integer
+15.05.2021 00:51:41.636 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2450 Class Integer
+15.05.2021 00:51:41.637 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2250 Class Integer
+15.05.2021 00:51:41.637 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2330 Class Integer
+15.05.2021 00:51:41.637 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2130 Class Integer
+15.05.2021 00:51:41.637 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2250 Class Integer
+15.05.2021 00:51:41.637 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2215 Class Integer
+15.05.2021 00:51:41.638 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2400 Class Integer
+15.05.2021 00:51:41.638 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 1.0 Class Double
+15.05.2021 00:51:41.639 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 1.131 Class Double
+15.05.2021 00:51:41.639 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 50 Class Integer
+15.05.2021 00:51:41.639 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 100 Class Integer
+15.05.2021 00:51:41.639 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 100 Class Integer
+15.05.2021 00:51:41.639 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 500 Class Integer
+15.05.2021 00:51:41.639 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 10 Class Integer
+15.05.2021 00:51:41.640 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 300 Class Integer
+15.05.2021 00:51:41.640 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 1 Class Integer
+15.05.2021 00:51:41.640 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 10 Class Integer
+15.05.2021 00:51:41.640 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 20 Class Integer
+15.05.2021 00:51:41.640 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 400 Class Integer
+15.05.2021 00:51:41.640 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 1.0 Class Double
+15.05.2021 00:51:41.640 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 3.5 Class Double
+15.05.2021 00:51:41.641 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 2.4 Class Double
+15.05.2021 00:51:41.641 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 5.01 Class Double
+15.05.2021 00:51:41.641 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 1.7 Class Double
+15.05.2021 00:51:41.641 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 4.2 Class Double
+15.05.2021 00:51:41.641 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 0.6 Class Double
+15.05.2021 00:51:41.641 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 1.0 Class Double
+15.05.2021 00:51:41.641 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 0.1 Class Double
+15.05.2021 00:51:41.642 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 0.6 Class Double
+15.05.2021 00:51:41.642 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 0 Class Integer
+15.05.2021 00:51:41.642 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 480 Class Integer
+15.05.2021 00:51:41.642 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 0 Class Integer
+15.05.2021 00:51:41.642 [JavaFX Application Thread] DEBUG  c.view.Controller - Value 60 Class Integer
+15.05.2021 00:51:41.642 [JavaFX Application Thread] DEBUG  c.view.Controller - Value {} Class LinkedHashMap
+15.05.2021 00:51:41.642 [JavaFX Application Thread] DEBUG  c.view.Controller - true
+15.05.2021 00:56:53.926 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=mVAtZeroDeg, styleClass=text-input text-field] value [Ljava.lang.Number;@54a37508
+15.05.2021 00:56:53.928 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=changingMVPerOneDeg, styleClass=text-input text-field] value [Ljava.lang.Number;@4c9ecc04
+15.05.2021 00:56:53.928 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=minTempFloat, styleClass=text-input text-field] value [Ljava.lang.Number;@7a64dca2
+15.05.2021 00:56:53.928 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=tempFirstMidPointFloat, styleClass=text-input text-field] value [Ljava.lang.Number;@77540799
+15.05.2021 00:56:53.928 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=tempSecondMidPointFloat, styleClass=text-input text-field] value [Ljava.lang.Number;@5b5d1266
+15.05.2021 00:56:53.928 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=maxTempFloat, styleClass=text-input text-field] value [Ljava.lang.Number;@61991be5
+15.05.2021 00:56:53.928 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=minTempBoost, styleClass=text-input text-field] value [Ljava.lang.Number;@3dc44ab8
+15.05.2021 00:56:53.928 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=maxTempBoost, styleClass=text-input text-field] value [Ljava.lang.Number;@6afbea56
+15.05.2021 00:56:53.929 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=outputMaximum, styleClass=text-input text-field] value [Ljava.lang.Number;@59060b4d
+15.05.2021 00:56:53.929 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=outputMiddle, styleClass=text-input text-field] value [Ljava.lang.Number;@706975bb
+15.05.2021 00:56:53.929 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=outputFloatMinimum, styleClass=text-input text-field] value [Ljava.lang.Number;@6fe76084
+15.05.2021 00:56:53.929 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=outputBoostMinimum, styleClass=text-input text-field] value [Ljava.lang.Number;@5afb9e74
+15.05.2021 00:56:53.929 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=coefficientOfCalibration, styleClass=text-input text-field] value [Ljava.lang.Number;@33ceba05
+15.05.2021 00:56:53.929 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=maxVoltShunt, styleClass=text-input text-field] value [Ljava.lang.Number;@831c56a
+15.05.2021 00:56:53.929 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=maxCurrentShunt, styleClass=text-input text-field] value [Ljava.lang.Number;@5c8677a8
+15.05.2021 00:56:53.929 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=capacitanceOfBattery, styleClass=text-input text-field] value [Ljava.lang.Number;@5a885a72
+15.05.2021 00:56:53.930 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=numberBattery, styleClass=text-input text-field] value [Ljava.lang.Number;@1c50cdb4
+15.05.2021 00:56:53.930 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=coeffAnalogueAmplifier, styleClass=text-input text-field] value [Ljava.lang.Number;@1a4c41c1
+15.05.2021 00:56:53.930 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=chargingCurrent, styleClass=text-input text-field] value [Ljava.lang.Number;@75984e17
+15.05.2021 00:56:53.930 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=maxChargCurrent, styleClass=text-input text-field] value [Ljava.lang.Number;@6d5bc11c
+15.05.2021 00:56:53.930 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=upThresholdCurrent, styleClass=text-input text-field] value [Ljava.lang.Number;@77fc9c6e
+15.05.2021 00:56:53.930 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=thresholdForBoost, styleClass=text-input text-field] value [Ljava.lang.Number;@fc68919
+15.05.2021 00:56:53.930 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=thresholdBoostEnding, styleClass=text-input text-field] value [Ljava.lang.Number;@38198600
+15.05.2021 00:56:53.930 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=timeInBoost, styleClass=text-input text-field] value [Ljava.lang.Number;@bf9e33e
+15.05.2021 00:56:53.930 [JavaFX Application Thread] DEBUG  c.view.Controller - key TextField[id=delayBoost, styleClass=text-input text-field] value [Ljava.lang.Number;@18f511c3
+15.05.2021 00:57:57.686 [JavaFX Application Thread] DEBUG  c.view.Controller - key mVAtZeroDeg value [Ljava.lang.Number;@54a37508
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key changingMVPerOneDeg value [Ljava.lang.Number;@4c9ecc04
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key minTempFloat value [Ljava.lang.Number;@7a64dca2
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key tempFirstMidPointFloat value [Ljava.lang.Number;@77540799
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key tempSecondMidPointFloat value [Ljava.lang.Number;@5b5d1266
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxTempFloat value [Ljava.lang.Number;@61991be5
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key minTempBoost value [Ljava.lang.Number;@3dc44ab8
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxTempBoost value [Ljava.lang.Number;@6afbea56
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputMaximum value [Ljava.lang.Number;@59060b4d
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputMiddle value [Ljava.lang.Number;@706975bb
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputFloatMinimum value [Ljava.lang.Number;@6fe76084
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputBoostMinimum value [Ljava.lang.Number;@5afb9e74
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key coefficientOfCalibration value [Ljava.lang.Number;@33ceba05
+15.05.2021 00:57:57.688 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxVoltShunt value [Ljava.lang.Number;@831c56a
+15.05.2021 00:57:57.689 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxCurrentShunt value [Ljava.lang.Number;@5c8677a8
+15.05.2021 00:57:57.689 [JavaFX Application Thread] DEBUG  c.view.Controller - key capacitanceOfBattery value [Ljava.lang.Number;@5a885a72
+15.05.2021 00:57:57.689 [JavaFX Application Thread] DEBUG  c.view.Controller - key numberBattery value [Ljava.lang.Number;@1c50cdb4
+15.05.2021 00:57:57.689 [JavaFX Application Thread] DEBUG  c.view.Controller - key coeffAnalogueAmplifier value [Ljava.lang.Number;@1a4c41c1
+15.05.2021 00:57:57.689 [JavaFX Application Thread] DEBUG  c.view.Controller - key chargingCurrent value [Ljava.lang.Number;@75984e17
+15.05.2021 00:57:57.689 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxChargCurrent value [Ljava.lang.Number;@6d5bc11c
+15.05.2021 00:57:57.689 [JavaFX Application Thread] DEBUG  c.view.Controller - key upThresholdCurrent value [Ljava.lang.Number;@77fc9c6e
+15.05.2021 00:57:57.689 [JavaFX Application Thread] DEBUG  c.view.Controller - key thresholdForBoost value [Ljava.lang.Number;@fc68919
+15.05.2021 00:57:57.689 [JavaFX Application Thread] DEBUG  c.view.Controller - key thresholdBoostEnding value [Ljava.lang.Number;@38198600
+15.05.2021 00:57:57.690 [JavaFX Application Thread] DEBUG  c.view.Controller - key timeInBoost value [Ljava.lang.Number;@bf9e33e
+15.05.2021 00:57:57.690 [JavaFX Application Thread] DEBUG  c.view.Controller - key delayBoost value [Ljava.lang.Number;@18f511c3
+15.05.2021 00:59:23.710 [JavaFX Application Thread] DEBUG  c.view.Controller - key mVAtZeroDeg value 1400 value 2 600
+15.05.2021 00:59:23.711 [JavaFX Application Thread] DEBUG  c.view.Controller - key changingMVPerOneDeg value 19 value 2 11
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key minTempFloat value 1-15 value 2 30
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key tempFirstMidPointFloat value 115 value 2 25
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key tempSecondMidPointFloat value 120 value 2 35
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxTempFloat value 140 value 2 55
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key minTempBoost value 115 value 2 35
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxTempBoost value 135 value 2 50
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputMaximum value 12350 value 2 2450
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputMiddle value 12250 value 2 2330
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputFloatMinimum value 12130 value 2 2250
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputBoostMinimum value 12215 value 2 2400
+15.05.2021 00:59:23.712 [JavaFX Application Thread] DEBUG  c.view.Controller - key coefficientOfCalibration value 11.0 value 2 1.131
+15.05.2021 00:59:23.713 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxVoltShunt value 150 value 2 100
+15.05.2021 00:59:23.713 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxCurrentShunt value 1100 value 2 500
+15.05.2021 00:59:23.713 [JavaFX Application Thread] DEBUG  c.view.Controller - key capacitanceOfBattery value 110 value 2 300
+15.05.2021 00:59:23.713 [JavaFX Application Thread] DEBUG  c.view.Controller - key numberBattery value 11 value 2 10
+15.05.2021 00:59:23.713 [JavaFX Application Thread] DEBUG  c.view.Controller - key coeffAnalogueAmplifier value 120 value 2 400
+15.05.2021 00:59:23.713 [JavaFX Application Thread] DEBUG  c.view.Controller - key chargingCurrent value 11.0 value 2 3.5
+15.05.2021 00:59:23.713 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxChargCurrent value 12.4 value 2 5.01
+15.05.2021 00:59:23.714 [JavaFX Application Thread] DEBUG  c.view.Controller - key upThresholdCurrent value 11.7 value 2 4.2
+15.05.2021 00:59:23.714 [JavaFX Application Thread] DEBUG  c.view.Controller - key thresholdForBoost value 10.6 value 2 1.0
+15.05.2021 00:59:23.714 [JavaFX Application Thread] DEBUG  c.view.Controller - key thresholdBoostEnding value 10.1 value 2 0.6
+15.05.2021 00:59:23.714 [JavaFX Application Thread] DEBUG  c.view.Controller - key timeInBoost value 10 value 2 480
+15.05.2021 00:59:23.714 [JavaFX Application Thread] DEBUG  c.view.Controller - key delayBoost value 10 value 2 60
+15.05.2021 00:59:53.980 [JavaFX Application Thread] DEBUG  c.view.Controller - key mVAtZeroDeg value 1: 400 value 2: 600
+15.05.2021 00:59:53.981 [JavaFX Application Thread] DEBUG  c.view.Controller - key changingMVPerOneDeg value 1: 9 value 2: 11
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key minTempFloat value 1: -15 value 2: 30
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key tempFirstMidPointFloat value 1: 15 value 2: 25
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key tempSecondMidPointFloat value 1: 20 value 2: 35
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxTempFloat value 1: 40 value 2: 55
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key minTempBoost value 1: 15 value 2: 35
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxTempBoost value 1: 35 value 2: 50
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputMaximum value 1: 2350 value 2: 2450
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputMiddle value 1: 2250 value 2: 2330
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputFloatMinimum value 1: 2130 value 2: 2250
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key outputBoostMinimum value 1: 2215 value 2: 2400
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key coefficientOfCalibration value 1: 1.0 value 2: 1.131
+15.05.2021 00:59:53.982 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxVoltShunt value 1: 50 value 2: 100
+15.05.2021 00:59:53.983 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxCurrentShunt value 1: 100 value 2: 500
+15.05.2021 00:59:53.983 [JavaFX Application Thread] DEBUG  c.view.Controller - key capacitanceOfBattery value 1: 10 value 2: 300
+15.05.2021 00:59:53.983 [JavaFX Application Thread] DEBUG  c.view.Controller - key numberBattery value 1: 1 value 2: 10
+15.05.2021 00:59:53.983 [JavaFX Application Thread] DEBUG  c.view.Controller - key coeffAnalogueAmplifier value 1: 20 value 2: 400
+15.05.2021 00:59:53.983 [JavaFX Application Thread] DEBUG  c.view.Controller - key chargingCurrent value 1: 1.0 value 2: 3.5
+15.05.2021 00:59:53.983 [JavaFX Application Thread] DEBUG  c.view.Controller - key maxChargCurrent value 1: 2.4 value 2: 5.01
+15.05.2021 00:59:53.983 [JavaFX Application Thread] DEBUG  c.view.Controller - key upThresholdCurrent value 1: 1.7 value 2: 4.2
+15.05.2021 00:59:53.983 [JavaFX Application Thread] DEBUG  c.view.Controller - key thresholdForBoost value 1: 0.6 value 2: 1.0
+15.05.2021 00:59:53.984 [JavaFX Application Thread] DEBUG  c.view.Controller - key thresholdBoostEnding value 1: 0.1 value 2: 0.6
+15.05.2021 00:59:53.984 [JavaFX Application Thread] DEBUG  c.view.Controller - key timeInBoost value 1: 0 value 2: 480
+15.05.2021 00:59:53.984 [JavaFX Application Thread] DEBUG  c.view.Controller - key delayBoost value 1: 0 value 2: 60
+15.05.2021 01:15:24.516 [JavaFX Application Thread] DEBUG  c.view.Controller - ---------------------------------------------------
+15.05.2021 01:15:24.517 [JavaFX Application Thread] DEBUG  c.view.Controller - Array of TextFields and boundary value
+15.05.2021 01:15:24.518 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-mVAtZeroDeg value Low: 400 value High: 600
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-changingMVPerOneDeg value Low: 9 value High: 11
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-minTempFloat value Low: -15 value High: 30
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-tempFirstMidPointFloat value Low: 15 value High: 25
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-tempSecondMidPointFloat value Low: 20 value High: 35
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-maxTempFloat value Low: 40 value High: 55
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-minTempBoost value Low: 15 value High: 35
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-maxTempBoost value Low: 35 value High: 50
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-outputMaximum value Low: 2350 value High: 2450
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-outputMiddle value Low: 2250 value High: 2330
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-outputFloatMinimum value Low: 2130 value High: 2250
+15.05.2021 01:15:24.519 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-outputBoostMinimum value Low: 2215 value High: 2400
+15.05.2021 01:15:24.520 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-coefficientOfCalibration value Low: 1.0 value High: 1.131
+15.05.2021 01:15:24.520 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-maxVoltShunt value Low: 50 value High: 100
+15.05.2021 01:15:24.520 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-maxCurrentShunt value Low: 100 value High: 500
+15.05.2021 01:15:24.520 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-capacitanceOfBattery value Low: 10 value High: 300
+15.05.2021 01:15:24.520 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-numberBattery value Low: 1 value High: 10
+15.05.2021 01:15:24.521 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-coeffAnalogueAmplifier value Low: 20 value High: 400
+15.05.2021 01:15:24.521 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-chargingCurrent value Low: 1.0 value High: 3.5
+15.05.2021 01:15:24.521 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-maxChargCurrent value Low: 2.4 value High: 5.01
+15.05.2021 01:15:24.521 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-upThresholdCurrent value Low: 1.7 value High: 4.2
+15.05.2021 01:15:24.521 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-thresholdForBoost value Low: 0.6 value High: 1.0
+15.05.2021 01:15:24.521 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-thresholdBoostEnding value Low: 0.1 value High: 0.6
+15.05.2021 01:15:24.522 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-timeInBoost value Low: 0 value High: 480
+15.05.2021 01:15:24.522 [JavaFX Application Thread] DEBUG  c.view.Controller - TextField name-delayBoost value Low: 0 value High: 60
+18.05.2021 19:29:18.077 [JavaFX Application Thread] DEBUG  c.c.Controller - ---------------------------------------------------
+18.05.2021 19:29:18.079 [JavaFX Application Thread] DEBUG  c.c.Controller - Array of TextFields and boundary value
+18.05.2021 19:29:18.080 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-mVAtZeroDeg value Low: 400 value High: 600
+18.05.2021 19:29:18.080 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-changingMVPerOneDeg value Low: 9 value High: 11
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-minTempFloat value Low: -15 value High: 30
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-tempFirstMidPointFloat value Low: 15 value High: 25
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-tempSecondMidPointFloat value Low: 20 value High: 35
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-maxTempFloat value Low: 40 value High: 55
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-minTempBoost value Low: 15 value High: 35
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-maxTempBoost value Low: 35 value High: 50
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-outputMaximum value Low: 2350 value High: 2450
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-outputMiddle value Low: 2250 value High: 2330
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-outputFloatMinimum value Low: 2130 value High: 2250
+18.05.2021 19:29:18.081 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-outputBoostMinimum value Low: 2215 value High: 2400
+18.05.2021 19:29:18.082 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-coefficientOfCalibration value Low: 1.0 value High: 1.131
+18.05.2021 19:29:18.082 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-maxVoltShunt value Low: 50 value High: 100
+18.05.2021 19:29:18.082 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-maxCurrentShunt value Low: 100 value High: 500
+18.05.2021 19:29:18.082 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-capacitanceOfBattery value Low: 10 value High: 300
+18.05.2021 19:29:18.082 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-numberBattery value Low: 1 value High: 10
+18.05.2021 19:29:18.082 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-coeffAnalogueAmplifier value Low: 20 value High: 400
+18.05.2021 19:29:18.082 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-chargingCurrent value Low: 1.0 value High: 3.5
+18.05.2021 19:29:18.083 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-maxChargCurrent value Low: 2.4 value High: 5.01
+18.05.2021 19:29:18.083 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-upThresholdCurrent value Low: 1.7 value High: 4.2
+18.05.2021 19:29:18.083 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-thresholdForBoost value Low: 0.6 value High: 1.0
+18.05.2021 19:29:18.083 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-thresholdBoostEnding value Low: 0.1 value High: 0.6
+18.05.2021 19:29:18.083 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-timeInBoost value Low: 0 value High: 480
+18.05.2021 19:29:18.083 [JavaFX Application Thread] DEBUG  c.c.Controller - TextField name-delayBoost value Low: 0 value High: 60
