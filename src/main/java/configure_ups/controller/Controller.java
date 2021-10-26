@@ -605,7 +605,9 @@ public class Controller {
                     "      }\n" +
                     "      //5.2 проверка на Uout>Ut либо Ushunt > Ureset\n" +
                     "      else if (outputSignal > voltageTemperature || valueOfCurrent > upThrCurrDAC) {\n" +
+                    "        if(outputSignal > voltageReset){\n" +
                     "        outputSignal--;\n" +
+                    "        }\n" +
                     "        event = \"5.2 Uout > Ut; Uout--\";\n" +
                     "      }\n" +
                     "      //5.3 проверка на Uout=Ut\n" +
