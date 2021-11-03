@@ -1,6 +1,8 @@
+configure_ups/controller/Controller.class
 configure_ups/model/Unit.class
+configure_ups/MainAppFX.class
+configure_ups/model/Unit$NumberOfPosition.class
+module-info.class
 configure_ups/model/Unit$UnitBoundaryValues.class
 configure_ups/model/UnitField.class
-configure_ups/controller/Controller.class
-configure_ups/model/Unit$NumberOfPosition.class
 configure_ups/model/UnitDataArray.class

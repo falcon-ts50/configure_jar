@@ -17,8 +17,6 @@ import org.slf4j.LoggerFactory;
 
 public class Controller {
 
-    private static final Logger logger = LoggerFactory.getLogger(Controller.class);
-
     UnitDataArray unitDataArray = UnitDataArray.getUnitDataArray();
 
     LinkedHashMap<String, UnitField> unitFields = unitDataArray.getDataArray();
@@ -300,9 +298,9 @@ public class Controller {
             strings[24] = "//Задайте условие окончания ускоренного заряда {R}\n" +
                     "double thresholdBoostEnding = " + unitFields.get("thresholdBoostEnding").getValue() + ";\n";
             strings[25] = "//Задайте максимальное время работы в режиме boost в минутах\n" +
-                    "byte timeInBoost = " + unitFields.get("timeInBoost").getValue() + ";\n";
+                    "short timeInBoost = " + unitFields.get("timeInBoost").getValue() + ";\n";
             strings[26] = "//Задайте время задержки между повторным включением режима boost в минутах\n" +
-                    "byte delayBoost = " + unitFields.get("delayBoost").getValue() + ";\n";
+                    "short delayBoost = " + unitFields.get("delayBoost").getValue() + ";\n";
             strings[27] = "\n" +
                     "// велечина напряжения сброса Ureset  в 10 битах\n" +
                     "\n" +

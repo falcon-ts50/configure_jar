@@ -8,4 +8,5 @@ module configure_ups {
     exports configure_ups.model;
     exports configure_ups.controller;
     opens configure_ups;
+    opens configure_ups.controller to javafx.fxml;
 }
