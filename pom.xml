@@ -6,7 +6,7 @@
 
     <groupId>sudService</groupId>
     <artifactId>configure_jar</artifactId>
-    <version>1.2</version>
+    <version>1.4</version>
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
